@@ -1,0 +1,74 @@
+.logo-placeholder {
+  width: 150px;
+  height: 75px;
+  background-color: #f0f0f0;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #888;
+}
+
+.navbar-text.header-title {
+  font-family: 'Yusei Magic', sans-serif;
+  font-size: 1.5rem; /* 24px */
+}
+
+/* Overlay Menu Styles */
+.overlay-menu {
+  height: 100%;
+  width: 0; /* Start with 0 width */
+  position: fixed;
+  z-index: 1050; /* Higher than Bootstrap's navbar */
+  top: 0;
+  right: 0; /* Align to the right */
+  background-color: rgba(234, 244, 255, 0.9); /* Semi-transparent light indigo */
+  overflow-x: hidden;
+  transition: 0.5s; /* Smooth transition */
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px; /* Space from the top */
+}
+
+.overlay-menu.open {
+  width: 25%; /* 1/4 of screen width */
+}
+
+.overlay-content {
+  width: 100%;
+  text-align: center;
+}
+
+.overlay-menu a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-family: 'Yusei Magic', sans-serif; /* Apply heartwarming font to menu items */
+}
+
+.overlay-menu a:hover, .overlay-menu a:focus {
+  color: #f1f1f1;
+}
+
+.overlay-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #818181;
+  cursor: pointer;
+}
+
+/* Adjust navbar-toggler for smaller screens */
+@media (max-width: 991.98px) { /* Bootstrap's lg breakpoint */
+  .navbar-expand-lg .navbar-toggler {
+    display: block; /* Always show toggler on smaller screens */
+  }
+  .navbar-expand-lg .navbar-collapse {
+    display: none !important; /* Hide default collapse */
+  }
+}

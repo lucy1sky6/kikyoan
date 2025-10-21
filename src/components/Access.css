@@ -1,0 +1,33 @@
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.car-access-section {
+  background-color: #eaf4ff; /* 薄藍色 */
+  padding: 20px;
+  margin: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.access-sub-heading {
+  font-size: 1.5rem; /* Equivalent to h4 */
+  font-weight: 500; /* Equivalent to h4 */
+  margin-bottom: 0.5rem; /* Equivalent to h4 */
+  text-align: left; /* Ensure left alignment */
+}
+
+.greengrass-spacing {
+  margin-bottom: 2rem; /* Approximately two lines of space */
+}
