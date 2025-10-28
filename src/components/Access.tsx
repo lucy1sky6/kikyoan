@@ -1,108 +1,268 @@
 const Access = () => {
   return (
     <div className="py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">アクセス</h2>
-      <p className="text-xl text-center font-semibold mb-6">桔梗庵</p>
+      <h2 className="text-3xl font-bold text-center mb-8">所在地</h2>
 
-      <div className="max-w-4xl mx-auto">
-        {/* Google Map */}
-        <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-          <iframe
-            src="https://maps.google.com/maps?q=石川県鳳珠郡能登町小木10-28&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            className="absolute top-0 left-0 w-full h-full border-0 rounded-lg shadow-lg"
-            allowFullScreen
-            aria-hidden="false"
-            tabIndex={0}
-            title="桔梗庵の地図"
-          ></iframe>
+      <div className="max-w-6xl mx-auto">
+        {/* マップ2カラム */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {/* 桔梗庵 */}
+          <div>
+            <p className="text-xl text-center font-semibold mb-4">桔梗庵</p>
+            <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+              <iframe
+                src="https://maps.google.com/maps?q=石川県鳳珠郡能登町小木10-28&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="absolute top-0 left-0 w-full h-full border-0 rounded-lg shadow-lg"
+                allowFullScreen
+                aria-hidden="false"
+                tabIndex={0}
+                title="桔梗庵の地図"
+              ></iframe>
+            </div>
+            <p className="text-center text-gray-700 mt-3 text-sm">
+              〒927-0553 石川県鳳珠郡能登町小木10-28
+            </p>
+          </div>
+
+          {/* greengrass */}
+          <div>
+            <p className="text-xl text-center font-semibold mb-4">greengrass</p>
+            <div className="relative w-full" style={{ paddingBottom: '75%' }}>
+              <iframe
+                src="https://maps.google.com/maps?q=37.3001348,137.223473&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="absolute top-0 left-0 w-full h-full border-0 rounded-lg shadow-lg"
+                allowFullScreen
+                aria-hidden="false"
+                tabIndex={0}
+                title="greengrassの地図"
+              ></iframe>
+            </div>
+            <p className="text-center text-gray-700 mt-3 text-sm">
+              石川県鳳珠郡能登町小木
+            </p>
+          </div>
         </div>
-
-        {/* greengrass */}
-        <p className="text-xl text-center font-semibold mt-12 mb-6">
-          greengrass
-        </p>
-        <p className="text-center mb-8">
-          <a
-            href="https://www.google.com/maps/place/%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%B9%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B0%E3%83%A9%E3%82%B9/@37.3001348,137.223473,17z/data=!3m1!4b1!4m6!3m5!1s0x5ff6cf794fe42e51:0x4d34f4084d245c35!8m2!3d37.3001348!4d137.223473!16s%2Fg%2F1tfwk64s?entry=ttu&g_ep=EgoyMDI1MDgxMy4wIKXMDSoASAFQAw%3D%3D"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:underline"
-          >
-            greengrassの場所はこちら
-          </a>
-        </p>
 
         {/* 交通手段 */}
         <div className="mt-12">
-          <h4 className="text-2xl font-bold mb-6">交通手段</h4>
+          <h3 className="text-3xl font-bold mb-8 text-center">アクセス</h3>
 
-          {/* 車でお越しの場合 */}
-          <div className="mb-8 p-6 bg-gray-50 rounded-lg">
-            <p className="font-bold text-lg mb-3">お車でお越しの場合</p>
-            <p className="mb-3">
-              金沢から
-              <a
-                href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline mx-1"
-              >
-                のと里山海道
-              </a>
-              に乗る。能登空港IC（終点）信号を右折、珠洲道路を通って宇出津（うしつ）方面へ。宇出津から海岸線を走って小木の信号通過、前方小木港を右折し、道なりに進みます。
-            </p>
-            <p>
-              所要時間は金沢から能登空港ICまで約1時間30分、能登空港ICから約1時間。
-            </p>
+          {/* 詳細情報（概要） */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {/* 飛行機 */}
+            <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
+              <p className="font-bold text-lg mb-3 text-gray-900">✈️ 飛行機</p>
+              <p className="text-sm text-gray-700 mb-2">
+                のと里山空港から
+                <a
+                  href="https://www.noto-airport.jp/access/furutaku.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline mx-1"
+                >
+                  ふるさとタクシー
+                </a>
+                で約1時間
+              </p>
+              <p className="text-xs text-gray-600">
+                運行ゾーン③ 能登町（内浦地区）小木
+              </p>
+            </div>
+
+            {/* 車 */}
+            <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
+              <p className="font-bold text-lg mb-3 text-gray-900">🚗 お車</p>
+              <p className="text-sm text-gray-700">
+                金沢から
+                <a
+                  href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline mx-1"
+                >
+                  のと里山海道
+                </a>
+                経由で約2.5時間
+              </p>
+            </div>
+
+            {/* バス */}
+            <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
+              <p className="font-bold text-lg mb-3 text-gray-900">🚌 バス</p>
+              <p className="text-sm text-gray-700">
+                金沢駅西口より
+                <a
+                  href="https://www.hokutetsu.co.jp/highway-bus/noto/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline mx-1"
+                >
+                  北陸鉄道 特急バス
+                </a>
+                で小木港へ
+              </p>
+            </div>
           </div>
 
-          {/* 飛行機でお越しの場合 */}
-          <div className="mb-8 p-6 bg-gray-50 rounded-lg">
-            <p className="font-bold text-lg mb-3">飛行機でお越しの場合</p>
-            <p>
-              のと里山空港から
-              <a
-                href="https://www.noto-airport.jp/access/furutaku.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline mx-1"
-              >
-                ふるさとタクシー
-              </a>
-              （運行ゾーン③ 能登町（内浦地区）小木）で約1時間。
-            </p>
-          </div>
+          {/* フローチャート（詳細） */}
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-xl mb-8">
+            <div className="max-w-5xl mx-auto">
+              {/* 中央縦並びルート */}
+              <div className="text-center mb-8">
+                {/* 全国各地（電車ルート用） */}
+                <div className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg mb-3 inline-block">
+                  全国各地
+                </div>
 
-          {/* バスでお越しの場合 */}
-          <div className="mb-8 p-6 bg-gray-50 rounded-lg">
-            <p className="font-bold text-lg mb-3">バスでお越しの場合</p>
-            <p className="mb-3">
-              金沢駅西口より
-              <a
-                href="https://www.hokutetsu.co.jp/highway-bus/noto/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline mx-1"
-              >
-                北陸鉄道 能登方面特急バス
-              </a>
-              で輪島行きに乗車、「のと里山空港」で宇出津行きに乗り換え、「小木港」で降車。
-            </p>
-            <p className="mb-2">
-              <strong>【桔梗庵】</strong>
-              「小木港」から、石川県漁協 小木市所方向に徒歩15分。
-            </p>
-            <p>
-              <strong>【greengrass】</strong>
-              「小木港」から、能登町役場
-              小木支所方向に徒歩15分。小木支所の後ろにあります。
-            </p>
+                {/* 電車 */}
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-2xl">↓</span>
+                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                    🚅 北陸新幹線 / 🚄 サンダーバード
+                  </span>
+                </div>
+
+                {/* 金沢 */}
+                <div className="bg-gray-200 text-gray-900 px-4 py-3 rounded-lg font-bold shadow-md inline-flex items-center gap-3 mb-3 text-lg">
+                  <span>金沢駅</span>
+                  <div className="w-12 h-12 bg-gray-300 rounded border-2 border-gray-400 flex items-center justify-center text-xs">
+                    写真
+                  </div>
+                </div>
+
+                {/* 車/バス */}
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-2xl">↓</span>
+                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                    🚗 車/🚌 バス
+                    <a
+                      href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline font-semibold ml-1"
+                    >
+                      のと里山海道
+                    </a>
+                    {' '}約1.5時間
+                  </span>
+                </div>
+
+                {/* 能登空港IC */}
+                <div className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg mb-3">
+                  能登空港IC
+                </div>
+
+                {/* 車 */}
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-2xl">↓</span>
+                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                    🚗 車 珠洲道路・宇出津経由 約1時間
+                  </span>
+                </div>
+
+                {/* のと里山空港（左から飛行機ルート合流） */}
+                <div className="flex items-center justify-center gap-4 mb-3">
+                  {/* 左：飛行機ルート */}
+                  <div className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg">
+                    全国各地
+                  </div>
+
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="text-2xl">→</div>
+                    <div className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-800 mt-1">
+                      ✈️ 飛行機
+                    </div>
+                  </div>
+
+                  {/* 中央：のと里山空港 */}
+                  <div className="bg-gray-200 text-gray-900 px-4 py-3 rounded-lg font-bold shadow-md inline-flex items-center gap-3 text-lg">
+                    <span>のと里山空港</span>
+                    <div className="w-12 h-12 bg-gray-300 rounded border-2 border-gray-400 flex items-center justify-center text-xs">
+                      写真
+                    </div>
+                  </div>
+                </div>
+
+                {/* タクシー */}
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-2xl">↓</span>
+                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                    🚗 タクシー 約1時間
+                  </span>
+                </div>
+              </div>
+
+              {/* 小木エリア（大きなコンテナ） */}
+              <div className="relative border-4 border-orange-300 rounded-2xl pt-3 pb-8 px-8 bg-orange-50">
+                {/* 小木入口（エリアの上部に重なる） */}
+                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className="bg-orange-200 text-orange-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg flex items-center gap-3 border-2 border-orange-400">
+                    <div className="w-10 h-10 bg-orange-300 rounded border-2 border-orange-500 flex items-center justify-center text-xs">
+                      写真
+                    </div>
+                    <span>小木入口</span>
+                  </div>
+                </div>
+
+                <div className="mb-6">
+                  <h4 className="text-xl font-bold text-orange-900">小木エリア</h4>
+                </div>
+
+                {/* 施設分岐 */}
+                <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+                  {/* 桔梗庵 */}
+                  <div className="flex-1 text-center">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <span className="text-3xl">↓</span>
+                      <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                        🚶 徒歩15分<br />
+                        石川県漁協小木支所方向
+                      </span>
+                    </div>
+                    <div className="bg-purple-200 text-purple-900 px-6 py-4 rounded-lg font-bold shadow-lg text-lg inline-flex items-center gap-3">
+                      <div className="w-12 h-12 bg-purple-300 rounded border-2 border-purple-400 flex items-center justify-center text-xs">
+                        写真
+                      </div>
+                      <span>桔梗庵</span>
+                    </div>
+                  </div>
+
+                  {/* 双方向矢印 */}
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="text-3xl font-bold text-gray-600">
+                      ⇄
+                    </div>
+                    <div className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-700 mt-2 text-center">
+                      🚶 徒歩数分<br />
+                      数100m
+                    </div>
+                  </div>
+
+                  {/* greengrass */}
+                  <div className="flex-1 text-center">
+                    <div className="flex items-center justify-center gap-2 mb-2">
+                      <span className="text-3xl">↓</span>
+                      <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                        🚶 徒歩15分<br />
+                        能登町役場小木支所方向
+                      </span>
+                    </div>
+                    <div className="bg-lime-200 text-lime-900 px-6 py-4 rounded-lg font-bold shadow-lg text-lg inline-flex items-center gap-3">
+                      <span>greengrass</span>
+                      <div className="w-12 h-12 bg-lime-300 rounded border-2 border-lime-400 flex items-center justify-center text-xs">
+                        写真
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* 近くの施設 */}
         <div className="mt-12">
-          <h4 className="text-2xl font-bold mb-6">近くの施設など</h4>
+          <h3 className="text-3xl font-bold mb-8 text-center">近くの施設など</h3>
 
           <div className="space-y-4">
             <div>
