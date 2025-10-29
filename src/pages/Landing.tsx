@@ -8,6 +8,8 @@ import BackButton from '../components/BackButton';
 import ContactSection from '../components/ContactSection';
 import MagazineSection from '../components/MagazineSection';
 import StoryModal from '../components/StoryModal';
+import ReadMoreButton from '../components/ReadMoreButton';
+import PhotoGalleryBanner from '../components/PhotoGalleryBanner';
 import GalleryPage from './GalleryPage';
 
 type Selection = null | 'kikyoan' | 'greengrass' | 'gallery';
@@ -17,6 +19,20 @@ const Landing = () => {
   const [galleryInitialTag, setGalleryInitialTag] = useState<string>('すべて');
   const [isKikyoanStoryOpen, setIsKikyoanStoryOpen] = useState(false);
   const [isGreengrassStoryOpen, setIsGreengrassStoryOpen] = useState(false);
+  const [kikyoanImageIndex, setKikyoanImageIndex] = useState(0);
+  const [greengrassImageIndex, setGreengrassImageIndex] = useState(0);
+
+  // 画像配列
+  const kikyoanImages = [
+    '/images/landing/kikyoan-hero-01.webp',
+    '/images/landing/kikyoan-hero-02.webp',
+    '/images/landing/kikyoan-hero-03.webp',
+  ];
+  const greengrassImages = [
+    '/images/landing/greengrass-hero-01.webp',
+    '/images/landing/greengrass-hero-02.webp',
+    '/images/landing/greengrass-hero-03.webp',
+  ];
 
   const handleSelect = (selection: 'kikyoan' | 'greengrass') => {
     setSelected(selection);
@@ -44,6 +60,45 @@ const Landing = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Escapeキーで詳細ページから戻る
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selected !== null) {
+        handleBack();
+      }
+    };
+
+    if (selected !== null) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selected]);
+
+  // 桔梗庵の画像スライドショー
+  useEffect(() => {
+    if (selected === null) {
+      const interval = setInterval(() => {
+        setKikyoanImageIndex((prev) => (prev + 1) % kikyoanImages.length);
+      }, 5000); // 5秒ごとに切り替え
+
+      return () => clearInterval(interval);
+    }
+  }, [selected, kikyoanImages.length]);
+
+  // greengrassの画像スライドショー
+  useEffect(() => {
+    if (selected === null) {
+      const interval = setInterval(() => {
+        setGreengrassImageIndex((prev) => (prev + 1) % greengrassImages.length);
+      }, 5000); // 5秒ごとに切り替え
+
+      return () => clearInterval(interval);
+    }
+  }, [selected, greengrassImages.length]);
+
   return (
     <div className="min-h-screen bg-stone-50">
       {/* メインコンテンツエリア */}
@@ -63,21 +118,37 @@ const Landing = () => {
                 {/* 桔梗庵セクション */}
                 <motion.div
                   onClick={() => handleSelect('kikyoan')}
-                  className="flex-1 bg-gradient-to-br from-purple-100 via-purple-200 to-purple-100 cursor-pointer flex items-center justify-center relative overflow-hidden group"
+                  className="flex-1 cursor-pointer flex items-center justify-center relative overflow-hidden group"
                 >
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                  {/* 背景画像スライドショー */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={kikyoanImageIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1.5 }}
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${kikyoanImages[kikyoanImageIndex]})`,
+                      }}
+                    />
+                  </AnimatePresence>
+                  {/* オーバーレイ */}
+                  <div className="absolute inset-0 bg-purple-900/40" />
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   <div className="text-center z-10 p-8">
                     <motion.h2
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
-                      className="text-6xl md:text-7xl font-serif mb-6 text-purple-900"
+                      className="text-6xl md:text-7xl font-serif mb-6 text-white drop-shadow-lg"
                     >
                       桔梗庵
                     </motion.h2>
-                    <p className="text-sm text-purple-700 max-w-md mb-6">
+                    <p className="text-sm text-white max-w-md mb-6 drop-shadow-md">
                       築130年、海辺から能登を支える
                     </p>
-                    <p className="text-lg text-purple-800 bg-white/50 px-6 py-2 rounded-full inline-block font-sans">
+                    <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full inline-block font-sans backdrop-blur-sm">
                       詳しく見る
                     </p>
                   </div>
@@ -86,21 +157,37 @@ const Landing = () => {
                 {/* greengrassセクション */}
                 <motion.div
                   onClick={() => handleSelect('greengrass')}
-                  className="flex-1 bg-gradient-to-br from-lime-200 via-lime-300 to-lime-200 cursor-pointer flex items-center justify-center relative overflow-hidden group"
+                  className="flex-1 cursor-pointer flex items-center justify-center relative overflow-hidden group"
                 >
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                  {/* 背景画像スライドショー */}
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={greengrassImageIndex}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1.5 }}
+                      className="absolute inset-0 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${greengrassImages[greengrassImageIndex]})`,
+                      }}
+                    />
+                  </AnimatePresence>
+                  {/* オーバーレイ */}
+                  <div className="absolute inset-0 bg-lime-900/40" />
+                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                   <div className="text-center z-10 p-8">
                     <motion.h2
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
-                      className="text-6xl md:text-7xl font-serif mb-6 text-lime-900"
+                      className="text-6xl md:text-7xl font-serif mb-6 text-white drop-shadow-lg"
                     >
                       greengrass
                     </motion.h2>
-                    <p className="text-sm text-lime-700 max-w-md mb-6">
+                    <p className="text-sm text-white max-w-md mb-6 drop-shadow-md">
                       手作りの椅子と、出会える場所
                     </p>
-                    <p className="text-lg text-lime-800 bg-white/50 px-6 py-2 rounded-full inline-block font-sans">
+                    <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full inline-block font-sans backdrop-blur-sm">
                       詳しく見る
                     </p>
                   </div>
@@ -108,35 +195,10 @@ const Landing = () => {
               </motion.div>
 
               {/* フォト入口 */}
-              <motion.div
+              <PhotoGalleryBanner
                 key="gallery-entrance"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
                 onClick={() => handleGallerySelect('すべて')}
-                className="h-40 bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 cursor-pointer flex items-center justify-center relative overflow-hidden group"
-              >
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                <div className="flex items-center justify-between w-full px-12 z-10">
-                  <div>
-                    <motion.h2
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.3 }}
-                      className="text-4xl md:text-5xl font-serif mb-2 text-white"
-                    >
-                      のとフォト
-                    </motion.h2>
-                    <p className="text-sm text-white ml-4">
-                      写真で巡る、能登の風景
-                    </p>
-                  </div>
-                  <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full font-sans">
-                    詳しく見る
-                  </p>
-                </div>
-              </motion.div>
+              />
             </>
           )}
 
@@ -186,15 +248,11 @@ const Landing = () => {
                         ここに桔梗庵の紹介文が入ります。施設の概要や雰囲気について説明するテキストが入ります。
                         能登の海に近い静かな環境で、ゆったりとした時間をお過ごしいただけます。
                       </p>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsKikyoanStoryOpen(true);
-                        }}
-                        className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
-                      >
-                        📖 続きを読む
-                      </button>
+                      <ReadMoreButton
+                        onClick={() => setIsKikyoanStoryOpen(true)}
+                        bgColor="bg-purple-600"
+                        hoverColor="hover:bg-purple-700"
+                      />
                     </>
                   }
                   imagePosition="right"
@@ -202,7 +260,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="https://via.placeholder.com/600x450?text=Photo+1"
+                  imageSrc="/images/kikyoan/about.webp"
                   imageAlt="桔梗庵の外観"
                   delay={0.3}
                 />
@@ -221,7 +279,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="https://via.placeholder.com/500?text=Photo+2"
+                  imageSrc="/images/kikyoan/activities.webp"
                   imageAlt="桔梗庵の内観"
                   delay={0.4}
                 />
@@ -251,7 +309,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="https://via.placeholder.com/500?text=Photo+3"
+                  imageSrc="/images/kikyoan/features.webp"
                   imageAlt="桔梗庵の雰囲気"
                   delay={0.5}
                 />
@@ -272,7 +330,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="https://via.placeholder.com/600x450?text=Photo+4"
+                  imageSrc="/images/kikyoan/photo-intro.webp"
                   imageAlt="桔梗庵での過ごし方"
                   delay={0.6}
                 />
@@ -436,15 +494,11 @@ const Landing = () => {
                         １Fが作業場兼木材置き場、2Fが手作り木の椅子の展示スペースとなっています。
                         網元の番屋（漁船に関わる器材の倉庫）を改造した建物です。
                       </p>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setIsGreengrassStoryOpen(true);
-                        }}
-                        className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
-                      >
-                        📖 続きを読む
-                      </button>
+                      <ReadMoreButton
+                        onClick={() => setIsGreengrassStoryOpen(true)}
+                        bgColor="bg-lime-600"
+                        hoverColor="hover:bg-lime-700"
+                      />
                     </>
                   }
                   imagePosition="right"
@@ -452,7 +506,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="https://via.placeholder.com/600x450?text=Photo+1"
+                  imageSrc="/images/greengrass/about.webp"
                   imageAlt="greengrassの外観"
                   delay={0.3}
                 />
@@ -471,7 +525,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="https://via.placeholder.com/500?text=Photo+2"
+                  imageSrc="/images/greengrass/chairs.webp"
                   imageAlt="手作りの木の椅子"
                   delay={0.4}
                 />
@@ -490,7 +544,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="https://via.placeholder.com/500?text=Photo+3"
+                  imageSrc="/images/greengrass/peeling.webp"
                   imageAlt="ピーリングウッド"
                   delay={0.5}
                 />
@@ -520,7 +574,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="https://via.placeholder.com/600x450?text=Photo+4"
+                  imageSrc="/images/greengrass/workshop.webp"
                   imageAlt="工房の様子"
                   delay={0.6}
                 />
@@ -543,7 +597,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="https://via.placeholder.com/600x450?text=Photo+5"
+                  imageSrc="/images/greengrass/exhibition.webp"
                   imageAlt="個展の様子"
                   delay={0.7}
                 />
@@ -567,7 +621,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="https://via.placeholder.com/600x450?text=Photo+6"
+                  imageSrc="/images/greengrass/media.webp"
                   imageAlt="メディア出演・導入事例"
                   delay={0.8}
                 />

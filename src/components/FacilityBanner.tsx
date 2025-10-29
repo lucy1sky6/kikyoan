@@ -11,6 +11,7 @@ interface FacilityBannerProps {
   mapSrc: string;
   mapTitle: string;
   zIndex?: number;
+  photoSrc?: string;
 }
 
 const FacilityBanner = ({
@@ -24,10 +25,11 @@ const FacilityBanner = ({
   mapSrc,
   mapTitle,
   zIndex = 10,
+  photoSrc,
 }: FacilityBannerProps) => {
   return (
     <div
-      className={`relative h-48 bg-gradient-to-r ${gradientFrom} ${gradientTo} flex items-center`}
+      className={`relative h-48 ${photoSrc ? '' : `bg-gradient-to-r ${gradientFrom} ${gradientTo}`} flex items-center`}
       style={{
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px))',
         zIndex,
@@ -35,8 +37,14 @@ const FacilityBanner = ({
         boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
       }}
     >
-      {/* 背景画像用（将来的に追加） */}
-      <div className="absolute inset-0 bg-black/20"></div>
+      {/* 背景画像 */}
+      {photoSrc && (
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${photoSrc})` }}
+        />
+      )}
+      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* テキスト情報（リンク） */}
       <a
