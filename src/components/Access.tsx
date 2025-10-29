@@ -82,7 +82,7 @@ const Access = () => {
               {/* 中央縦並びルート */}
               <div className="text-center mb-8">
                 {/* 全国各地（電車ルート用） */}
-                <SimpleNode name="全国各地" className="mb-3 inline-block" />
+                <SimpleNode name="全国各地" bgColor="bg-yellow-100" className="mb-3 inline-block" />
 
                 {/* 電車 */}
                 <FlowArrow
@@ -112,20 +112,23 @@ const Access = () => {
                 <FlowArrow direction="down" description="🚗🚌" />
 
                 {/* のと里山空港（左から飛行機ルート合流） */}
-                <div className="flex items-center justify-center gap-4 mb-3">
-                  {/* 左：飛行機ルート */}
-                  <SimpleNode name="全国各地" />
+                <div className="mb-3 text-center">
+                  <div className="inline-block relative">
+                    {/* 中央：のと里山空港 */}
+                    <LocationNode
+                      name="のと里山空港"
+                      bgColor="bg-gray-200"
+                      photoAreaColor="bg-gray-300"
+                      className="shadow-md"
+                      photoSrc="/images/access/noto-airport.webp"
+                    />
 
-                  <FlowArrow direction="right" description="✈️ 飛行機" />
-
-                  {/* 中央：のと里山空港 */}
-                  <LocationNode
-                    name="のと里山空港"
-                    bgColor="bg-gray-200"
-                    photoAreaColor="bg-gray-300"
-                    className="shadow-md"
-                    photoSrc="/images/access/noto-airport.webp"
-                  />
+                    {/* 左：飛行機ルート（空港のすぐ左に配置） */}
+                    <div className="absolute right-full top-1/2 -translate-y-1/2 flex items-center gap-3 mr-3 whitespace-nowrap">
+                      <SimpleNode name="全国各地" bgColor="bg-yellow-100" />
+                      <FlowArrow direction="right" description="✈️ 飛行機" />
+                    </div>
+                  </div>
                 </div>
 
                 {/* お車/バス */}

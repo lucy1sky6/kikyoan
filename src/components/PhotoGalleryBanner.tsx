@@ -6,11 +6,7 @@ interface PhotoGalleryBannerProps {
 
 const PhotoGalleryBanner = ({ onClick }: PhotoGalleryBannerProps) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+    <div
       onClick={onClick}
       className="h-40 cursor-pointer flex items-center justify-center relative overflow-hidden group"
     >
@@ -40,7 +36,7 @@ const PhotoGalleryBanner = ({ onClick }: PhotoGalleryBannerProps) => {
           詳しく見る
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

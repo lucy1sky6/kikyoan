@@ -369,7 +369,7 @@ const Landing = () => {
                           <span className="font-semibold">¥XX,XXX~</span>
                         </li>
                       </ul>
-                      <p className="text-sm text-gray-500 mt-4">※料金は利用内容により変動します</p>
+                      <p className="text-sm text-gray-500 mt-4 ml-4">※料金は利用内容により変動します</p>
                     </div>
 
                     {/* 予約について */}
@@ -660,7 +660,7 @@ const Landing = () => {
                           <span className="font-semibold">¥XX,XXX~</span>
                         </li>
                       </ul>
-                      <p className="text-sm text-gray-500 mt-4">※サイズや仕様により価格は変動します</p>
+                      <p className="text-sm text-gray-500 mt-4 ml-4">※サイズや仕様により価格は変動します</p>
                     </div>
 
                     {/* 在庫について */}
