@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
 import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
@@ -7,6 +7,7 @@ import Contact from '../components/Contact';
 import BackButton from '../components/BackButton';
 import ContactSection from '../components/ContactSection';
 import MagazineSection from '../components/MagazineSection';
+import StoryModal from '../components/StoryModal';
 import GalleryPage from './GalleryPage';
 
 type Selection = null | 'kikyoan' | 'greengrass' | 'gallery';
@@ -14,6 +15,8 @@ type Selection = null | 'kikyoan' | 'greengrass' | 'gallery';
 const Landing = () => {
   const [selected, setSelected] = useState<Selection>(null);
   const [galleryInitialTag, setGalleryInitialTag] = useState<string>('すべて');
+  const [isKikyoanStoryOpen, setIsKikyoanStoryOpen] = useState(false);
+  const [isGreengrassStoryOpen, setIsGreengrassStoryOpen] = useState(false);
 
   const handleSelect = (selection: 'kikyoan' | 'greengrass') => {
     setSelected(selection);
@@ -71,8 +74,8 @@ const Landing = () => {
                     >
                       桔梗庵
                     </motion.h2>
-                    <p className="text-sm text-purple-700 max-w-md mb-3">
-                      レンタルスペース、民泊としてご利用いただけます
+                    <p className="text-sm text-purple-700 max-w-md mb-6">
+                      築130年、海辺から能登を支える
                     </p>
                     <p className="text-lg text-purple-800 bg-white/50 px-6 py-2 rounded-full inline-block font-sans">
                       詳しく見る
@@ -94,8 +97,8 @@ const Landing = () => {
                     >
                       greengrass
                     </motion.h2>
-                    <p className="text-sm text-lime-700 max-w-md mb-3">
-                      手作りの木の椅子、ピーリングウッドの販売
+                    <p className="text-sm text-lime-700 max-w-md mb-6">
+                      手作りの椅子と、出会える場所
                     </p>
                     <p className="text-lg text-lime-800 bg-white/50 px-6 py-2 rounded-full inline-block font-sans">
                       詳しく見る
@@ -115,16 +118,21 @@ const Landing = () => {
                 className="h-40 bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 cursor-pointer flex items-center justify-center relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                <div className="text-center z-10 p-8">
-                  <motion.h2
-                    initial={{ y: 10, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-4xl md:text-5xl font-serif mb-3 text-white"
-                  >
-                    📷 フォト
-                  </motion.h2>
-                  <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full inline-block font-sans">
+                <div className="flex items-center justify-between w-full px-12 z-10">
+                  <div>
+                    <motion.h2
+                      initial={{ y: 10, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                      className="text-4xl md:text-5xl font-serif mb-2 text-white"
+                    >
+                      のとフォト
+                    </motion.h2>
+                    <p className="text-sm text-white ml-4">
+                      写真で巡る、能登の風景
+                    </p>
+                  </div>
+                  <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full font-sans">
                     詳しく見る
                   </p>
                 </div>
@@ -158,11 +166,14 @@ const Landing = () => {
                   transition={{ delay: 0.2 }}
                   className="text-center mb-20"
                 >
-                  <h1 className="text-5xl md:text-6xl font-serif text-purple-900 mb-6">
+                  <h1 className="text-5xl md:text-6xl font-serif text-purple-900 mb-2">
                     桔梗庵
                   </h1>
+                  <p className="text-sm font-sans italic tracking-wider text-purple-700 opacity-70 mb-6">
+                    ［ききょうあん］
+                  </p>
                   <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    海にほど近い静かな場所で、心安らぐひとときをお過ごしください
+                    築130年、海辺から能登を支える
                   </p>
                 </motion.div>
 
@@ -170,10 +181,21 @@ const Landing = () => {
                 <MagazineSection
                   title="桔梗庵って？"
                   description={
-                    <p>
-                      ここに桔梗庵の紹介文が入ります。施設の概要や雰囲気について説明するテキストが入ります。
-                      能登の海に近い静かな環境で、ゆったりとした時間をお過ごしいただけます。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        ここに桔梗庵の紹介文が入ります。施設の概要や雰囲気について説明するテキストが入ります。
+                        能登の海に近い静かな環境で、ゆったりとした時間をお過ごしいただけます。
+                      </p>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsKikyoanStoryOpen(true);
+                        }}
+                        className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
+                      >
+                        📖 続きを読む
+                      </button>
+                    </>
                   }
                   imagePosition="right"
                   aspectRatio="landscape"
@@ -220,7 +242,7 @@ const Landing = () => {
                         }}
                         className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
                       >
-                        📷 フォトを見る
+                        🖼️ フォトを見る
                       </button>
                     </>
                   }
@@ -325,6 +347,45 @@ const Landing = () => {
                   linkColor="text-purple-700"
                   linkHoverColor="hover:text-purple-900"
                 />
+
+                {/* 桔梗庵ストーリーモーダル */}
+                <StoryModal
+                  isOpen={isKikyoanStoryOpen}
+                  onClose={() => setIsKikyoanStoryOpen(false)}
+                  title="桔梗庵について"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        2024年1月1日、能登半島地震が発生しました。
+                        震度7を記録したこの地震により、能登半島の多くの地域が甚大な被害を受けました。
+                      </p>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">地震被害の写真</span>
+                      </div>
+
+                      <p className="mb-6">
+                        桔梗庵は、能登半島の復興を応援し、この美しい地域を再び活気づけるために生まれました。
+                        地域の方々とともに歩み、訪れる皆様に能登の魅力を感じていただきながら、
+                        復興への一助となることを目指しています。
+                      </p>
+
+                      <p className="mb-6">
+                        古民家をリノベーションしたこの施設は、能登の伝統と新しい息吹が調和する空間です。
+                        海に近い静かな環境で、心安らぐひとときをお過ごしください。
+                      </p>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">復興の様子の写真</span>
+                      </div>
+
+                      <p className="mb-6">
+                        桔梗庵でのご滞在が、能登半島の復興を応援する一歩となります。
+                        皆様のお越しを心よりお待ちしております。
+                      </p>
+                    </div>
+                  }
+                />
               </div>
             </motion.div>
           )}
@@ -355,11 +416,14 @@ const Landing = () => {
                   transition={{ delay: 0.2 }}
                   className="text-center mb-20"
                 >
-                  <h1 className="text-5xl md:text-6xl font-serif text-lime-900 mb-6">
+                  <h1 className="text-5xl md:text-6xl font-serif text-lime-900 mb-2">
                     greengrass
                   </h1>
+                  <p className="text-sm font-sans italic tracking-wider text-lime-700 opacity-70 mb-6">
+                    ［グリーングラス］
+                  </p>
                   <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    手作りの木の椅子と、ピーリングウッドの販売
+                    手作りの椅子と、出会える場所
                   </p>
                 </motion.div>
 
@@ -367,10 +431,21 @@ const Landing = () => {
                 <MagazineSection
                   title="greengrassって？"
                   description={
-                    <p>
-                      １Fが作業場兼木材置き場、2Fが手作り木の椅子の展示スペースとなっています。
-                      網元の番屋（漁船に関わる器材の倉庫）を改造した建物です。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        １Fが作業場兼木材置き場、2Fが手作り木の椅子の展示スペースとなっています。
+                        網元の番屋（漁船に関わる器材の倉庫）を改造した建物です。
+                      </p>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsGreengrassStoryOpen(true);
+                        }}
+                        className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
+                      >
+                        📖 続きを読む
+                      </button>
+                    </>
                   }
                   imagePosition="right"
                   aspectRatio="landscape"
@@ -436,7 +511,7 @@ const Landing = () => {
                         }}
                         className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
                       >
-                        📷 フォトを見る
+                        🖼️ フォトを見る
                       </button>
                     </>
                   }
@@ -566,6 +641,45 @@ const Landing = () => {
                   websiteLink="https://greengrass-example.com"
                   linkColor="text-lime-700"
                   linkHoverColor="hover:text-lime-900"
+                />
+
+                {/* greengrassストーリーモーダル */}
+                <StoryModal
+                  isOpen={isGreengrassStoryOpen}
+                  onClose={() => setIsGreengrassStoryOpen(false)}
+                  title="greengrassについて"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        greengrassの始まりは、台風がきっかけでした。
+                        能登半島を襲った台風により、たくさんの木の枝が折れて地面に転がっていました。
+                      </p>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">台風後の枝の写真</span>
+                      </div>
+
+                      <p className="mb-6">
+                        この折れた枝を何かに活用できないか。そう考えたのがgreengrassの始まりです。
+                        自然の恵みを無駄にせず、新しい価値を生み出したい。
+                        その想いから、木材を活かした製品づくりが始まりました。
+                      </p>
+
+                      <p className="mb-6">
+                        網元の番屋を改造した建物で、一つ一つ手作りで木の椅子を制作しています。
+                        また、ピーリングウッドという独特の風合いを持つ木材製品も販売しています。
+                      </p>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">工房での作業風景</span>
+                      </div>
+
+                      <p className="mb-6">
+                        自然の力で生まれた素材を、職人の手で丁寧に形にする。
+                        greengrassは、能登の自然と共に歩む工房です。
+                      </p>
+                    </div>
+                  }
                 />
               </div>
             </motion.div>

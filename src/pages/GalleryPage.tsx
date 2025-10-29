@@ -114,7 +114,10 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
           transition={{ delay: 0.2 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-serif text-blue-900">📷 フォト</h1>
+          <h1 className="text-5xl md:text-6xl font-serif text-blue-900 mb-6">のとフォト</h1>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            写真で巡る、能登の風景
+          </p>
         </motion.div>
 
         {/* タグフィルター */}
