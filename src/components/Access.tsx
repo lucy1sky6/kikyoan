@@ -1,4 +1,4 @@
-import { FaCar } from 'react-icons/fa';
+import { FaCar, FaExternalLinkAlt } from 'react-icons/fa';
 
 const Access = () => {
   return (
@@ -55,19 +55,28 @@ const Access = () => {
             <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
               <p className="font-bold text-lg mb-3 text-gray-900">✈️ 飛行機</p>
               <p className="text-sm text-gray-700 mb-2">
-                のと里山空港から
+                のと里山空港から <strong>北陸鉄道 特急バス</strong> で約1時間
+                <a
+                  href="https://www.hokutetsu.co.jp/highway-bus/noto/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
+                >
+                  <FaExternalLinkAlt className="text-xs" />
+                  時刻表・料金
+                </a>
+              </p>
+              <p className="text-sm text-gray-700 mb-2">
+                のと里山空港から <strong>ふるさとタクシー</strong> で約1時間
                 <a
                   href="https://www.noto-airport.jp/access/furutaku.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mx-1"
+                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
                 >
-                  ふるさとタクシー
+                  <FaExternalLinkAlt className="text-xs" />
+                  詳細・予約
                 </a>
-                で約1時間
-              </p>
-              <p className="text-xs text-gray-600">
-                運行ゾーン③ 能登町（内浦地区）小木
               </p>
             </div>
 
@@ -75,16 +84,16 @@ const Access = () => {
             <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
               <p className="font-bold text-lg mb-3 text-gray-900">🚗 お車</p>
               <p className="text-sm text-gray-700">
-                金沢から
+                金沢から <strong>のと里山海道</strong> 経由で約2.5時間
                 <a
                   href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mx-1"
+                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
                 >
-                  のと里山海道
+                  <FaExternalLinkAlt className="text-xs" />
+                  道路情報
                 </a>
-                経由で約2.5時間
               </p>
             </div>
 
@@ -92,16 +101,16 @@ const Access = () => {
             <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
               <p className="font-bold text-lg mb-3 text-gray-900">🚌 バス</p>
               <p className="text-sm text-gray-700">
-                金沢駅西口より
+                金沢駅西口から <strong>北陸鉄道 特急バス</strong> で <strong>小木港</strong> へ 約2.5時間
                 <a
                   href="https://www.hokutetsu.co.jp/highway-bus/noto/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline mx-1"
+                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
                 >
-                  北陸鉄道 特急バス
+                  <FaExternalLinkAlt className="text-xs" />
+                  時刻表・料金
                 </a>
-                で小木港へ
               </p>
             </div>
           </div>
@@ -118,8 +127,8 @@ const Access = () => {
 
                 {/* 電車 */}
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl">↓</span>
-                  <span className="text-xs text-gray-800">
+                  <span className="text-2xl leading-none">↓</span>
+                  <span className="text-xs text-gray-800 inline-flex items-center">
                     🚅 北陸新幹線 / 🚄 サンダーバード
                   </span>
                 </div>
@@ -132,20 +141,11 @@ const Access = () => {
                   </div>
                 </div>
 
-                {/* 車/バス */}
+                {/* お車/バス */}
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl">↓</span>
-                  <span className="text-xs text-gray-800">
-                    🚗 車/🚌 バス
-                    <a
-                      href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline font-semibold ml-1"
-                    >
-                      のと里山海道
-                    </a>
-                    {' '}約1.5時間
+                  <span className="text-2xl leading-none">↓</span>
+                  <span className="text-xs text-gray-800 inline-flex items-center">
+                    🚗🚌 のと里山海道 約 1.5時間
                   </span>
                 </div>
 
@@ -154,11 +154,11 @@ const Access = () => {
                   能登空港IC
                 </div>
 
-                {/* 車 */}
+                {/* お車/バス */}
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl">↓</span>
-                  <span className="text-xs text-gray-800">
-                    🚗 車 珠洲道路・宇出津経由 約1時間
+                  <span className="text-2xl leading-none">↓</span>
+                  <span className="text-xs text-gray-800 inline-flex items-center">
+                    🚗🚌
                   </span>
                 </div>
 
@@ -170,8 +170,8 @@ const Access = () => {
                   </div>
 
                   <div className="flex flex-col items-center justify-center">
-                    <div className="text-2xl">→</div>
-                    <div className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-800 mt-1">
+                    <div className="text-2xl leading-none">→</div>
+                    <div className="text-xs text-gray-800 mt-1 inline-flex items-center">
                       ✈️ 飛行機
                     </div>
                   </div>
@@ -185,11 +185,11 @@ const Access = () => {
                   </div>
                 </div>
 
-                {/* タクシー */}
+                {/* お車/バス */}
                 <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl">↓</span>
-                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
-                    🚗 タクシー 約1時間
+                  <span className="text-2xl leading-none">↓</span>
+                  <span className="text-xs text-gray-800 inline-flex items-center">
+                    🚗🚌 珠洲道路・宇出津経由 約1時間
                   </span>
                 </div>
               </div>
@@ -215,8 +215,8 @@ const Access = () => {
                   {/* 桔梗庵 */}
                   <div className="flex-1 text-center">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-3xl">↓</span>
-                      <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                      <span className="text-3xl leading-none">↓</span>
+                      <span className="text-xs text-gray-800 inline-flex items-center">
                         🚶 徒歩15分<br />
                         石川県漁協小木支所方向
                       </span>
@@ -231,10 +231,10 @@ const Access = () => {
 
                   {/* 双方向矢印 */}
                   <div className="flex flex-col items-center justify-center">
-                    <div className="text-3xl font-bold text-gray-600">
+                    <div className="text-3xl font-bold text-gray-600 leading-none">
                       ⇄
                     </div>
-                    <div className="bg-gray-100 px-2 py-1 rounded text-xs text-gray-700 mt-2 text-center">
+                    <div className="text-xs text-gray-700 mt-2 text-center inline-flex items-center flex-col">
                       🚶 徒歩数分<br />
                       数100m
                     </div>
@@ -243,8 +243,8 @@ const Access = () => {
                   {/* greengrass */}
                   <div className="flex-1 text-center">
                     <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-3xl">↓</span>
-                      <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                      <span className="text-3xl leading-none">↓</span>
+                      <span className="text-xs text-gray-800 inline-flex items-center">
                         🚶 徒歩15分<br />
                         能登町役場小木支所方向
                       </span>
@@ -261,14 +261,15 @@ const Access = () => {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* 近くの施設 */}
-        <div className="mt-12">
-          <h3 className="text-3xl font-bold mb-8 text-center">近くの施設</h3>
+      {/* 近くの施設 */}
+      <div className="mt-12 -mx-4">
+        <h3 className="text-3xl font-bold mb-8 text-center px-4">近くの施設</h3>
 
-          <div className="space-y-6">
+        <div className="space-y-0">
             {/* 小木漁港 */}
-            <div className="relative h-48 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+            <div className="relative h-48 bg-gradient-to-r from-blue-100 to-blue-50 shadow-lg overflow-hidden flex items-center">
               {/* 背景画像用（将来的に追加） */}
               <div className="absolute inset-0 bg-black/20"></div>
 
@@ -300,7 +301,7 @@ const Access = () => {
             </div>
 
             {/* イカの駅 つくモール */}
-            <div className="relative h-48 bg-gradient-to-r from-orange-100 to-orange-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+            <div className="relative h-48 bg-gradient-to-r from-orange-100 to-orange-50 shadow-lg overflow-hidden flex items-center">
               {/* 背景画像用（将来的に追加） */}
               <div className="absolute inset-0 bg-black/20"></div>
 
@@ -339,7 +340,7 @@ const Access = () => {
             </div>
 
             {/* のと海洋ふれあいセンター */}
-            <div className="relative h-48 bg-gradient-to-r from-teal-100 to-teal-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+            <div className="relative h-48 bg-gradient-to-r from-teal-100 to-teal-50 shadow-lg overflow-hidden flex items-center">
               {/* 背景画像用（将来的に追加） */}
               <div className="absolute inset-0 bg-black/20"></div>
 
@@ -378,7 +379,7 @@ const Access = () => {
             </div>
 
             {/* 縄文真脇遺跡 */}
-            <div className="relative h-48 bg-gradient-to-r from-amber-100 to-amber-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+            <div className="relative h-48 bg-gradient-to-r from-amber-100 to-amber-50 shadow-lg overflow-hidden flex items-center">
               {/* 背景画像用（将来的に追加） */}
               <div className="absolute inset-0 bg-black/20"></div>
 
@@ -407,7 +408,6 @@ const Access = () => {
                   title="縄文真脇遺跡の地図"
                 ></iframe>
               </div>
-            </div>
           </div>
         </div>
       </div>
