@@ -1,8 +1,10 @@
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import LocationNode from './LocationNode';
 import FacilityBanner from './FacilityBanner';
 import LocationMap from './LocationMap';
 import TransportCard from './TransportCard';
+import SimpleNode from './SimpleNode';
+import FlowArrow from './FlowArrow';
+import ExternalLink from './ExternalLink';
 
 const Access = () => {
   return (
@@ -37,27 +39,17 @@ const Access = () => {
             <TransportCard icon="✈️" title="飛行機">
               <p className="text-sm text-gray-700">
                 のと里山空港から <strong>北陸鉄道 特急バス</strong> で約1時間
-                <a
+                <ExternalLink
                   href="https://www.hokutetsu.co.jp/highway-bus/noto/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
-                >
-                  <FaExternalLinkAlt className="text-xs" />
-                  時刻表・料金
-                </a>
+                  label="時刻表・料金"
+                />
               </p>
               <p className="text-sm text-gray-700">
                 のと里山空港から <strong>ふるさとタクシー</strong> で約1時間
-                <a
+                <ExternalLink
                   href="https://www.noto-airport.jp/access/furutaku.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
-                >
-                  <FaExternalLinkAlt className="text-xs" />
-                  詳細・予約
-                </a>
+                  label="詳細・予約"
+                />
               </p>
             </TransportCard>
 
@@ -65,15 +57,10 @@ const Access = () => {
             <TransportCard icon="🚗" title="お車">
               <p className="text-sm text-gray-700">
                 金沢から <strong>のと里山海道</strong> 経由で約2.5時間
-                <a
+                <ExternalLink
                   href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
-                >
-                  <FaExternalLinkAlt className="text-xs" />
-                  道路情報
-                </a>
+                  label="道路情報"
+                />
               </p>
             </TransportCard>
 
@@ -81,15 +68,10 @@ const Access = () => {
             <TransportCard icon="🚌" title="バス">
               <p className="text-sm text-gray-700">
                 金沢駅西口から <strong>北陸鉄道 特急バス</strong> で <strong>小木港</strong> へ 約2.5時間
-                <a
+                <ExternalLink
                   href="https://www.hokutetsu.co.jp/highway-bus/noto/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline inline-flex items-center gap-1 ml-2"
-                >
-                  <FaExternalLinkAlt className="text-xs" />
-                  時刻表・料金
-                </a>
+                  label="時刻表・料金"
+                />
               </p>
             </TransportCard>
           </div>
@@ -100,17 +82,13 @@ const Access = () => {
               {/* 中央縦並びルート */}
               <div className="text-center mb-8">
                 {/* 全国各地（電車ルート用） */}
-                <div className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg mb-3 inline-block">
-                  全国各地
-                </div>
+                <SimpleNode name="全国各地" className="mb-3 inline-block" />
 
                 {/* 電車 */}
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl leading-none">↓</span>
-                  <span className="text-xs text-gray-800 inline-flex items-center">
-                    🚅 北陸新幹線 / 🚄 サンダーバード
-                  </span>
-                </div>
+                <FlowArrow
+                  direction="down"
+                  description="🚅 北陸新幹線 / 🚄 サンダーバード"
+                />
 
                 {/* 金沢 */}
                 <LocationNode
@@ -121,39 +99,23 @@ const Access = () => {
                 />
 
                 {/* お車/バス */}
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl leading-none">↓</span>
-                  <span className="text-xs text-gray-800 inline-flex items-center">
-                    🚗🚌 のと里山海道 約 1.5時間
-                  </span>
-                </div>
+                <FlowArrow
+                  direction="down"
+                  description="🚗🚌 のと里山海道 約 1.5時間"
+                />
 
                 {/* 能登空港IC */}
-                <div className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg mb-3">
-                  能登空港IC
-                </div>
+                <SimpleNode name="能登空港IC" className="mb-3" />
 
                 {/* お車/バス */}
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl leading-none">↓</span>
-                  <span className="text-xs text-gray-800 inline-flex items-center">
-                    🚗🚌
-                  </span>
-                </div>
+                <FlowArrow direction="down" description="🚗🚌" />
 
                 {/* のと里山空港（左から飛行機ルート合流） */}
                 <div className="flex items-center justify-center gap-4 mb-3">
                   {/* 左：飛行機ルート */}
-                  <div className="bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg">
-                    全国各地
-                  </div>
+                  <SimpleNode name="全国各地" />
 
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="text-2xl leading-none">→</div>
-                    <div className="text-xs text-gray-800 mt-1 inline-flex items-center">
-                      ✈️ 飛行機
-                    </div>
-                  </div>
+                  <FlowArrow direction="right" description="✈️ 飛行機" />
 
                   {/* 中央：のと里山空港 */}
                   <LocationNode
@@ -165,12 +127,10 @@ const Access = () => {
                 </div>
 
                 {/* お車/バス */}
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-2xl leading-none">↓</span>
-                  <span className="text-xs text-gray-800 inline-flex items-center">
-                    🚗🚌 珠洲道路・宇出津経由 約1時間
-                  </span>
-                </div>
+                <FlowArrow
+                  direction="down"
+                  description="🚗🚌 珠洲道路・宇出津経由 約1時間"
+                />
               </div>
 
               {/* 小木エリア（大きなコンテナ） */}
@@ -195,13 +155,16 @@ const Access = () => {
                 <div className="flex flex-col md:flex-row justify-center items-center gap-8">
                   {/* 桔梗庵 */}
                   <div className="flex-1 text-center">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-3xl leading-none">↓</span>
-                      <span className="text-xs text-gray-800 inline-flex items-center">
-                        🚶 徒歩15分<br />
-                        石川県漁協小木支所方向
-                      </span>
-                    </div>
+                    <FlowArrow
+                      direction="down"
+                      description={
+                        <>
+                          🚶 徒歩15分
+                          <br />
+                          石川県漁協小木支所方向
+                        </>
+                      }
+                    />
                     <LocationNode
                       name="桔梗庵"
                       bgColor="bg-purple-200"
@@ -213,25 +176,29 @@ const Access = () => {
                   </div>
 
                   {/* 双方向矢印 */}
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="text-3xl font-bold text-gray-600 leading-none">
-                      ⇄
-                    </div>
-                    <div className="text-xs text-gray-700 mt-2 text-center inline-flex items-center flex-col">
-                      🚶 徒歩数分<br />
-                      数100m
-                    </div>
-                  </div>
+                  <FlowArrow
+                    direction="bidirectional"
+                    description={
+                      <>
+                        🚶 徒歩数分
+                        <br />
+                        数100m
+                      </>
+                    }
+                  />
 
                   {/* greengrass */}
                   <div className="flex-1 text-center">
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <span className="text-3xl leading-none">↓</span>
-                      <span className="text-xs text-gray-800 inline-flex items-center">
-                        🚶 徒歩15分<br />
-                        能登町役場小木支所方向
-                      </span>
-                    </div>
+                    <FlowArrow
+                      direction="down"
+                      description={
+                        <>
+                          🚶 徒歩15分
+                          <br />
+                          能登町役場小木支所方向
+                        </>
+                      }
+                    />
                     <LocationNode
                       name="greengrass"
                       bgColor="bg-lime-200"

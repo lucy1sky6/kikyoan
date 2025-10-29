@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
 import Access from '../components/Access';
 import Contact from '../components/Contact';
+import BackButton from '../components/BackButton';
+import GalleryImageCard from '../components/GalleryImageCard';
+import ContactSection from '../components/ContactSection';
 
 type Selection = null | 'kikyoan' | 'greengrass';
 
@@ -125,12 +128,11 @@ const Landing = () => {
               className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-16 px-4 relative"
             >
               {/* 戻るボタン */}
-              <button
+              <BackButton
                 onClick={handleBack}
-                className="absolute top-4 left-4 px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-lg z-10"
-              >
-                ← 戻る
-              </button>
+                bgColor="bg-purple-600"
+                hoverColor="hover:bg-purple-700"
+              />
 
               <div className="max-w-6xl mx-auto">
 
@@ -157,57 +159,29 @@ const Landing = () => {
                   className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
                 >
                   {kikyoanImages.map((image, index) => (
-                    <motion.div
+                    <GalleryImageCard
                       key={image.id}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                      className="group"
-                    >
-                      <div className="aspect-square bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-shadow">
-                        <img
-                          src={`https://via.placeholder.com/400?text=Photo+${image.id}`}
-                          className="w-full h-full object-cover"
-                          alt={`桔梗庵の写真 ${image.id}`}
-                        />
-                      </div>
-                      <p className="text-center text-sm text-gray-600">
-                        {image.description}
-                      </p>
-                    </motion.div>
+                      imageId={image.id}
+                      description={image.description}
+                      index={index}
+                      gradientFrom="from-purple-100"
+                      gradientTo="to-purple-200"
+                      altPrefix="桔梗庵"
+                    />
                   ))}
                 </motion.div>
 
                 {/* お問い合わせ */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                  className="mt-16 text-center bg-purple-50 rounded-2xl p-8 shadow-md"
-                >
-                  <h2 className="text-3xl font-bold text-purple-900 mb-6">
-                    お問い合わせ
-                  </h2>
-                  <div className="space-y-4 text-gray-700">
-                    <p className="text-lg">
-                      <span className="font-semibold">電話:</span>{' '}
-                      <a href="tel:0123456789" className="hover:text-purple-700 transition">
-                        012-345-6789
-                      </a>
-                    </p>
-                    <p className="text-lg">
-                      <span className="font-semibold">ウェブサイト:</span>{' '}
-                      <a
-                        href="https://example.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-purple-700 hover:text-purple-900 underline transition"
-                      >
-                        https://example.com
-                      </a>
-                    </p>
-                  </div>
-                </motion.div>
+                <ContactSection
+                  bgColor="bg-purple-50"
+                  titleColor="text-purple-900"
+                  phone="012-345-6789"
+                  phoneLink="tel:0123456789"
+                  website="https://example.com"
+                  websiteLink="https://example.com"
+                  linkColor="text-purple-700"
+                  linkHoverColor="hover:text-purple-900"
+                />
               </div>
             </motion.div>
           )}
@@ -223,12 +197,11 @@ const Landing = () => {
               className="min-h-screen bg-gradient-to-b from-lime-50 to-white py-16 px-4 relative"
             >
               {/* 戻るボタン */}
-              <button
+              <BackButton
                 onClick={handleBack}
-                className="absolute top-4 left-4 px-6 py-3 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-lg z-10"
-              >
-                ← 戻る
-              </button>
+                bgColor="bg-lime-600"
+                hoverColor="hover:bg-lime-700"
+              />
 
               <div className="max-w-6xl mx-auto">
 
@@ -270,57 +243,29 @@ const Landing = () => {
                   className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
                 >
                   {greengrassImages.map((image, index) => (
-                    <motion.div
+                    <GalleryImageCard
                       key={image.id}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.5 + index * 0.1 }}
-                      className="group"
-                    >
-                      <div className="aspect-square bg-gradient-to-br from-lime-100 to-lime-200 rounded-2xl overflow-hidden mb-3 shadow-md group-hover:shadow-xl transition-shadow">
-                        <img
-                          src={`https://via.placeholder.com/400?text=Photo+${image.id}`}
-                          className="w-full h-full object-cover"
-                          alt={`greengrassの写真 ${image.id}`}
-                        />
-                      </div>
-                      <p className="text-center text-sm text-gray-600">
-                        {image.description}
-                      </p>
-                    </motion.div>
+                      imageId={image.id}
+                      description={image.description}
+                      index={index}
+                      gradientFrom="from-lime-100"
+                      gradientTo="to-lime-200"
+                      altPrefix="greengrass"
+                    />
                   ))}
                 </motion.div>
 
                 {/* お問い合わせ */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                  className="mt-16 text-center bg-lime-50 rounded-2xl p-8 shadow-md"
-                >
-                  <h2 className="text-3xl font-bold text-lime-900 mb-6">
-                    お問い合わせ
-                  </h2>
-                  <div className="space-y-4 text-gray-700">
-                    <p className="text-lg">
-                      <span className="font-semibold">電話:</span>{' '}
-                      <a href="tel:0987654321" className="hover:text-lime-700 transition">
-                        098-765-4321
-                      </a>
-                    </p>
-                    <p className="text-lg">
-                      <span className="font-semibold">ウェブサイト:</span>{' '}
-                      <a
-                        href="https://greengrass-example.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-lime-700 hover:text-lime-900 underline transition"
-                      >
-                        https://greengrass-example.com
-                      </a>
-                    </p>
-                  </div>
-                </motion.div>
+                <ContactSection
+                  bgColor="bg-lime-50"
+                  titleColor="text-lime-900"
+                  phone="098-765-4321"
+                  phoneLink="tel:0987654321"
+                  website="https://greengrass-example.com"
+                  websiteLink="https://greengrass-example.com"
+                  linkColor="text-lime-700"
+                  linkHoverColor="hover:text-lime-900"
+                />
               </div>
             </motion.div>
           )}
