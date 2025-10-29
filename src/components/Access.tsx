@@ -40,7 +40,7 @@ const Access = () => {
               ></iframe>
             </div>
             <p className="text-center text-gray-700 mt-3 text-sm">
-              石川県鳳珠郡能登町小木
+              〒927-0553 石川県鳳珠郡能登町小木
             </p>
           </div>
         </div>
@@ -134,9 +134,9 @@ const Access = () => {
                 </div>
 
                 {/* 金沢 */}
-                <div className="bg-gray-200 text-gray-900 px-4 py-3 rounded-lg font-bold shadow-md inline-flex items-center gap-3 mb-3 text-lg">
-                  <span>金沢駅</span>
-                  <div className="w-12 h-12 bg-gray-300 rounded border-2 border-gray-400 flex items-center justify-center text-xs">
+                <div className="bg-gray-200 text-gray-900 rounded-lg font-bold shadow-md inline-flex items-stretch mb-3 text-lg overflow-hidden">
+                  <span className="px-4 py-3">金沢駅</span>
+                  <div className="w-16 bg-gray-300 border-l-2 border-gray-400 flex items-center justify-center text-xs">
                     写真
                   </div>
                 </div>
@@ -177,9 +177,9 @@ const Access = () => {
                   </div>
 
                   {/* 中央：のと里山空港 */}
-                  <div className="bg-gray-200 text-gray-900 px-4 py-3 rounded-lg font-bold shadow-md inline-flex items-center gap-3 text-lg">
-                    <span>のと里山空港</span>
-                    <div className="w-12 h-12 bg-gray-300 rounded border-2 border-gray-400 flex items-center justify-center text-xs">
+                  <div className="bg-gray-200 text-gray-900 rounded-lg font-bold shadow-md inline-flex items-stretch text-lg overflow-hidden">
+                    <span className="px-4 py-3">のと里山空港</span>
+                    <div className="w-16 bg-gray-300 border-l-2 border-gray-400 flex items-center justify-center text-xs">
                       写真
                     </div>
                   </div>
@@ -198,11 +198,11 @@ const Access = () => {
               <div className="relative border-4 border-orange-300 rounded-2xl pt-3 pb-8 px-8 bg-orange-50">
                 {/* 小木入口（エリアの上部に重なる） */}
                 <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className="bg-orange-200 text-orange-900 px-6 py-3 rounded-lg font-bold shadow-lg text-lg flex items-center gap-3 border-2 border-orange-400">
-                    <div className="w-10 h-10 bg-orange-300 rounded border-2 border-orange-500 flex items-center justify-center text-xs">
+                  <div className="bg-orange-200 text-orange-900 rounded-lg font-bold shadow-lg text-lg inline-flex items-stretch border-2 border-orange-400 overflow-hidden">
+                    <span className="px-4 py-3">小木入口</span>
+                    <div className="w-16 bg-orange-300 border-l-2 border-orange-500 flex items-center justify-center text-xs">
                       写真
                     </div>
-                    <span>小木入口</span>
                   </div>
                 </div>
 
@@ -221,11 +221,11 @@ const Access = () => {
                         石川県漁協小木支所方向
                       </span>
                     </div>
-                    <div className="bg-purple-200 text-purple-900 px-6 py-4 rounded-lg font-bold shadow-lg text-lg inline-flex items-center gap-3">
-                      <div className="w-12 h-12 bg-purple-300 rounded border-2 border-purple-400 flex items-center justify-center text-xs">
+                    <div className="bg-purple-200 text-purple-900 rounded-lg font-bold shadow-lg text-lg inline-flex items-stretch overflow-hidden">
+                      <span className="px-6 py-4">桔梗庵</span>
+                      <div className="w-16 bg-purple-300 border-l-2 border-purple-400 flex items-center justify-center text-xs">
                         写真
                       </div>
-                      <span>桔梗庵</span>
                     </div>
                   </div>
 
@@ -249,9 +249,9 @@ const Access = () => {
                         能登町役場小木支所方向
                       </span>
                     </div>
-                    <div className="bg-lime-200 text-lime-900 px-6 py-4 rounded-lg font-bold shadow-lg text-lg inline-flex items-center gap-3">
-                      <span>greengrass</span>
-                      <div className="w-12 h-12 bg-lime-300 rounded border-2 border-lime-400 flex items-center justify-center text-xs">
+                    <div className="bg-lime-200 text-lime-900 rounded-lg font-bold shadow-lg text-lg inline-flex items-stretch overflow-hidden">
+                      <span className="px-6 py-4">greengrass</span>
+                      <div className="w-16 bg-lime-300 border-l-2 border-lime-400 flex items-center justify-center text-xs">
                         写真
                       </div>
                     </div>
@@ -408,7 +408,39 @@ const Access = () => {
                   title="縄文真脇遺跡の地図"
                 ></iframe>
               </div>
-          </div>
+            </div>
+
+            {/* 柳田植物公園 */}
+            <div className="relative h-48 bg-gradient-to-r from-green-100 to-green-50 shadow-lg overflow-hidden flex items-center">
+              {/* 背景画像用（将来的に追加） */}
+              <div className="absolute inset-0 bg-black/20"></div>
+
+              {/* テキスト情報 */}
+              <div className="relative z-10 flex-1 px-8">
+                <h4 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                  柳田植物公園
+                </h4>
+                <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full mb-3 shadow-md">
+                  <FaCar className="text-green-600" />
+                  <span className="text-sm font-semibold text-gray-800">桔梗庵から車で20分</span>
+                </div>
+                <p className="text-base text-white drop-shadow-md">
+                  四季折々の花々が楽しめる植物公園。
+                </p>
+              </div>
+
+              {/* Google Map */}
+              <div className="relative z-10 w-80 h-full">
+                <iframe
+                  src="https://maps.google.com/maps?q=柳田植物公園,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                  title="柳田植物公園の地図"
+                ></iframe>
+              </div>
+            </div>
         </div>
       </div>
     </div>
