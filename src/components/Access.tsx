@@ -223,6 +223,7 @@ const Access = () => {
             {/* 小木漁港 */}
             <FacilityBanner
               title="小木漁港"
+              link="https://notocho.jp/%E7%89%B9%E7%94%A3%E5%93%81/3929/"
               gradientFrom="from-blue-100"
               gradientTo="to-blue-50"
               carIconColor="text-blue-600"
@@ -230,12 +231,13 @@ const Access = () => {
               description="人気の釣り場です。"
               mapSrc="https://maps.google.com/maps?q=小木漁港,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="小木漁港の地図"
+              zIndex={14}
             />
 
             {/* イカの駅 つくモール */}
             <FacilityBanner
               title="イカの駅 つくモール"
-              titleLink="https://ikanoeki.com/"
+              link="https://ikanoeki.com/"
               gradientFrom="from-orange-100"
               gradientTo="to-orange-50"
               carIconColor="text-orange-600"
@@ -243,12 +245,13 @@ const Access = () => {
               description="お土産やグルメが楽しめる道の駅。"
               mapSrc="https://maps.google.com/maps?q=イカの駅つくモール,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="イカの駅 つくモールの地図"
+              zIndex={13}
             />
 
             {/* のと海洋ふれあいセンター */}
             <FacilityBanner
               title="のと海洋ふれあいセンター"
-              titleLink="http://notomarine.jp/"
+              link="http://notomarine.jp/"
               gradientFrom="from-teal-100"
               gradientTo="to-teal-50"
               carIconColor="text-teal-600"
@@ -256,11 +259,13 @@ const Access = () => {
               description="海の生き物と触れ合える体験施設。"
               mapSrc="https://maps.google.com/maps?q=のと海洋ふれあいセンター,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="のと海洋ふれあいセンターの地図"
+              zIndex={12}
             />
 
             {/* 縄文真脇遺跡 */}
             <FacilityBanner
               title="縄文真脇遺跡"
+              link="http://www.mawakiiseki.jp/"
               gradientFrom="from-amber-100"
               gradientTo="to-amber-50"
               carIconColor="text-amber-600"
@@ -268,11 +273,13 @@ const Access = () => {
               description="約4000年前の縄文時代の遺跡。"
               mapSrc="https://maps.google.com/maps?q=縄文真脇遺跡,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="縄文真脇遺跡の地図"
+              zIndex={11}
             />
 
             {/* 柳田植物公園 */}
             <FacilityBanner
               title="柳田植物公園"
+              link="https://yanagida-flower.jp/"
               gradientFrom="from-green-100"
               gradientTo="to-green-50"
               carIconColor="text-green-600"
@@ -280,6 +287,7 @@ const Access = () => {
               description="四季折々の花々が楽しめる植物公園。"
               mapSrc="https://maps.google.com/maps?q=柳田植物公園,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="柳田植物公園の地図"
+              zIndex={10}
             />
         </div>
       </div>
