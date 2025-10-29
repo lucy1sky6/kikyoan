@@ -11,6 +11,7 @@ import StoryModal from '../components/StoryModal';
 import ReadMoreButton from '../components/ReadMoreButton';
 import PhotoGalleryBanner from '../components/PhotoGalleryBanner';
 import GalleryPage from './GalleryPage';
+import { getImagePath } from '../utils/getImagePath';
 
 type Selection = null | 'kikyoan' | 'greengrass' | 'gallery';
 
@@ -24,14 +25,14 @@ const Landing = () => {
 
   // 画像配列
   const kikyoanImages = [
-    '/images/landing/kikyoan-hero-01.webp',
-    '/images/landing/kikyoan-hero-02.webp',
-    '/images/landing/kikyoan-hero-03.webp',
+    getImagePath('/images/landing/kikyoan-hero-01.webp'),
+    getImagePath('/images/landing/kikyoan-hero-02.webp'),
+    getImagePath('/images/landing/kikyoan-hero-03.webp'),
   ];
   const greengrassImages = [
-    '/images/landing/greengrass-hero-01.webp',
-    '/images/landing/greengrass-hero-02.webp',
-    '/images/landing/greengrass-hero-03.webp',
+    getImagePath('/images/landing/greengrass-hero-01.webp'),
+    getImagePath('/images/landing/greengrass-hero-02.webp'),
+    getImagePath('/images/landing/greengrass-hero-03.webp'),
   ];
 
   const handleSelect = (selection: 'kikyoan' | 'greengrass') => {
@@ -268,7 +269,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="/images/kikyoan/about.webp"
+                  imageSrc={getImagePath('/images/kikyoan/about.webp')}
                   imageAlt="桔梗庵の外観"
                   delay={0.3}
                 />
@@ -287,7 +288,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="/images/kikyoan/activities.webp"
+                  imageSrc={getImagePath('/images/kikyoan/activities.webp')}
                   imageAlt="桔梗庵の内観"
                   delay={0.4}
                 />
@@ -317,7 +318,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="/images/kikyoan/features.webp"
+                  imageSrc={getImagePath('/images/kikyoan/features.webp')}
                   imageAlt="桔梗庵の雰囲気"
                   delay={0.5}
                 />
@@ -338,7 +339,7 @@ const Landing = () => {
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"
-                  imageSrc="/images/kikyoan/photo-intro.webp"
+                  imageSrc={getImagePath('/images/kikyoan/photo-intro.webp')}
                   imageAlt="桔梗庵での過ごし方"
                   delay={0.6}
                 />
@@ -514,7 +515,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="/images/greengrass/about.webp"
+                  imageSrc={getImagePath('/images/greengrass/about.webp')}
                   imageAlt="greengrassの外観"
                   delay={0.3}
                 />
@@ -533,7 +534,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="/images/greengrass/chairs.webp"
+                  imageSrc={getImagePath('/images/greengrass/chairs.webp')}
                   imageAlt="手作りの木の椅子"
                   delay={0.4}
                 />
@@ -552,7 +553,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="/images/greengrass/peeling.webp"
+                  imageSrc={getImagePath('/images/greengrass/peeling.webp')}
                   imageAlt="ピーリングウッド"
                   delay={0.5}
                 />
@@ -582,7 +583,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="/images/greengrass/workshop.webp"
+                  imageSrc={getImagePath('/images/greengrass/workshop.webp')}
                   imageAlt="工房の様子"
                   delay={0.6}
                 />
@@ -605,7 +606,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="/images/greengrass/exhibition.webp"
+                  imageSrc={getImagePath('/images/greengrass/exhibition.webp')}
                   imageAlt="個展の様子"
                   delay={0.7}
                 />
@@ -629,7 +630,7 @@ const Landing = () => {
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
-                  imageSrc="/images/greengrass/media.webp"
+                  imageSrc={getImagePath('/images/greengrass/media.webp')}
                   imageAlt="メディア出演・導入事例"
                   delay={0.8}
                 />

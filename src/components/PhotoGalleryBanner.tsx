@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 
+import { getImagePath } from '../utils/getImagePath';
+
 interface PhotoGalleryBannerProps {
   onClick: () => void;
 }
@@ -13,7 +15,7 @@ const PhotoGalleryBanner = ({ onClick }: PhotoGalleryBannerProps) => {
       {/* 背景画像 */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: 'url(/images/landing/gallery-hero.webp)' }}
+        style={{ backgroundImage: `url(${getImagePath('/images/landing/gallery-hero.webp')})` }}
       />
       {/* オーバーレイ */}
       <div className="absolute inset-0 bg-blue-900/60" />

@@ -5,6 +5,7 @@ import TransportCard from './TransportCard';
 import SimpleNode from './SimpleNode';
 import FlowArrow from './FlowArrow';
 import ExternalLink from './ExternalLink';
+import { getImagePath } from '../utils/getImagePath';
 
 const Access = () => {
   return (
@@ -96,7 +97,7 @@ const Access = () => {
                   bgColor="bg-gray-200"
                   photoAreaColor="bg-gray-300"
                   className="mb-3 shadow-md"
-                  photoSrc="/images/access/kanazawa-station.webp"
+                  photoSrc={getImagePath('/images/access/kanazawa-station.webp')}
                 />
 
                 {/* お車/バス */}
@@ -120,7 +121,7 @@ const Access = () => {
                       bgColor="bg-gray-200"
                       photoAreaColor="bg-gray-300"
                       className="shadow-md"
-                      photoSrc="/images/access/noto-airport.webp"
+                      photoSrc={getImagePath('/images/access/noto-airport.webp')}
                     />
 
                     {/* 左：飛行機ルート（空港のすぐ左に配置） */}
@@ -149,7 +150,7 @@ const Access = () => {
                     photoAreaColor="bg-orange-300"
                     borderColor="border-orange-500"
                     className="shadow-lg border-2 border-orange-400"
-                    photoSrc="/images/access/ogi-entrance.webp"
+                    photoSrc={getImagePath('/images/access/ogi-entrance.webp')}
                   />
                 </div>
 
@@ -178,7 +179,7 @@ const Access = () => {
                       photoAreaColor="bg-purple-300"
                       borderColor="border-purple-400"
                       className="shadow-lg"
-                      photoSrc="/images/access/kikyoan.webp"
+                      photoSrc={getImagePath('/images/access/kikyoan.webp')}
                     />
                   </div>
 
@@ -213,7 +214,7 @@ const Access = () => {
                       photoAreaColor="bg-lime-300"
                       borderColor="border-lime-400"
                       className="shadow-lg"
-                      photoSrc="/images/access/greengrass.webp"
+                      photoSrc={getImagePath('/images/access/greengrass.webp')}
                     />
                   </div>
                 </div>
@@ -240,7 +241,7 @@ const Access = () => {
               mapSrc="https://maps.google.com/maps?q=小木漁港,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="小木漁港の地図"
               zIndex={14}
-              photoSrc="/images/facilities/ogi-port.webp"
+              photoSrc={getImagePath('/images/facilities/ogi-port.webp')}
             />
 
             {/* イカの駅 つくモール */}
@@ -255,7 +256,7 @@ const Access = () => {
               mapSrc="https://maps.google.com/maps?q=イカの駅つくモール,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="イカの駅 つくモールの地図"
               zIndex={13}
-              photoSrc="/images/facilities/ika-no-eki.webp"
+              photoSrc={getImagePath('/images/facilities/ika-no-eki.webp')}
             />
 
             {/* のと海洋ふれあいセンター */}
@@ -270,7 +271,7 @@ const Access = () => {
               mapSrc="https://maps.google.com/maps?q=のと海洋ふれあいセンター,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="のと海洋ふれあいセンターの地図"
               zIndex={12}
-              photoSrc="/images/facilities/marine-center.webp"
+              photoSrc={getImagePath('/images/facilities/marine-center.webp')}
             />
 
             {/* 縄文真脇遺跡 */}
@@ -285,7 +286,7 @@ const Access = () => {
               mapSrc="https://maps.google.com/maps?q=縄文真脇遺跡,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="縄文真脇遺跡の地図"
               zIndex={11}
-              photoSrc="/images/facilities/mawaki-ruins.webp"
+              photoSrc={getImagePath('/images/facilities/mawaki-ruins.webp')}
             />
 
             {/* 柳田植物公園 */}
@@ -300,7 +301,7 @@ const Access = () => {
               mapSrc="https://maps.google.com/maps?q=柳田植物公園,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
               mapTitle="柳田植物公園の地図"
               zIndex={10}
-              photoSrc="/images/facilities/yanagida-park.webp"
+              photoSrc={getImagePath('/images/facilities/yanagida-park.webp')}
             />
         </div>
       </div>
