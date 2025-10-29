@@ -5,7 +5,7 @@ import { getImagePath } from '../../utils/getImagePath';
 
 const AccessFlowChart = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 sm:p-6 md:p-8 rounded-xl mb-8">
+    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-2 sm:p-4 md:p-6 lg:p-8 rounded-xl mb-8">
       <div className="max-w-5xl mx-auto">
         {/* 中央縦並びルート */}
         <div className="text-center mb-8">
@@ -67,7 +67,7 @@ const AccessFlowChart = () => {
         </div>
 
         {/* 小木エリア（大きなコンテナ） */}
-        <div className="relative border-4 border-orange-300 rounded-2xl pt-3 pb-8 px-8 bg-orange-50">
+        <div className="relative border-2 sm:border-4 border-orange-300 rounded-2xl pt-3 pb-6 sm:pb-8 px-3 sm:px-6 md:px-8 bg-orange-50">
           {/* 小木入口（エリアの上部に重なる） */}
           <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
             <RouteStopNode
@@ -81,8 +81,8 @@ const AccessFlowChart = () => {
             />
           </div>
 
-          <div className="mb-6">
-            <h4 className="text-xl font-bold text-orange-900">小木エリア</h4>
+          <div className="mb-4 sm:mb-6">
+            <h4 className="text-base sm:text-lg md:text-xl font-bold text-orange-900">小木エリア</h4>
           </div>
 
           {/* 施設分岐 */}
