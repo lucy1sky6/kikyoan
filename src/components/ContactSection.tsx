@@ -26,7 +26,7 @@ const ContactSection = ({
       transition={{ delay: 0.7 }}
       className="mt-32 mb-16 text-center"
     >
-      <h2 className={`text-4xl font-serif ${titleColor} mb-8`}>お問い合わせ</h2>
+      <h2 className={`text-4xl font-serif font-bold ${titleColor} mb-8`}>お問い合わせ</h2>
       <div className="space-y-3 text-gray-700">
         <p className="text-lg">
           <span className="mr-2">📞</span>

@@ -9,7 +9,7 @@ import ExternalLink from './ExternalLink';
 const Access = () => {
   return (
     <div className="py-12">
-      <h2 className="text-3xl font-bold text-center mb-8">所在地</h2>
+      <h2 className="text-4xl font-bold text-center mb-8">所在地</h2>
 
       <div className="max-w-6xl mx-auto">
         {/* マップ2カラム */}
@@ -31,7 +31,7 @@ const Access = () => {
 
         {/* 交通手段 */}
         <div className="mt-12">
-          <h3 className="text-3xl font-bold mb-8 text-center">アクセス</h3>
+          <h3 className="text-4xl font-bold mb-8 text-center">アクセス</h3>
 
           {/* 詳細情報（概要） */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -217,7 +217,7 @@ const Access = () => {
 
       {/* 近くの施設 */}
       <div className="mt-12 -mx-4">
-        <h3 className="text-3xl font-bold mb-8 text-center px-4">近くの施設</h3>
+        <h3 className="text-4xl font-bold mb-8 text-center px-4">近くの施設</h3>
 
         <div className="space-y-0">
             {/* 小木漁港 */}

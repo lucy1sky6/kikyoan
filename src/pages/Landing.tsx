@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
+import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
 import Access from '../components/Access';
 import Contact from '../components/Contact';
 import BackButton from '../components/BackButton';
@@ -12,6 +13,7 @@ type Selection = null | 'kikyoan' | 'greengrass' | 'gallery';
 
 const Landing = () => {
   const [selected, setSelected] = useState<Selection>(null);
+  const [galleryInitialTag, setGalleryInitialTag] = useState<string>('すべて');
 
   const handleSelect = (selection: 'kikyoan' | 'greengrass') => {
     setSelected(selection);
@@ -21,8 +23,17 @@ const Landing = () => {
     }, 300);
   };
 
+  const handleGallerySelect = (initialTag: string = 'すべて') => {
+    setGalleryInitialTag(initialTag);
+    setSelected('gallery');
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 300);
+  };
+
   const handleBack = () => {
     setSelected(null);
+    setGalleryInitialTag('すべて');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -63,7 +74,7 @@ const Landing = () => {
                     <p className="text-sm text-purple-700 max-w-md mb-3">
                       レンタルスペース、民泊としてご利用いただけます
                     </p>
-                    <p className="text-lg text-purple-800 bg-white/50 px-6 py-2 rounded-full inline-block">
+                    <p className="text-lg text-purple-800 bg-white/50 px-6 py-2 rounded-full inline-block font-sans">
                       詳しく見る
                     </p>
                   </div>
@@ -86,7 +97,7 @@ const Landing = () => {
                     <p className="text-sm text-lime-700 max-w-md mb-3">
                       手作りの木の椅子、ピーリングウッドの販売
                     </p>
-                    <p className="text-lg text-lime-800 bg-white/50 px-6 py-2 rounded-full inline-block">
+                    <p className="text-lg text-lime-800 bg-white/50 px-6 py-2 rounded-full inline-block font-sans">
                       詳しく見る
                     </p>
                   </div>
@@ -100,7 +111,7 @@ const Landing = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                onClick={() => handleSelect('gallery')}
+                onClick={() => handleGallerySelect('すべて')}
                 className="h-40 bg-gradient-to-r from-blue-900 via-blue-700 to-cyan-600 cursor-pointer flex items-center justify-center relative overflow-hidden group"
               >
                 <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
@@ -113,7 +124,7 @@ const Landing = () => {
                   >
                     📷 フォト
                   </motion.h2>
-                  <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full inline-block">
+                  <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full inline-block font-sans">
                     詳しく見る
                   </p>
                 </div>
@@ -197,10 +208,21 @@ const Landing = () => {
                 <MagazineSection
                   title="施設の魅力"
                   description={
-                    <p>
-                      古民家をリノベーションした温かみのある空間です。
-                      木のぬくもりを感じながら、能登の自然に囲まれた贅沢な時間をお楽しみください。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        古民家をリノベーションした温かみのある空間です。
+                        木のぬくもりを感じながら、能登の自然に囲まれた贅沢な時間をお楽しみください。
+                      </p>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleGallerySelect('桔梗庵');
+                        }}
+                        className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
+                      >
+                        📷 フォトを見る
+                      </button>
+                    </>
                   }
                   imagePosition="right"
                   aspectRatio="square"
@@ -232,6 +254,66 @@ const Landing = () => {
                   imageAlt="桔梗庵での過ごし方"
                   delay={0.6}
                 />
+
+                {/* 料金・予約について */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                  className="mb-16"
+                >
+                  <h2 className="text-4xl font-serif font-bold text-purple-900 mb-8 text-center">料金・予約について</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* 料金の目安 */}
+                    <div className="bg-white p-8 shadow-lg">
+                      <h3 className="text-2xl font-bold text-purple-800 mb-4">料金の目安</h3>
+                      <ul className="space-y-3 text-gray-700">
+                        <li className="flex justify-between">
+                          <span>1泊（民泊）</span>
+                          <span className="font-semibold">¥XX,XXX~</span>
+                        </li>
+                        <li className="flex justify-between">
+                          <span>半日レンタル</span>
+                          <span className="font-semibold">¥X,XXX~</span>
+                        </li>
+                        <li className="flex justify-between">
+                          <span>1日レンタル</span>
+                          <span className="font-semibold">¥XX,XXX~</span>
+                        </li>
+                      </ul>
+                      <p className="text-sm text-gray-500 mt-4">※料金は利用内容により変動します</p>
+                    </div>
+
+                    {/* 予約について */}
+                    <div className="bg-white p-8 shadow-lg">
+                      <h3 className="text-2xl font-bold text-purple-800 mb-4">予約について</h3>
+                      <p className="text-gray-700 mb-4">
+                        最新の空き状況や予約については、SNSにてお知らせしております。
+                      </p>
+                      <div className="flex gap-4 mb-4">
+                        <a
+                          href="https://instagram.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-purple-600 hover:text-purple-800 transition text-2xl"
+                        >
+                          <FaInstagram />
+                        </a>
+                        <a
+                          href="https://twitter.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-purple-600 hover:text-purple-800 transition text-2xl"
+                        >
+                          <FaXTwitter />
+                        </a>
+                      </div>
+                      <p className="text-gray-700">
+                        お気軽にお問い合わせください。
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
 
                 {/* お問い合わせ */}
                 <ContactSection
@@ -342,10 +424,21 @@ const Landing = () => {
                 <MagazineSection
                   title="工房を訪れて"
                   description={
-                    <p>
-                      実際に工房を訪れて、木の椅子やピーリングウッドをご覧いただけます。
-                      木のぬくもりを感じながら、お気に入りの一品を見つけてください。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        実際に工房を訪れて、木の椅子やピーリングウッドをご覧いただけます。
+                        木のぬくもりを感じながら、お気に入りの一品を見つけてください。
+                      </p>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleGallerySelect('greengrass');
+                        }}
+                        className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
+                      >
+                        📷 フォトを見る
+                      </button>
+                    </>
                   }
                   imagePosition="left"
                   aspectRatio="landscape"
@@ -356,6 +449,113 @@ const Landing = () => {
                   imageAlt="工房の様子"
                   delay={0.6}
                 />
+
+                {/* セクション5: 個展の開催 */}
+                <MagazineSection
+                  title="個展の開催"
+                  description={
+                    <div>
+                      <p className="mb-4">
+                        個展を開催し、多くの方に木の椅子の魅力をご覧いただきました。
+                      </p>
+                      <p>
+                        一つ一つ丁寧に作られた椅子を実際に見て、触れて、座っていただける貴重な機会となりました。
+                      </p>
+                    </div>
+                  }
+                  imagePosition="right"
+                  aspectRatio="landscape"
+                  gradientFrom="from-lime-100"
+                  gradientTo="to-lime-200"
+                  titleColor="text-lime-900"
+                  imageSrc="https://via.placeholder.com/600x450?text=Photo+5"
+                  imageAlt="個展の様子"
+                  delay={0.7}
+                />
+
+                {/* セクション6: メディア・導入事例 */}
+                <MagazineSection
+                  title="メディア・導入事例"
+                  description={
+                    <div>
+                      <p className="mb-4">
+                        NHKで能登の里山が特集され、工房の裏山も含めて紹介されました。山も含めてgreengrassなのです。
+                      </p>
+                      <p>
+                        県内外のカフェやレストランで椅子をご利用いただいています。
+                        実際に座り心地を体験していただけます。
+                      </p>
+                    </div>
+                  }
+                  imagePosition="left"
+                  aspectRatio="landscape"
+                  gradientFrom="from-lime-100"
+                  gradientTo="to-lime-200"
+                  titleColor="text-lime-900"
+                  imageSrc="https://via.placeholder.com/600x450?text=Photo+6"
+                  imageAlt="メディア出演・導入事例"
+                  delay={0.8}
+                />
+
+                {/* 価格・在庫について */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 }}
+                  className="mb-16"
+                >
+                  <h2 className="text-4xl font-serif font-bold text-lime-900 mb-8 text-center">価格・在庫について</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {/* 価格の目安 */}
+                    <div className="bg-white p-8 shadow-lg">
+                      <h3 className="text-2xl font-bold text-lime-800 mb-4">価格の目安</h3>
+                      <ul className="space-y-3 text-gray-700">
+                        <li className="flex justify-between">
+                          <span>木の椅子</span>
+                          <span className="font-semibold">¥XX,XXX~</span>
+                        </li>
+                        <li className="flex justify-between">
+                          <span>ピーリングウッド（小）</span>
+                          <span className="font-semibold">¥X,XXX~</span>
+                        </li>
+                        <li className="flex justify-between">
+                          <span>ピーリングウッド（大）</span>
+                          <span className="font-semibold">¥XX,XXX~</span>
+                        </li>
+                      </ul>
+                      <p className="text-sm text-gray-500 mt-4">※サイズや仕様により価格は変動します</p>
+                    </div>
+
+                    {/* 在庫について */}
+                    <div className="bg-white p-8 shadow-lg">
+                      <h3 className="text-2xl font-bold text-lime-800 mb-4">在庫について</h3>
+                      <p className="text-gray-700 mb-4">
+                        最新の在庫状況については、SNSにてお知らせしております。
+                      </p>
+                      <div className="flex gap-4 mb-4">
+                        <a
+                          href="https://instagram.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lime-600 hover:text-lime-800 transition text-2xl"
+                        >
+                          <FaInstagram />
+                        </a>
+                        <a
+                          href="https://twitter.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lime-600 hover:text-lime-800 transition text-2xl"
+                        >
+                          <FaXTwitter />
+                        </a>
+                      </div>
+                      <p className="text-gray-700">
+                        お気軽にお問い合わせください。
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
 
                 {/* お問い合わせ */}
                 <ContactSection
@@ -373,7 +573,7 @@ const Landing = () => {
 
           {/* 写真ギャラリーページ */}
           {selected === 'gallery' && (
-            <GalleryPage onBack={handleBack} />
+            <GalleryPage onBack={handleBack} initialTag={galleryInitialTag} />
           )}
         </AnimatePresence>
       </main>
@@ -391,7 +591,7 @@ const Landing = () => {
       {/* トップに戻るボタン */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 bg-gray-800 text-white p-4 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 z-50 hover:scale-110"
+        className="fixed bottom-8 right-8 bg-gray-800 text-white p-4 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 z-50 hover:scale-110 font-sans"
         aria-label="トップに戻る"
       >
         <FaArrowUp className="text-xl" />

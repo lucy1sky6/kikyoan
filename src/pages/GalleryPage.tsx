@@ -33,11 +33,17 @@ const tags = ['すべて', '桔梗庵', 'greengrass', '祭', '海', 'その他']
 
 interface GalleryPageProps {
   onBack: () => void;
+  initialTag?: string;
 }
 
-const GalleryPage = ({ onBack }: GalleryPageProps) => {
-  const [selectedTag, setSelectedTag] = useState('すべて');
+const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => {
+  const [selectedTag, setSelectedTag] = useState(initialTag);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  // initialTagが変わったときにselectedTagを更新
+  useEffect(() => {
+    setSelectedTag(initialTag);
+  }, [initialTag]);
 
   // タグでフィルタリング
   const filteredPhotos = selectedTag === 'すべて'

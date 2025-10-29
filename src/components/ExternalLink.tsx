@@ -12,7 +12,7 @@ const ExternalLink = ({ href, label, className = '' }: ExternalLinkProps) => {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`text-blue-600 hover:underline inline-flex items-center gap-1 ml-2 ${className}`}
+      className={`text-blue-600 hover:underline inline-flex items-center gap-1 ml-2 font-sans ${className}`}
     >
       <FaExternalLinkAlt className="text-xs" />
       {label}
