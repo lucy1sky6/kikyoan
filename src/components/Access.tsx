@@ -1,3 +1,5 @@
+import { FaCar } from 'react-icons/fa';
+
 const Access = () => {
   return (
     <div className="py-12">
@@ -117,7 +119,7 @@ const Access = () => {
                 {/* 電車 */}
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <span className="text-2xl">↓</span>
-                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                  <span className="text-xs text-gray-800">
                     🚅 北陸新幹線 / 🚄 サンダーバード
                   </span>
                 </div>
@@ -133,7 +135,7 @@ const Access = () => {
                 {/* 車/バス */}
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <span className="text-2xl">↓</span>
-                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                  <span className="text-xs text-gray-800">
                     🚗 車/🚌 バス
                     <a
                       href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
@@ -155,7 +157,7 @@ const Access = () => {
                 {/* 車 */}
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <span className="text-2xl">↓</span>
-                  <span className="bg-gray-100 px-3 py-2 rounded text-xs text-gray-800">
+                  <span className="text-xs text-gray-800">
                     🚗 車 珠洲道路・宇出津経由 約1時間
                   </span>
                 </div>
@@ -262,42 +264,149 @@ const Access = () => {
 
         {/* 近くの施設 */}
         <div className="mt-12">
-          <h3 className="text-3xl font-bold mb-8 text-center">近くの施設など</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center">近くの施設</h3>
 
-          <div className="space-y-4">
-            <div>
-              <p className="font-bold">能登小木漁港</p>
-              <p className="text-gray-700">
-                人気の釣り場です。桔梗庵から車で2分。
-              </p>
+          <div className="space-y-6">
+            {/* 小木漁港 */}
+            <div className="relative h-48 bg-gradient-to-r from-blue-100 to-blue-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+              {/* 背景画像用（将来的に追加） */}
+              <div className="absolute inset-0 bg-black/20"></div>
+
+              {/* テキスト情報 */}
+              <div className="relative z-10 flex-1 px-8">
+                <h4 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                  小木漁港
+                </h4>
+                <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full mb-3 shadow-md">
+                  <FaCar className="text-blue-600" />
+                  <span className="text-sm font-semibold text-gray-800">桔梗庵から車で2分</span>
+                </div>
+                <p className="text-base text-white drop-shadow-md">
+                  人気の釣り場です。
+                </p>
+              </div>
+
+              {/* Google Map */}
+              <div className="relative z-10 w-80 h-full">
+                <iframe
+                  src="https://maps.google.com/maps?q=小木漁港,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                  title="小木漁港の地図"
+                ></iframe>
+              </div>
             </div>
 
-            <div>
-              <p className="font-bold">
-                <a
-                  href="https://ikanoeki.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  イカの駅 つくモール
-                </a>
-              </p>
-              <p className="text-gray-700">桔梗庵から車で7分。</p>
+            {/* イカの駅 つくモール */}
+            <div className="relative h-48 bg-gradient-to-r from-orange-100 to-orange-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+              {/* 背景画像用（将来的に追加） */}
+              <div className="absolute inset-0 bg-black/20"></div>
+
+              {/* テキスト情報 */}
+              <div className="relative z-10 flex-1 px-8">
+                <h4 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                  <a
+                    href="https://ikanoeki.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    イカの駅 つくモール
+                  </a>
+                </h4>
+                <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full mb-3 shadow-md">
+                  <FaCar className="text-orange-600" />
+                  <span className="text-sm font-semibold text-gray-800">桔梗庵から車で7分</span>
+                </div>
+                <p className="text-base text-white drop-shadow-md">
+                  お土産やグルメが楽しめる道の駅。
+                </p>
+              </div>
+
+              {/* Google Map */}
+              <div className="relative z-10 w-80 h-full">
+                <iframe
+                  src="https://maps.google.com/maps?q=イカの駅つくモール,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                  title="イカの駅 つくモールの地図"
+                ></iframe>
+              </div>
             </div>
 
-            <div>
-              <p className="font-bold">
-                <a
-                  href="http://notomarine.jp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  のと海洋ふれあいセンター
-                </a>
-              </p>
-              <p className="text-gray-700">桔梗庵から車で10分。</p>
+            {/* のと海洋ふれあいセンター */}
+            <div className="relative h-48 bg-gradient-to-r from-teal-100 to-teal-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+              {/* 背景画像用（将来的に追加） */}
+              <div className="absolute inset-0 bg-black/20"></div>
+
+              {/* テキスト情報 */}
+              <div className="relative z-10 flex-1 px-8">
+                <h4 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                  <a
+                    href="http://notomarine.jp/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  >
+                    のと海洋ふれあいセンター
+                  </a>
+                </h4>
+                <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full mb-3 shadow-md">
+                  <FaCar className="text-teal-600" />
+                  <span className="text-sm font-semibold text-gray-800">桔梗庵から車で10分</span>
+                </div>
+                <p className="text-base text-white drop-shadow-md">
+                  海の生き物と触れ合える体験施設。
+                </p>
+              </div>
+
+              {/* Google Map */}
+              <div className="relative z-10 w-80 h-full">
+                <iframe
+                  src="https://maps.google.com/maps?q=のと海洋ふれあいセンター,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                  title="のと海洋ふれあいセンターの地図"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* 縄文真脇遺跡 */}
+            <div className="relative h-48 bg-gradient-to-r from-amber-100 to-amber-50 rounded-xl shadow-lg overflow-hidden flex items-center">
+              {/* 背景画像用（将来的に追加） */}
+              <div className="absolute inset-0 bg-black/20"></div>
+
+              {/* テキスト情報 */}
+              <div className="relative z-10 flex-1 px-8">
+                <h4 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+                  縄文真脇遺跡
+                </h4>
+                <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full mb-3 shadow-md">
+                  <FaCar className="text-amber-600" />
+                  <span className="text-sm font-semibold text-gray-800">桔梗庵から車で15分</span>
+                </div>
+                <p className="text-base text-white drop-shadow-md">
+                  約4000年前の縄文時代の遺跡。
+                </p>
+              </div>
+
+              {/* Google Map */}
+              <div className="relative z-10 w-80 h-full">
+                <iframe
+                  src="https://maps.google.com/maps?q=縄文真脇遺跡,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                  aria-hidden="false"
+                  tabIndex={0}
+                  title="縄文真脇遺跡の地図"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

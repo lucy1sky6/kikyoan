@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Header from '../components/Header';
+import { FaArrowUp } from 'react-icons/fa';
 import Access from '../components/Access';
 import Contact from '../components/Contact';
 
@@ -45,10 +45,12 @@ const Landing = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-stone-50">
-      <Header />
-
       {/* メインコンテンツエリア */}
       <main className="relative">
         {/* 初期表示：2分割セクション */}
@@ -120,16 +122,17 @@ const Landing = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.6 }}
-              className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-16 px-4"
+              className="min-h-screen bg-gradient-to-b from-purple-50 to-white py-16 px-4 relative"
             >
+              {/* 戻るボタン */}
+              <button
+                onClick={handleBack}
+                className="absolute top-4 left-4 px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-lg z-10"
+              >
+                ← 戻る
+              </button>
+
               <div className="max-w-6xl mx-auto">
-                {/* 戻るボタン */}
-                <button
-                  onClick={handleBack}
-                  className="mb-8 px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-lg"
-                >
-                  ← 戻る
-                </button>
 
                 {/* タイトル */}
                 <motion.div
@@ -174,6 +177,37 @@ const Landing = () => {
                     </motion.div>
                   ))}
                 </motion.div>
+
+                {/* お問い合わせ */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                  className="mt-16 text-center bg-purple-50 rounded-2xl p-8 shadow-md"
+                >
+                  <h2 className="text-3xl font-bold text-purple-900 mb-6">
+                    お問い合わせ
+                  </h2>
+                  <div className="space-y-4 text-gray-700">
+                    <p className="text-lg">
+                      <span className="font-semibold">電話:</span>{' '}
+                      <a href="tel:0123456789" className="hover:text-purple-700 transition">
+                        012-345-6789
+                      </a>
+                    </p>
+                    <p className="text-lg">
+                      <span className="font-semibold">ウェブサイト:</span>{' '}
+                      <a
+                        href="https://example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-purple-700 hover:text-purple-900 underline transition"
+                      >
+                        https://example.com
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           )}
@@ -186,16 +220,17 @@ const Landing = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.6 }}
-              className="min-h-screen bg-gradient-to-b from-lime-50 to-white py-16 px-4"
+              className="min-h-screen bg-gradient-to-b from-lime-50 to-white py-16 px-4 relative"
             >
+              {/* 戻るボタン */}
+              <button
+                onClick={handleBack}
+                className="absolute top-4 left-4 px-6 py-3 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-lg z-10"
+              >
+                ← 戻る
+              </button>
+
               <div className="max-w-6xl mx-auto">
-                {/* 戻るボタン */}
-                <button
-                  onClick={handleBack}
-                  className="mb-8 px-6 py-3 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-lg"
-                >
-                  ← 戻る
-                </button>
 
                 {/* タイトル */}
                 <motion.div
@@ -255,19 +290,61 @@ const Landing = () => {
                     </motion.div>
                   ))}
                 </motion.div>
+
+                {/* お問い合わせ */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                  className="mt-16 text-center bg-lime-50 rounded-2xl p-8 shadow-md"
+                >
+                  <h2 className="text-3xl font-bold text-lime-900 mb-6">
+                    お問い合わせ
+                  </h2>
+                  <div className="space-y-4 text-gray-700">
+                    <p className="text-lg">
+                      <span className="font-semibold">電話:</span>{' '}
+                      <a href="tel:0987654321" className="hover:text-lime-700 transition">
+                        098-765-4321
+                      </a>
+                    </p>
+                    <p className="text-lg">
+                      <span className="font-semibold">ウェブサイト:</span>{' '}
+                      <a
+                        href="https://greengrass-example.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lime-700 hover:text-lime-900 underline transition"
+                      >
+                        https://greengrass-example.com
+                      </a>
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </main>
 
-      {/* アクセスとコンタクト（常に表示） */}
-      <div className="bg-white border-t border-gray-200">
-        <div className="max-w-6xl mx-auto px-4">
-          <Access />
-          <Contact />
+      {/* アクセスとコンタクト（トップページのみ表示） */}
+      {!selected && (
+        <div className="bg-white border-t border-gray-200">
+          <div className="max-w-6xl mx-auto px-4">
+            <Access />
+            <Contact />
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* トップに戻るボタン */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 bg-gray-800 text-white p-4 rounded-full shadow-lg hover:bg-gray-700 transition-all duration-300 z-50 hover:scale-110"
+        aria-label="トップに戻る"
+      >
+        <FaArrowUp className="text-xl" />
+      </button>
     </div>
   );
 };
