@@ -24,6 +24,19 @@ const Lightbox = ({ photos, currentIndex, onClose, onPrevious, onNext }: Lightbo
   const hasPrevious = currentIndex > 0;
   const hasNext = currentIndex < photos.length - 1;
 
+  // スワイプ処理
+  const handleDragEnd = (_event: any, info: any) => {
+    const swipeThreshold = 50; // スワイプと判定する最小距離（ピクセル）
+
+    if (info.offset.x > swipeThreshold && hasPrevious) {
+      // 右スワイプ → 前の写真
+      onPrevious();
+    } else if (info.offset.x < -swipeThreshold && hasNext) {
+      // 左スワイプ → 次の写真
+      onNext();
+    }
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -73,9 +86,13 @@ const Lightbox = ({ photos, currentIndex, onClose, onPrevious, onNext }: Lightbo
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.8, opacity: 0 }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          dragElastic={0.2}
+          onDragEnd={handleDragEnd}
           src={currentPhoto.src}
           alt={currentPhoto.alt}
-          className="max-w-[90vw] max-h-[90vh] object-contain"
+          className="max-w-[90vw] max-h-[90vh] object-contain cursor-grab active:cursor-grabbing"
           onClick={(e) => e.stopPropagation()}
         />
 

@@ -20,7 +20,7 @@ const GalleryHeroBanner = ({ onClick }: GalleryHeroBannerProps) => {
       {/* オーバーレイ */}
       <div className="absolute inset-0 bg-blue-900/60" />
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-      <div className="flex items-center justify-between w-full px-12 z-10">
+      <div className="flex items-center justify-between w-full px-4 md:px-12 z-10">
         <div>
           <motion.h2
             initial={{ y: 10, opacity: 0 }}
@@ -34,7 +34,7 @@ const GalleryHeroBanner = ({ onClick }: GalleryHeroBannerProps) => {
             写真で巡る、能登の風景
           </p>
         </div>
-        <p className="text-lg text-white bg-white/30 px-6 py-2 rounded-full font-sans">
+        <p className="text-sm md:text-lg text-white bg-white/30 px-3 py-2 md:px-6 rounded-full font-sans whitespace-nowrap">
           詳しく見る
         </p>
       </div>

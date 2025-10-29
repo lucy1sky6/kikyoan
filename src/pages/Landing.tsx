@@ -235,7 +235,7 @@ const Landing = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-center mb-20"
+                  className="text-center mb-20 mt-16 md:mt-20"
                 >
                   <h1 className="text-5xl md:text-6xl font-serif text-purple-900 mb-2">
                     桔梗庵
@@ -481,7 +481,7 @@ const Landing = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="text-center mb-20"
+                  className="text-center mb-20 mt-16 md:mt-20"
                 >
                   <h1 className="text-5xl md:text-6xl font-serif text-lime-900 mb-2">
                     greengrass
