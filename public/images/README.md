@@ -61,6 +61,11 @@ greengrassの紹介セクション（MagazineSection）で使用する写真を�
 ### `logos/` - ロゴ画像
 サイトロゴや各種アイコンを配置します。
 
+### `qr/` - QRコード
+サイトのQRコードを配置します。
+
+- `qr-code.webp` - サイトのQRコード (192x192)
+
 ## 画像の参照方法
 
 画像は `/images/` から始まるパスで参照します：
@@ -74,6 +79,9 @@ imageSrc="/images/kikyoan/exterior.jpg"
 
 // ロゴ
 <img src="/images/logos/site-logo.png" alt="桔梗庵 & greengrass" />
+
+// QRコード
+<img src="/images/qr/qr-code.webp" alt="QRコード" />
 ```
 
 ## 推奨画像サイズ
@@ -90,6 +98,10 @@ imageSrc="/images/kikyoan/exterior.jpg"
 ### ロゴ
 - **PNG形式** (透過背景の場合)
 - サイズは用途に応じて
+
+### QRコード
+- **正方形**: 192x192px 以上
+- **フォーマット**: PNG または WebP
 
 ## 注意事項
 

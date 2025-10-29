@@ -10,9 +10,9 @@ interface PhotoGridItemProps {
 const PhotoGridItem = ({ src, alt, index, onClick }: PhotoGridItemProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: index * 0.05 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: index * 0.05, duration: 0.8 }}
       className="aspect-square bg-gray-200 overflow-hidden cursor-pointer hover:scale-105 transition-transform shadow-md"
       onClick={onClick}
     >

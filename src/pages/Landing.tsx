@@ -82,7 +82,7 @@ const Landing = () => {
     if (selected === null) {
       const interval = setInterval(() => {
         setKikyoanImageIndex((prev) => (prev + 1) % kikyoanImages.length);
-      }, 5000); // 5秒ごとに切り替え
+      }, 6000); // 6秒ごとに切り替え
 
       return () => clearInterval(interval);
     }
@@ -93,7 +93,7 @@ const Landing = () => {
     if (selected === null) {
       const interval = setInterval(() => {
         setGreengrassImageIndex((prev) => (prev + 1) % greengrassImages.length);
-      }, 5000); // 5秒ごとに切り替え
+      }, 6000); // 6秒ごとに切り替え
 
       return () => clearInterval(interval);
     }
@@ -124,13 +124,17 @@ const Landing = () => {
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={kikyoanImageIndex}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5 }}
-                      className="absolute inset-0 bg-cover bg-center"
+                      initial={{ opacity: 0, y: '-12%' }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: '12%' }}
+                      transition={{ duration: 2.5, ease: 'easeInOut' }}
+                      className="absolute bg-cover bg-center"
                       style={{
                         backgroundImage: `url(${kikyoanImages[kikyoanImageIndex]})`,
+                        width: '150%',
+                        height: '150%',
+                        top: '-25%',
+                        left: '-25%',
                       }}
                     />
                   </AnimatePresence>
@@ -163,13 +167,17 @@ const Landing = () => {
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={greengrassImageIndex}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5 }}
-                      className="absolute inset-0 bg-cover bg-center"
+                      initial={{ opacity: 0, y: '12%' }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: '-12%' }}
+                      transition={{ duration: 2.5, ease: 'easeInOut' }}
+                      className="absolute bg-cover bg-center"
                       style={{
                         backgroundImage: `url(${greengrassImages[greengrassImageIndex]})`,
+                        width: '150%',
+                        height: '150%',
+                        top: '-25%',
+                        left: '-25%',
                       }}
                     />
                   </AnimatePresence>
