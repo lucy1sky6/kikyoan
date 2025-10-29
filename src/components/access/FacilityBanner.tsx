@@ -51,20 +51,20 @@ const FacilityBanner = ({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative z-10 flex-1 px-8 hover:opacity-90 transition-opacity"
+        className="relative z-10 flex-1 px-3 sm:px-6 md:px-8 hover:opacity-90 transition-opacity"
       >
-        <h4 className="text-2xl font-bold text-white mb-3 drop-shadow-lg">
+        <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">
           {title}
         </h4>
-        <p className="text-base text-white drop-shadow-md mb-3">{description}</p>
-        <div className="inline-flex items-center gap-2 bg-white/90 px-4 py-2 rounded-full shadow-md">
-          <FaCar className={carIconColor} />
-          <span className="text-sm font-semibold text-gray-800">{distance}</span>
+        <p className="text-sm sm:text-base text-white drop-shadow-md mb-2 sm:mb-3">{description}</p>
+        <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/90 px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-md">
+          <FaCar className={`${carIconColor} text-xs sm:text-base`} />
+          <span className="text-xs sm:text-sm font-semibold text-gray-800">{distance}</span>
         </div>
       </a>
 
       {/* Google Map */}
-      <div className="relative z-10 w-80 h-full">
+      <div className="relative z-10 w-32 sm:w-48 md:w-64 lg:w-80 h-full flex-shrink-0">
         <iframe
           src={mapSrc}
           className="w-full h-full border-0"
