@@ -1,4 +1,4 @@
-interface LocationNodeProps {
+interface RouteStopNodeProps {
   name: string;
   bgColor: string;
   textColor?: string;
@@ -8,7 +8,7 @@ interface LocationNodeProps {
   photoSrc?: string;
 }
 
-const LocationNode = ({
+const RouteStopNode = ({
   name,
   bgColor,
   textColor = 'text-gray-900',
@@ -16,7 +16,7 @@ const LocationNode = ({
   borderColor = 'border-gray-400',
   className = '',
   photoSrc,
-}: LocationNodeProps) => {
+}: RouteStopNodeProps) => {
   return (
     <div
       className={`${bgColor} ${textColor} rounded-lg font-bold shadow-md inline-flex items-stretch text-lg overflow-hidden ${className}`}
@@ -39,4 +39,4 @@ const LocationNode = ({
   );
 };
 
-export default LocationNode;
+export default RouteStopNode;

@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion';
 
-import { getImagePath } from '../utils/getImagePath';
+import { getImagePath } from '../../utils/getImagePath';
 
-interface PhotoGalleryBannerProps {
+interface GalleryHeroBannerProps {
   onClick: () => void;
 }
 
-const PhotoGalleryBanner = ({ onClick }: PhotoGalleryBannerProps) => {
+const GalleryHeroBanner = ({ onClick }: GalleryHeroBannerProps) => {
   return (
     <div
       onClick={onClick}
@@ -42,4 +42,4 @@ const PhotoGalleryBanner = ({ onClick }: PhotoGalleryBannerProps) => {
   );
 };
 
-export default PhotoGalleryBanner;
+export default GalleryHeroBanner;

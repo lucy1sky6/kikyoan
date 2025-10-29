@@ -1,16 +1,16 @@
-interface SimpleNodeProps {
+interface RouteNodeProps {
   name: string;
   bgColor?: string;
   textColor?: string;
   className?: string;
 }
 
-const SimpleNode = ({
+const RouteNode = ({
   name,
   bgColor = 'bg-gray-200',
   textColor = 'text-gray-900',
   className = '',
-}: SimpleNodeProps) => {
+}: RouteNodeProps) => {
   return (
     <div
       className={`${bgColor} ${textColor} px-6 py-3 rounded-lg font-bold shadow-lg text-lg ${className}`}
@@ -20,4 +20,4 @@ const SimpleNode = ({
   );
 };
 
-export default SimpleNode;
+export default RouteNode;

@@ -1,4 +1,4 @@
-import QRCodePlaceholder from './QRCodePlaceholder';
+import QRCodePlaceholder from '../content/QRCodePlaceholder';
 import SocialLinks from './SocialLinks';
 
 const Contact = () => {

@@ -2,14 +2,14 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
 import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
-import Access from '../components/Access';
-import Contact from '../components/Contact';
-import BackButton from '../components/BackButton';
-import ContactSection from '../components/ContactSection';
-import MagazineSection from '../components/MagazineSection';
-import StoryModal from '../components/StoryModal';
-import ReadMoreButton from '../components/ReadMoreButton';
-import PhotoGalleryBanner from '../components/PhotoGalleryBanner';
+import Access from '../components/access/Access';
+import Contact from '../components/layout/Contact';
+import BackButton from '../components/common/BackButton';
+import ContactSection from '../components/layout/ContactSection';
+import MagazineSection from '../components/content/MagazineSection';
+import StoryModal from '../components/content/StoryModal';
+import ReadMoreButton from '../components/common/ReadMoreButton';
+import GalleryHeroBanner from '../components/gallery/GalleryHeroBanner';
 import GalleryPage from './GalleryPage';
 import { getImagePath } from '../utils/getImagePath';
 
@@ -204,7 +204,7 @@ const Landing = () => {
               </motion.div>
 
               {/* フォト入口 */}
-              <PhotoGalleryBanner
+              <GalleryHeroBanner
                 key="gallery-entrance"
                 onClick={() => handleGallerySelect('すべて')}
               />

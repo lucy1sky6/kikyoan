@@ -1,4 +1,4 @@
-import { getImagePath } from '../utils/getImagePath';
+import { getImagePath } from '../../utils/getImagePath';
 
 const QRCodePlaceholder = () => {
   return (
