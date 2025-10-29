@@ -81,13 +81,11 @@ const Landing = () => {
                   >
                     桔梗庵
                   </motion.h2>
-                  <p className="text-lg text-purple-800 mb-3">
-                    クリックして詳細を見る
+                  <p className="text-sm text-purple-700 max-w-md mb-3">
+                    レンタルスペース、民泊としてご利用いただけます
                   </p>
-                  <p className="text-sm text-purple-700 max-w-md">
-                    レンタルスペースとしてご利用いただけます
-                    <br />
-                    ただいま民泊に向けて準備中！
+                  <p className="text-lg text-purple-800 bg-white/50 px-6 py-2 rounded-full inline-block">
+                    詳しく見る
                   </p>
                 </div>
               </motion.div>
@@ -106,11 +104,11 @@ const Landing = () => {
                   >
                     greengrass
                   </motion.h2>
-                  <p className="text-lg text-lime-800 mb-3">
-                    クリックして詳細を見る
-                  </p>
-                  <p className="text-sm text-lime-700 max-w-md">
+                  <p className="text-sm text-lime-700 max-w-md mb-3">
                     作業所/ALL手作り木の椅子/ピーリングウッド販売
+                  </p>
+                  <p className="text-lg text-lime-800 bg-white/50 px-6 py-2 rounded-full inline-block">
+                    詳しく見る
                   </p>
                 </div>
               </motion.div>
