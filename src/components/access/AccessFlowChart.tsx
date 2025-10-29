@@ -5,10 +5,8 @@ import { getImagePath } from '../../utils/getImagePath';
 
 const AccessFlowChart = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 sm:p-8 rounded-xl mb-8">
-      {/* フロー図を800px固定幅で、スケールで縮小 */}
-      <div className="w-full max-w-[800px] mx-auto flex justify-center overflow-hidden">
-        <div className="w-[800px] scale-[0.45] sm:scale-[0.65] md:scale-[0.85] lg:scale-100 origin-top -mb-[55%] sm:-mb-[35%] md:-mb-[15%] lg:mb-0">
+    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 sm:p-6 md:p-8 rounded-xl mb-8">
+      <div className="max-w-5xl mx-auto">
         {/* 中央縦並びルート */}
         <div className="text-center mb-8">
           {/* 全国各地（電車ルート用） */}
@@ -147,7 +145,6 @@ const AccessFlowChart = () => {
               />
             </div>
           </div>
-        </div>
         </div>
       </div>
     </div>
