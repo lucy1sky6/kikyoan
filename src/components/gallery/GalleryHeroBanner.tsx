@@ -10,7 +10,7 @@ const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerPro
   return (
     <div
       onClick={onClick}
-      className="h-40 cursor-pointer flex items-center justify-center relative overflow-hidden group"
+      className="h-40 cursor-pointer flex items-center justify-center relative overflow-hidden group bg-black"
     >
       {/* 背景画像スライドショー */}
       <AnimatePresence mode="wait">
@@ -23,10 +23,10 @@ const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerPro
           className="absolute bg-cover bg-center"
           style={{
             backgroundImage: `url(${images[imageIndex]})`,
-            width: '150%',
-            height: '150%',
-            top: '-25%',
-            left: '-25%',
+            width: '110%',
+            height: '110%',
+            top: '-5%',
+            left: '-5%',
           }}
         />
       </AnimatePresence>

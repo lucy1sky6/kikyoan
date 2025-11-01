@@ -159,7 +159,7 @@ const Landing = () => {
                 {/* 桔梗庵セクション */}
                 <motion.div
                   onClick={() => handleSelect('kikyoan')}
-                  className="flex-1 cursor-pointer flex items-center justify-center relative overflow-hidden group"
+                  className="flex-1 cursor-pointer flex items-center justify-center relative overflow-hidden group bg-black"
                 >
                   {/* 背景画像スライドショー */}
                   <AnimatePresence mode="wait">
@@ -172,10 +172,10 @@ const Landing = () => {
                       className="absolute bg-cover bg-center"
                       style={{
                         backgroundImage: `url(${kikyoanImages[kikyoanImageIndex]})`,
-                        width: '150%',
-                        height: '150%',
-                        top: '-25%',
-                        left: '-25%',
+                        width: '110%',
+                        height: '110%',
+                        top: '-5%',
+                        left: '-5%',
                       }}
                     />
                   </AnimatePresence>
@@ -202,7 +202,7 @@ const Landing = () => {
                 {/* greengrassセクション */}
                 <motion.div
                   onClick={() => handleSelect('greengrass')}
-                  className="flex-1 cursor-pointer flex items-center justify-center relative overflow-hidden group"
+                  className="flex-1 cursor-pointer flex items-center justify-center relative overflow-hidden group bg-black"
                 >
                   {/* 背景画像スライドショー */}
                   <AnimatePresence mode="wait">
@@ -215,10 +215,10 @@ const Landing = () => {
                       className="absolute bg-cover bg-center"
                       style={{
                         backgroundImage: `url(${greengrassImages[greengrassImageIndex]})`,
-                        width: '150%',
-                        height: '150%',
-                        top: '-25%',
-                        left: '-25%',
+                        width: '110%',
+                        height: '110%',
+                        top: '-5%',
+                        left: '-5%',
                       }}
                     />
                   </AnimatePresence>
