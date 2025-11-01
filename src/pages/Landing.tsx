@@ -363,7 +363,7 @@ const Landing = () => {
                     </>
                   }
                   imagePosition="right"
-                  aspectRatio="square"
+                  aspectRatio="auto"
                   gradientFrom="from-purple-100"
                   gradientTo="to-purple-200"
                   titleColor="text-purple-900"

@@ -5,7 +5,7 @@ interface MagazineSectionProps {
   title: string;
   description: ReactNode;
   imagePosition: 'left' | 'right';
-  aspectRatio: 'landscape' | 'square';
+  aspectRatio: 'landscape' | 'square' | 'auto';
   gradientFrom: string;
   gradientTo: string;
   titleColor: string;
@@ -27,7 +27,12 @@ const MagazineSection = ({
   delay = 0.3,
 }: MagazineSectionProps) => {
   const isPhotoRight = imagePosition === 'right';
-  const aspectClass = aspectRatio === 'landscape' ? 'aspect-[4/3]' : 'aspect-square';
+  const aspectClass =
+    aspectRatio === 'landscape'
+      ? 'aspect-[4/3]'
+      : aspectRatio === 'square'
+        ? 'aspect-square'
+        : '';
   const marginClass = isPhotoRight ? 'md:-mr-8' : 'md:-ml-8';
 
   return (
@@ -49,7 +54,7 @@ const MagazineSection = ({
           <div className={`${aspectClass} bg-gradient-to-br ${gradientFrom} ${gradientTo} overflow-hidden shadow-xl`}>
             <img
               src={imageSrc}
-              className="w-full h-full object-cover"
+              className={aspectRatio === 'auto' ? 'w-full' : 'w-full h-full object-cover'}
               alt={imageAlt}
             />
           </div>

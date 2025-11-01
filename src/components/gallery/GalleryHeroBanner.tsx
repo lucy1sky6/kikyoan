@@ -16,9 +16,9 @@ const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerPro
       <AnimatePresence mode="wait">
         <motion.div
           key={imageIndex}
-          initial={{ opacity: 0, x: '12%' }}
+          initial={{ opacity: 0, x: '-12%' }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: '-12%' }}
+          exit={{ opacity: 0, x: '12%' }}
           transition={{ duration: 2.5, ease: 'easeInOut' }}
           className="absolute bg-cover bg-center"
           style={{
