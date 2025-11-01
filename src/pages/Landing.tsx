@@ -279,8 +279,15 @@ const Landing = () => {
                   transition={{ delay: 0.2 }}
                   className="text-center mb-20 mt-16 md:mt-20"
                 >
-                  <h1 className="text-5xl md:text-6xl font-serif text-purple-900 mb-2">
-                    桔梗庵
+                  <h1 className="mb-2 flex justify-center">
+                    <img
+                      src={getImagePath('/images/kikyoan-title.webp')}
+                      alt="桔梗庵"
+                      className="h-24 md:h-32 w-auto"
+                      style={{
+                        filter: 'brightness(0) saturate(100%) invert(14%) sepia(64%) saturate(4571%) hue-rotate(263deg) brightness(91%) contrast(103%)'
+                      }}
+                    />
                   </h1>
                   <p className="text-sm font-sans italic tracking-wider text-purple-700 opacity-70 mb-6">
                     ［ききょうあん］
@@ -525,8 +532,15 @@ const Landing = () => {
                   transition={{ delay: 0.2 }}
                   className="text-center mb-20 mt-16 md:mt-20"
                 >
-                  <h1 className="text-5xl md:text-6xl font-serif text-lime-900 mb-2">
-                    greengrass
+                  <h1 className="mb-2 flex justify-center">
+                    <img
+                      src={getImagePath('/images/greengrass-title.webp')}
+                      alt="greengrass"
+                      className="h-24 md:h-32 w-auto"
+                      style={{
+                        filter: 'brightness(0) saturate(100%) invert(24%) sepia(37%) saturate(1598%) hue-rotate(57deg) brightness(96%) contrast(92%)'
+                      }}
+                    />
                   </h1>
                   <p className="text-sm font-sans italic tracking-wider text-lime-700 opacity-70 mb-6">
                     ［グリーングラス］
