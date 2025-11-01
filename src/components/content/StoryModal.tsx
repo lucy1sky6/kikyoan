@@ -51,7 +51,7 @@ const StoryModal = ({ isOpen, onClose, title, content }: StoryModalProps) => {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-          className="bg-amber-50 max-w-3xl w-full max-h-[85vh] overflow-y-auto rounded-lg shadow-2xl"
+          className="bg-amber-50 max-w-3xl md:max-w-5xl w-full max-h-[85vh] overflow-y-auto rounded-lg shadow-2xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* 紙のような背景テクスチャ */}

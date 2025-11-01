@@ -22,6 +22,7 @@ const Landing = () => {
   const [isGreengrassStoryOpen, setIsGreengrassStoryOpen] = useState(false);
   const [kikyoanImageIndex, setKikyoanImageIndex] = useState(0);
   const [greengrassImageIndex, setGreengrassImageIndex] = useState(0);
+  const [galleryImageIndex, setGalleryImageIndex] = useState(0);
 
   // 画像配列
   const kikyoanImages = [
@@ -33,6 +34,11 @@ const Landing = () => {
     getImagePath('/images/landing/greengrass-hero-01.webp'),
     getImagePath('/images/landing/greengrass-hero-02.webp'),
     getImagePath('/images/landing/greengrass-hero-03.webp'),
+  ];
+  const galleryImages = [
+    getImagePath('/images/landing/gallery-hero-01.webp'),
+    getImagePath('/images/landing/gallery-hero-02.webp'),
+    getImagePath('/images/landing/gallery-hero-03.webp'),
   ];
 
   const handleSelect = (selection: 'kikyoan' | 'greengrass') => {
@@ -99,6 +105,17 @@ const Landing = () => {
       return () => clearInterval(interval);
     }
   }, [selected, greengrassImages.length]);
+
+  // のとフォトの画像スライドショー
+  useEffect(() => {
+    if (selected === null) {
+      const interval = setInterval(() => {
+        setGalleryImageIndex((prev) => (prev + 1) % galleryImages.length);
+      }, 6000); // 6秒ごとに切り替え
+
+      return () => clearInterval(interval);
+    }
+  }, [selected, galleryImages.length]);
 
   return (
     <div className="min-h-screen bg-stone-50">
@@ -207,6 +224,8 @@ const Landing = () => {
               <GalleryHeroBanner
                 key="gallery-entrance"
                 onClick={() => handleGallerySelect('すべて')}
+                imageIndex={galleryImageIndex}
+                images={galleryImages}
               />
             </>
           )}

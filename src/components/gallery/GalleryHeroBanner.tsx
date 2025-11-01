@@ -1,22 +1,35 @@
-import { motion } from 'framer-motion';
-
-import { getImagePath } from '../../utils/getImagePath';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface GalleryHeroBannerProps {
   onClick: () => void;
+  imageIndex: number;
+  images: string[];
 }
 
-const GalleryHeroBanner = ({ onClick }: GalleryHeroBannerProps) => {
+const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerProps) => {
   return (
     <div
       onClick={onClick}
       className="h-40 cursor-pointer flex items-center justify-center relative overflow-hidden group"
     >
-      {/* 背景画像 */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${getImagePath('/images/landing/gallery-hero.webp')})` }}
-      />
+      {/* 背景画像スライドショー */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={imageIndex}
+          initial={{ opacity: 0, x: '12%' }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: '-12%' }}
+          transition={{ duration: 2.5, ease: 'easeInOut' }}
+          className="absolute bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${images[imageIndex]})`,
+            width: '150%',
+            height: '150%',
+            top: '-25%',
+            left: '-25%',
+          }}
+        />
+      </AnimatePresence>
       {/* オーバーレイ */}
       <div className="absolute inset-0 bg-blue-900/60" />
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
