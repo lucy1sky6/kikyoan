@@ -34,7 +34,7 @@ const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerPro
       <div className="absolute inset-0 bg-blue-900/60" />
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
       <div className="flex items-center justify-between w-full px-4 md:px-12 z-10">
-        <div>
+        <div className="text-center">
           <motion.h2
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -43,7 +43,7 @@ const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerPro
           >
             のとフォト
           </motion.h2>
-          <p className="text-sm text-white ml-4">
+          <p className="text-sm text-white">
             写真で巡る、能登の風景
           </p>
         </div>
