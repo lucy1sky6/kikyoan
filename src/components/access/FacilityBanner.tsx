@@ -12,6 +12,7 @@ interface FacilityBannerProps {
   mapTitle: string;
   zIndex?: number;
   photoSrc?: string;
+  customGradientColor?: string; // カスタムグラデーション色（RGB）
 }
 
 const FacilityBanner = ({
@@ -26,41 +27,37 @@ const FacilityBanner = ({
   mapTitle,
   zIndex = 10,
   photoSrc,
+  customGradientColor,
 }: FacilityBannerProps) => {
   return (
     <div
-      className={`relative h-48 bg-gradient-to-r ${gradientFrom} ${gradientTo} flex items-center`}
+      className={`relative h-48 ${!customGradientColor ? `bg-gradient-to-r ${gradientFrom} ${gradientTo}` : ''} flex items-center`}
       style={{
         clipPath: 'polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px))',
         zIndex,
         marginBottom: '-1px',
         boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+        ...(customGradientColor && {
+          background: customGradientColor,
+        }),
       }}
     >
-      {/* 背景画像（マップの左側部分のみ） */}
+      {/* 背景画像（マップの左側部分のみ）- 左側を透明に、右側を不透明に */}
       {photoSrc && (
-        <div
-          className="absolute top-0 left-0 bottom-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${photoSrc})`,
-            right: 'max(128px, min(320px, 20%))', // マップの幅に合わせて調整
-          }}
-        />
+        <>
+          <div
+            className="absolute top-0 left-0 bottom-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${photoSrc})`,
+              right: 'max(128px, min(320px, 20%))', // マップの幅に合わせて調整
+              WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 45%)',
+              maskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 45%)',
+            }}
+          />
+          {/* 写真を見やすくするための暗いオーバーレイ */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </>
       )}
-
-      {/* グラデーションオーバーレイ（写真がある場合のみ） - 元の背景色から透明へ */}
-      {photoSrc && (
-        <div
-          className={`absolute top-0 left-0 bottom-0 bg-gradient-to-r ${gradientFrom} ${gradientTo}`}
-          style={{
-            right: 'max(128px, min(320px, 20%))', // マップの幅に合わせて調整
-            WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 45%)',
-            maskImage: 'linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 45%)',
-          }}
-        />
-      )}
-
-      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* テキスト情報（リンク） */}
       <a

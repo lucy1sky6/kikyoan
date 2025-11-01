@@ -20,6 +20,7 @@ const NearbyFacilities = () => {
           mapTitle="小木漁港の地図"
           zIndex={14}
           photoSrc={getImagePath('/images/facilities/ogi-port.webp')}
+          customGradientColor="rgb(70,130,180)"
         />
 
         {/* イカの駅 つくモール */}
@@ -35,6 +36,7 @@ const NearbyFacilities = () => {
           mapTitle="イカの駅 つくモールの地図"
           zIndex={13}
           photoSrc={getImagePath('/images/facilities/ika-no-eki.webp')}
+          customGradientColor="rgb(252,137,0)"
         />
 
         {/* のと海洋ふれあいセンター */}
@@ -50,6 +52,7 @@ const NearbyFacilities = () => {
           mapTitle="のと海洋ふれあいセンターの地図"
           zIndex={12}
           photoSrc={getImagePath('/images/facilities/marine-center.webp')}
+          customGradientColor="rgb(29,179,167)"
         />
 
         {/* 縄文真脇遺跡 */}
@@ -65,6 +68,7 @@ const NearbyFacilities = () => {
           mapTitle="縄文真脇遺跡の地図"
           zIndex={11}
           photoSrc={getImagePath('/images/facilities/mawaki-ruins.webp')}
+          customGradientColor="rgb(215,164,42)"
         />
 
         {/* 柳田植物公園 */}
@@ -80,6 +84,7 @@ const NearbyFacilities = () => {
           mapTitle="柳田植物公園の地図"
           zIndex={10}
           photoSrc={getImagePath('/images/facilities/yanagida-park.webp')}
+          customGradientColor="rgb(38,139,34)"
         />
       </div>
     </div>
