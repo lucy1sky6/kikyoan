@@ -2,12 +2,13 @@ interface LocationMapProps {
   title: string;
   mapSrc: string;
   address: string;
+  titleColor?: string;
 }
 
-const LocationMap = ({ title, mapSrc, address }: LocationMapProps) => {
+const LocationMap = ({ title, mapSrc, address, titleColor = 'text-gray-900' }: LocationMapProps) => {
   return (
     <div>
-      <p className="text-xl text-center font-semibold mb-4">{title}</p>
+      <p className={`text-xl text-center font-semibold mb-4 ${titleColor}`}>{title}</p>
       <div className="relative w-full" style={{ paddingBottom: '75%' }}>
         <iframe
           src={mapSrc}

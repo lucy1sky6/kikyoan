@@ -47,7 +47,7 @@ const GalleryHeroBanner = ({ onClick, imageIndex, images }: GalleryHeroBannerPro
             写真で巡る、能登の風景
           </p>
         </div>
-        <p className="text-sm md:text-lg text-white bg-white/30 px-3 py-2 md:px-6 rounded-full font-sans whitespace-nowrap">
+        <p className="text-sm md:text-lg text-white bg-white/30 px-3 py-2 md:px-6 rounded-full font-sans whitespace-nowrap backdrop-blur-sm">
           詳しく見る
         </p>
       </div>

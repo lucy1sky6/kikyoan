@@ -70,8 +70,8 @@ const FacilityBanner = ({
           {title}
         </h4>
         <p className="text-sm sm:text-base text-white drop-shadow-md mb-2 sm:mb-3">{description}</p>
-        <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/90 px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-md">
-          <FaCar className={`${carIconColor} text-xs sm:text-base`} />
+        <div className="inline-flex items-center gap-1 sm:gap-2 bg-white/45 px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-md backdrop-blur-sm">
+          <FaCar className={`${carIconColor} text-xs sm:text-base drop-shadow-[0_0_2px_rgba(255,255,255,0.8)]`} />
           <span className="text-xs sm:text-sm font-semibold text-gray-800">{distance}</span>
         </div>
       </a>

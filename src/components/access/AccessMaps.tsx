@@ -8,13 +8,15 @@ const AccessMaps = () => {
         title="桔梗庵"
         mapSrc="https://maps.google.com/maps?q=石川県鳳珠郡能登町小木10-28&t=&z=15&ie=UTF8&iwloc=&output=embed"
         address="〒927-0553 石川県鳳珠郡能登町小木10-28"
+        titleColor="text-purple-900"
       />
 
       {/* greengrass */}
       <LocationMap
         title="greengrass"
         mapSrc="https://maps.google.com/maps?q=37.3001348,137.223473&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        address="〒927-0553 石川県鳳珠郡能登町小木"
+        address="〒927-0553 石川県鳳珠郡能登町小木ヘ14-2"
+        titleColor="text-lime-900"
       />
     </div>
   );

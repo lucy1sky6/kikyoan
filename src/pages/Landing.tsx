@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowUp } from 'react-icons/fa';
-import { FaInstagram, FaXTwitter } from 'react-icons/fa6';
+import { FaInstagram } from 'react-icons/fa6';
 import Access from '../components/access/Access';
 import Contact from '../components/layout/Contact';
 import BackButton from '../components/common/BackButton';
@@ -328,7 +328,7 @@ const Landing = () => {
                   title="ここでできること"
                   description={
                     <p>
-                      レンタルスペースとして、また民泊としてご利用いただけます。
+                      レンタルスペースとして、また体験宿泊所としてご利用いただけます。
                       イベントや会議、ワーケーションなど、様々な用途でお使いいただけます。
                     </p>
                   }
@@ -407,7 +407,7 @@ const Landing = () => {
                       <h3 className="text-2xl font-bold text-purple-800 mb-4">料金の目安</h3>
                       <ul className="space-y-3 text-gray-700">
                         <li className="flex justify-between">
-                          <span>1泊（民泊）</span>
+                          <span>1泊（体験宿泊所）</span>
                           <span className="font-semibold">¥XX,XXX~</span>
                         </li>
                         <li className="flex justify-between">
@@ -436,14 +436,6 @@ const Landing = () => {
                           className="text-purple-600 hover:text-purple-800 transition text-2xl"
                         >
                           <FaInstagram />
-                        </a>
-                        <a
-                          href="https://twitter.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-600 hover:text-purple-800 transition text-2xl"
-                        >
-                          <FaXTwitter />
                         </a>
                       </div>
                       <p className="text-gray-700">
@@ -734,14 +726,6 @@ const Landing = () => {
                           className="text-lime-600 hover:text-lime-800 transition text-2xl"
                         >
                           <FaInstagram />
-                        </a>
-                        <a
-                          href="https://twitter.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-lime-600 hover:text-lime-800 transition text-2xl"
-                        >
-                          <FaXTwitter />
                         </a>
                       </div>
                       <p className="text-gray-700">
