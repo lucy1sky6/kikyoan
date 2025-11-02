@@ -3,8 +3,6 @@ import { getImagePath } from '../utils/getImagePath';
 
 // 写真データ（画像ファイルは public/images/gallery/ に配置）
 export const GALLERY_PHOTOS: Photo[] = [
-  { id: 4, src: getImagePath('/images/gallery/festival/01.webp'), alt: '祭の様子', description: '地域の伝統的な祭りで賑わう小木の町。', tags: ['祭'] },
-  { id: 8, src: getImagePath('/images/gallery/festival/02.webp'), alt: 'イカ祭り', description: '新鮮なイカを味わえる地域の人気イベント。', tags: ['祭', '海'] },
   { id: 12, src: getImagePath('/images/gallery/other/01.webp'), alt: '伝統工芸', description: '能登に伝わる伝統的な工芸品の数々。', tags: ['その他'] },
   { id: 13, src: getImagePath('/images/gallery/kikyoan/04.webp'), alt: '桔梗庵の室内', description: '落ち着いた雰囲気の和の空間。能登の静けさが感じられます。', tags: ['桔梗庵'] },
   { id: 17, src: getImagePath('/images/gallery/kikyoan/05.webp'), alt: '桔梗庵の外観', description: '海に近い静かな場所に佇む古民家の様子。', tags: ['桔梗庵'] },
@@ -20,7 +18,10 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 23, src: getImagePath('/images/gallery/sea/06.webp'), alt: '小木の海', description: '静かな小木の海辺の風景。', tags: ['海'] },
   { id: 24, src: getImagePath('/images/gallery/sea/07.webp'), alt: '日本海', description: '能登半島から望む雄大な日本海。', tags: ['海'] },
   { id: 26, src: getImagePath('/images/gallery/town/01.webp'), alt: '小木の町並み', description: '能登の港町、小木の風景。', tags: ['小木の町'] },
+  { id: 27, src: getImagePath('/images/gallery/festival/01.webp'), alt: '祭りの風景', description: '地域の伝統的な祭りで賑わう小木の町。', tags: ['祭り'] },
+  { id: 28, src: getImagePath('/images/gallery/festival/02.webp'), alt: '祭りの様子', description: '能登の祭りに集まる人々の活気。', tags: ['祭り'] },
+  { id: 29, src: getImagePath('/images/gallery/festival/03.webp'), alt: '祭りの賑わい', description: '伝統を受け継ぐ祭りの一コマ。', tags: ['祭り'] },
 ];
 
 // タグのリスト
-export const GALLERY_TAGS = ['すべて', '桔梗庵', 'greengrass', '海', '祭', '小木の町', 'その他'];
+export const GALLERY_TAGS = ['すべて', '桔梗庵', 'greengrass', '海', '祭り', '小木の町', 'その他'];
