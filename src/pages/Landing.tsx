@@ -513,6 +513,21 @@ const Landing = () => {
                   businessHours="9:00〜18:00　不定休"
                 />
 
+                {/* 装飾イラスト */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                  className="flex justify-center mt-12 mb-8"
+                >
+                  <img
+                    src={getImagePath('/images/kikyoan-figure.webp')}
+                    alt=""
+                    className="w-64 h-64 rounded-2xl"
+                    aria-hidden="true"
+                  />
+                </motion.div>
+
                 {/* 桔梗庵ストーリーモーダル */}
                 <StoryModal
                   isOpen={isKikyoanStoryOpen}
@@ -1001,6 +1016,21 @@ const Landing = () => {
                   linkHoverColor="hover:text-lime-900"
                   businessHours="9:00〜18:00　不定休"
                 />
+
+                {/* 装飾イラスト */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.9 }}
+                  className="flex justify-center mt-12 mb-8"
+                >
+                  <img
+                    src={getImagePath('/images/greengrass-figure.webp')}
+                    alt=""
+                    className="w-64 h-64 rounded-2xl"
+                    aria-hidden="true"
+                  />
+                </motion.div>
 
                 {/* greengrassストーリーモーダル */}
                 <StoryModal
