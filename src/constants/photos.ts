@@ -15,6 +15,7 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 10, src: getImagePath('/images/gallery/greengrass/03.webp'), alt: 'ピーリングウッド', description: '自然の木材を活かした独特の風合いの製品。', tags: ['greengrass'] },
   { id: 11, src: getImagePath('/images/gallery/sea/03.webp'), alt: '日本海', description: '雄大な日本海の景色を一望できる絶景スポット。', tags: ['海'] },
   { id: 12, src: getImagePath('/images/gallery/other/01.webp'), alt: '伝統工芸', description: '能登に伝わる伝統的な工芸品の数々。', tags: ['その他'] },
+  { id: 13, src: getImagePath('/images/gallery/kikyoan/04.webp'), alt: '桔梗庵の室内', description: '落ち着いた雰囲気の和の空間。能登の静けさが感じられます。', tags: ['桔梗庵'] },
 ];
 
 // タグのリスト

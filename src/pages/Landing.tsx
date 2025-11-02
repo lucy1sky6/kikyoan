@@ -9,6 +9,7 @@ import ContactSection from '../components/layout/ContactSection';
 import MagazineSection from '../components/content/MagazineSection';
 import StoryModal from '../components/content/StoryModal';
 import ReadMoreButton from '../components/common/ReadMoreButton';
+import ViewPhotosButton from '../components/common/ViewPhotosButton';
 import GalleryHeroBanner from '../components/gallery/GalleryHeroBanner';
 import GalleryPage from './GalleryPage';
 import { getImagePath } from '../utils/getImagePath';
@@ -372,15 +373,14 @@ const Landing = () => {
                           bgColor="bg-purple-600"
                           hoverColor="hover:bg-purple-700"
                         />
-                        <button
+                        <ViewPhotosButton
                           onClick={(e) => {
                             e.stopPropagation();
                             handleGallerySelect('桔梗庵');
                           }}
-                          className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
-                        >
-                          🖼️ フォトを見る
-                        </button>
+                          bgColor="bg-purple-600"
+                          hoverColor="hover:bg-purple-700"
+                        />
                       </div>
                     </>
                   }
@@ -479,8 +479,6 @@ const Landing = () => {
                   titleColor="text-purple-900"
                   phone="0768-74-0072"
                   phoneLink="tel:0768740072"
-                  website="https://example.com"
-                  websiteLink="https://example.com"
                   linkColor="text-purple-700"
                   linkHoverColor="hover:text-purple-900"
                 />
@@ -794,15 +792,14 @@ const Landing = () => {
                           bgColor="bg-lime-600"
                           hoverColor="hover:bg-lime-700"
                         />
-                        <button
+                        <ViewPhotosButton
                           onClick={(e) => {
                             e.stopPropagation();
                             handleGallerySelect('greengrass');
                           }}
-                          className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
-                        >
-                          🖼️ フォトを見る
-                        </button>
+                          bgColor="bg-lime-600"
+                          hoverColor="hover:bg-lime-700"
+                        />
                       </div>
                     </>
                   }
@@ -930,8 +927,6 @@ const Landing = () => {
                   titleColor="text-lime-900"
                   phone="0768-74-0072"
                   phoneLink="tel:0768740072"
-                  website="https://greengrass-example.com"
-                  websiteLink="https://greengrass-example.com"
                   linkColor="text-lime-700"
                   linkHoverColor="hover:text-lime-900"
                 />

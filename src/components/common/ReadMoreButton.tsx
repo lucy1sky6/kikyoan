@@ -1,3 +1,5 @@
+import { FaBookOpen } from 'react-icons/fa';
+
 interface ReadMoreButtonProps {
   onClick: () => void;
   bgColor: string;
@@ -11,9 +13,10 @@ const ReadMoreButton = ({ onClick, bgColor, hoverColor }: ReadMoreButtonProps) =
         e.stopPropagation();
         onClick();
       }}
-      className={`inline-block px-6 py-2 ${bgColor} text-white rounded-full ${hoverColor} transition-colors shadow-md font-sans`}
+      className={`inline-flex items-center gap-2 px-6 py-2 ${bgColor} text-white rounded-full ${hoverColor} transition-colors shadow-md font-sans`}
     >
-      📖 続きを読む
+      <FaBookOpen className="text-white" />
+      続きを読む
     </button>
   );
 };
