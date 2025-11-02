@@ -75,7 +75,7 @@ const AccessFlowChart = () => {
               bgColor="bg-orange-200"
               textColor="text-orange-900"
               photoAreaColor="bg-orange-300"
-              className="shadow-none"
+              className="shadow-none !rounded-t-lg !rounded-b-none"
               photoSrc={getImagePath('/images/access/ogi-entrance.webp')}
             />
           </div>
