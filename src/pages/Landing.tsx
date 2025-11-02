@@ -148,7 +148,7 @@ const Landing = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
-                  className="hidden md:block absolute top-1/2 z-20 pointer-events-none"
+                  className="hidden md:block absolute top-1/2 z-[5] pointer-events-none"
                   style={{
                     left: '50%',
                     marginLeft: '-5vw',  // 画像幅10vwの半分
@@ -171,7 +171,7 @@ const Landing = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
-                  className="md:hidden absolute top-1/2 z-20 pointer-events-none"
+                  className="md:hidden absolute top-1/2 z-[5] pointer-events-none"
                   style={{
                     left: '50%',
                     marginLeft: '-10vw',  // 画像幅20vwの半分

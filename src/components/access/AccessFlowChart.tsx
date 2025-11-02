@@ -66,20 +66,20 @@ const AccessFlowChart = () => {
           />
         </div>
 
+        {/* 小木入口 */}
+        <div className="text-center">
+          <RouteStopNode
+            name="小木入口"
+            bgColor="bg-orange-200"
+            textColor="text-orange-900"
+            photoAreaColor="bg-orange-300"
+            className="shadow-none !rounded-t-lg !rounded-b-none"
+            photoSrc={getImagePath('/images/access/ogi-entrance.webp')}
+          />
+        </div>
+
         {/* 小木エリア（大きなコンテナ） */}
         <div className="relative rounded-2xl pt-3 pb-6 sm:pb-8 px-3 sm:px-6 md:px-8 bg-orange-200">
-          {/* 小木入口（エリアの上部に重なる） */}
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
-            <RouteStopNode
-              name="小木入口"
-              bgColor="bg-orange-200"
-              textColor="text-orange-900"
-              photoAreaColor="bg-orange-300"
-              className="shadow-none !rounded-t-lg !rounded-b-none"
-              photoSrc={getImagePath('/images/access/ogi-entrance.webp')}
-            />
-          </div>
-
           <div className="mb-4 sm:mb-6">
             <h4 className="text-base sm:text-lg md:text-xl font-bold text-orange-900">小木エリア</h4>
           </div>
