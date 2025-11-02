@@ -110,7 +110,7 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4"
         >
           {filteredPhotos.map((photo, index) => (
             <PhotoGridItem
