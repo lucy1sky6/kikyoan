@@ -3,7 +3,6 @@ interface RouteStopNodeProps {
   bgColor: string;
   textColor?: string;
   photoAreaColor: string;
-  borderColor?: string;
   className?: string;
   photoSrc?: string;
 }
@@ -13,7 +12,6 @@ const RouteStopNode = ({
   bgColor,
   textColor = 'text-gray-900',
   photoAreaColor,
-  borderColor = 'border-gray-400',
   className = '',
   photoSrc,
 }: RouteStopNodeProps) => {

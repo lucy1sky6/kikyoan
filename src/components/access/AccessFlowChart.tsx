@@ -75,7 +75,6 @@ const AccessFlowChart = () => {
               bgColor="bg-orange-200"
               textColor="text-orange-900"
               photoAreaColor="bg-orange-300"
-              borderColor="border-orange-500"
               className="shadow-none"
               photoSrc={getImagePath('/images/access/ogi-entrance.webp')}
             />
@@ -95,16 +94,15 @@ const AccessFlowChart = () => {
                   <>
                     🚶 徒歩15分
                     <br />
-                    石川県漁協小木支所方向
+                    石川県漁協 小木支所方向
                   </>
                 }
               />
               <RouteStopNode
                 name="桔梗庵"
-                bgColor="bg-purple-200"
-                textColor="text-purple-900"
-                photoAreaColor="bg-purple-300"
-                borderColor="border-purple-400"
+                bgColor="bg-purple-900"
+                textColor="text-white"
+                photoAreaColor="bg-purple-800"
                 className="shadow-lg"
                 photoSrc={getImagePath('/images/access/kikyoan.webp')}
               />
@@ -130,16 +128,15 @@ const AccessFlowChart = () => {
                   <>
                     🚶 徒歩15分
                     <br />
-                    能登町役場小木支所方向
+                    能登町役場 小木支所方向
                   </>
                 }
               />
               <RouteStopNode
                 name="greengrass"
-                bgColor="bg-lime-200"
-                textColor="text-lime-900"
-                photoAreaColor="bg-lime-300"
-                borderColor="border-lime-400"
+                bgColor="bg-lime-900"
+                textColor="text-white"
+                photoAreaColor="bg-lime-800"
                 className="shadow-lg"
                 photoSrc={getImagePath('/images/access/greengrass.webp')}
               />
