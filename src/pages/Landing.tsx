@@ -143,12 +143,12 @@ const Landing = () => {
                 transition={{ duration: 0.5 }}
                 className="flex flex-col md:flex-row min-h-[80vh] relative"
               >
-                {/* 桔梗の花 - 2分割の境界線上に配置 */}
+                {/* 桔梗の花 - 横並び用（PC） */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
-                  className="hidden md:block absolute top-1/2 z-0 pointer-events-none"
+                  className="hidden md:block absolute top-1/2 z-20 pointer-events-none"
                   style={{
                     left: '50%',
                     marginLeft: '-5vw',  // 画像幅10vwの半分
@@ -162,7 +162,30 @@ const Landing = () => {
                     style={{
                       width: '10vw',
                       height: '10vw'
-    }}
+                    }}
+                  />
+                </motion.div>
+
+                {/* 桔梗の花 - 縦並び用（スマホ） */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="md:hidden absolute top-1/2 z-20 pointer-events-none"
+                  style={{
+                    left: '50%',
+                    marginLeft: '-10vw',  // 画像幅20vwの半分
+                    marginTop: '-10vw'    // 画像高20vwの半分
+                  }}
+                >
+                  <img
+                    src={getImagePath('/images/kikyoan-flower.webp')}
+                    alt="桔梗の花"
+                    className="drop-shadow-2xl"
+                    style={{
+                      width: '20vw',
+                      height: '20vw'
+                    }}
                   />
                 </motion.div>
 
