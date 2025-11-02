@@ -84,13 +84,13 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
         hoverColor="hover:bg-blue-700"
       />
 
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
         {/* タイトル */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-center mb-20 mt-16 md:mt-20"
+          className="text-center mb-20 mt-16 md:mt-20 px-4"
         >
           <h1 className="text-5xl md:text-6xl font-serif text-blue-900 mb-6">のとフォト</h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
@@ -99,18 +99,20 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
         </motion.div>
 
         {/* タグフィルター */}
-        <TagFilter
-          tags={tags}
-          selectedTag={selectedTag}
-          onTagSelect={setSelectedTag}
-        />
+        <div className="px-4">
+          <TagFilter
+            tags={tags}
+            selectedTag={selectedTag}
+            onTagSelect={setSelectedTag}
+          />
+        </div>
 
         {/* 格子状写真ギャラリー */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4"
+          className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4"
         >
           {filteredPhotos.map((photo, index) => (
             <PhotoGridItem
