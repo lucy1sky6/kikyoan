@@ -98,17 +98,22 @@ const Lightbox = ({ photos, currentIndex, onClose, onPrevious, onNext }: Lightbo
 
         {/* 写真の説明 */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white w-[90vw] max-w-3xl px-3 py-2 md:px-6 md:py-3 bg-black/60 backdrop-blur-sm rounded-lg">
-          <div className="text-center pr-12">
-            <p className="font-semibold mb-1 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.75rem, 3.5vw, 1.25rem)' }}>{currentPhoto.alt}</p>
-            {currentPhoto.description && (
-              <p className="text-gray-200 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.625rem, 2.5vw, 0.875rem)' }}>{currentPhoto.description}</p>
-            )}
+          {/* タイトル行：3分割でセンタリング */}
+          <div className="flex items-start mb-1">
+            <div className="w-16"></div>
+            <div className="flex-1 text-center">
+              <p className="font-semibold whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.75rem, 3.5vw, 1.25rem)' }}>{currentPhoto.alt}</p>
+            </div>
+            <div className="w-16 flex justify-end">
+              <p className="text-xs text-gray-400 whitespace-nowrap pt-1">
+                {currentIndex + 1} / {photos.length}
+              </p>
+            </div>
           </div>
-          <div className="absolute top-2 right-3">
-            <p className="text-xs text-gray-400 whitespace-nowrap">
-              {currentIndex + 1} / {photos.length}
-            </p>
-          </div>
+          {/* 説明文：普通に中央揃え */}
+          {currentPhoto.description && (
+            <p className="text-center text-gray-200 whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontSize: 'clamp(0.625rem, 2.5vw, 0.875rem)' }}>{currentPhoto.description}</p>
+          )}
         </div>
       </motion.div>
     </AnimatePresence>

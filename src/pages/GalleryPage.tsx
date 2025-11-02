@@ -75,7 +75,7 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 px-4 relative"
+      className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 relative"
     >
       {/* 戻るボタン */}
       <BackButton

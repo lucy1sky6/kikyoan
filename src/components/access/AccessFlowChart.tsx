@@ -5,8 +5,8 @@ import { getImagePath } from '../../utils/getImagePath';
 
 const AccessFlowChart = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 p-2 sm:p-4 md:p-6 lg:p-8 mb-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
-      <div className="max-w-5xl mx-auto scale-[0.6] sm:scale-75 md:scale-90 lg:scale-100 origin-top" style={{ width: 'max-content' }}>
+    <div className="bg-gradient-to-b from-white to-gray-50 p-2 sm:p-4 md:p-6 lg:p-8 mb-8 flex justify-center" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
+      <div className="max-w-5xl scale-[0.8] sm:scale-90 md:scale-95 lg:scale-100" style={{ width: 'max-content', transformOrigin: 'top center' }}>
         {/* 中央縦並びルート */}
         <div className="text-center mb-8">
           {/* 全国各地（電車ルート用） */}
