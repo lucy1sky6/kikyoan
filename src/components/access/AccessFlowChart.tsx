@@ -5,7 +5,7 @@ import { getImagePath } from '../../utils/getImagePath';
 
 const AccessFlowChart = () => {
   return (
-    <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-2 sm:p-4 md:p-6 lg:p-8 rounded-xl mb-8">
+    <div className="bg-gradient-to-b from-white to-gray-50 p-2 sm:p-4 md:p-6 lg:p-8 mb-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
       <div className="max-w-5xl mx-auto">
         {/* 中央縦並びルート */}
         <div className="text-center mb-8">
@@ -34,7 +34,7 @@ const AccessFlowChart = () => {
           />
 
           {/* 能登空港IC */}
-          <RouteNode name="能登空港IC" className="mb-3" />
+          <RouteNode name="能登空港IC" bgColor="bg-green-600" textColor="text-white" className="mb-3" />
 
           {/* お車/バス */}
           <FlowArrow direction="down" description="🚗🚌" />

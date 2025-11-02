@@ -403,7 +403,7 @@ const Landing = () => {
                   <h2 className="text-4xl font-serif font-bold text-purple-900 mb-8 text-center">料金・予約について</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* 料金の目安 */}
-                    <div className="bg-white p-8 shadow-lg">
+                    <div className="bg-gradient-to-b from-white to-purple-50 p-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
                       <h3 className="text-2xl font-bold text-purple-800 mb-4">料金の目安</h3>
                       <ul className="space-y-3 text-gray-700">
                         <li className="flex justify-between">
@@ -423,7 +423,7 @@ const Landing = () => {
                     </div>
 
                     {/* 予約について */}
-                    <div className="bg-white p-8 shadow-lg">
+                    <div className="bg-gradient-to-b from-white to-purple-50 p-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
                       <h3 className="text-2xl font-bold text-purple-800 mb-4">予約について</h3>
                       <p className="text-gray-700 mb-4">
                         最新の空き状況や予約については、SNSにてお知らせしております。
@@ -693,7 +693,7 @@ const Landing = () => {
                   <h2 className="text-4xl font-serif font-bold text-lime-900 mb-8 text-center">価格・在庫について</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* 価格の目安 */}
-                    <div className="bg-white p-8 shadow-lg">
+                    <div className="bg-gradient-to-b from-white to-lime-50 p-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
                       <h3 className="text-2xl font-bold text-lime-800 mb-4">価格の目安</h3>
                       <ul className="space-y-3 text-gray-700">
                         <li className="flex justify-between">
@@ -713,7 +713,7 @@ const Landing = () => {
                     </div>
 
                     {/* 在庫について */}
-                    <div className="bg-white p-8 shadow-lg">
+                    <div className="bg-gradient-to-b from-white to-lime-50 p-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
                       <h3 className="text-2xl font-bold text-lime-800 mb-4">在庫について</h3>
                       <p className="text-gray-700 mb-4">
                         最新の在庫状況については、SNSにてお知らせしております。

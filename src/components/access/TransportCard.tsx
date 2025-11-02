@@ -8,7 +8,7 @@ interface TransportCardProps {
 
 const TransportCard = ({ icon, title, children }: TransportCardProps) => {
   return (
-    <div className="p-6 bg-gray-50 rounded-lg border-2 border-gray-300">
+    <div className="p-6 bg-gradient-to-b from-white to-gray-50" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
       <div className="flex items-center gap-2 font-bold text-lg mb-3 text-gray-900">
         <span className="text-2xl flex items-center">
           {icon}
