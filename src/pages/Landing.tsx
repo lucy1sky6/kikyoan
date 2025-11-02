@@ -593,8 +593,12 @@ const Landing = () => {
                         近くの漁港で手に入れた新鮮な魚を刺し身にして味わうこともできます。
                       </p>
 
-                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-                        <span className="text-gray-500">刺し身の写真</span>
+                      <div className="my-8 rounded-lg overflow-hidden">
+                        <img
+                          src={getImagePath('/images/kikyoan/sashimi.webp')}
+                          alt="新鮮な刺し身"
+                          className="w-full h-auto"
+                        />
                       </div>
 
                       <p className="mb-6">
@@ -834,7 +838,7 @@ const Landing = () => {
                     </>
                   }
                   imagePosition="right"
-                  aspectRatio="square"
+                  aspectRatio="landscape"
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
@@ -1068,6 +1072,15 @@ const Landing = () => {
                       <p className="mb-6">
                         ピーリングウッドは、木の皮を剥いた独特の風合いを持つ木材製品です。
                       </p>
+
+                      <div className="my-8 rounded-lg overflow-hidden">
+                        <img
+                          src={getImagePath('/images/greengrass/peeling.webp')}
+                          alt="ピーリングウッド"
+                          className="w-full h-auto"
+                        />
+                      </div>
+
                       <p className="mb-6">
                         自然の木材を活かした素朴な美しさと、手に馴染む温もりが特徴です。
                         インテリアとしても、実用品としてもお使いいただけます。
