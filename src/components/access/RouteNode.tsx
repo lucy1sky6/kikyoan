@@ -13,7 +13,8 @@ const RouteNode = ({
 }: RouteNodeProps) => {
   return (
     <div
-      className={`${bgColor} ${textColor} px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 lg:px-6 rounded-lg font-bold shadow-lg text-xs sm:text-sm md:text-base lg:text-lg whitespace-nowrap ${className}`}
+      className={`${bgColor} ${textColor} px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 lg:px-6 rounded-lg font-bold text-xs sm:text-sm md:text-base lg:text-lg whitespace-nowrap ${className}`}
+      style={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.15)' }}
     >
       {name}
     </div>

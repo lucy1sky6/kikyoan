@@ -5,8 +5,8 @@ import { getImagePath } from '../../utils/getImagePath';
 
 const AccessFlowChart = () => {
   return (
-    <div className="bg-gradient-to-b from-white to-gray-50 p-2 sm:p-4 md:p-6 lg:p-8 mb-8" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
-      <div className="max-w-5xl mx-auto">
+    <div className="bg-gradient-to-b from-white to-gray-50 p-2 sm:p-4 md:p-6 lg:p-8 mb-8 overflow-x-auto" style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}>
+      <div className="max-w-5xl mx-auto min-w-max">
         {/* 中央縦並びルート */}
         <div className="text-center mb-8">
           {/* 全国各地（電車ルート用） */}
@@ -21,8 +21,8 @@ const AccessFlowChart = () => {
           {/* 金沢 */}
           <RouteStopNode
             name="金沢駅"
-            bgColor="bg-gray-200"
-            photoAreaColor="bg-gray-300"
+            bgColor="bg-cyan-50"
+            photoAreaColor="bg-cyan-100"
             className="mb-3 shadow-md"
             photoSrc={getImagePath('/images/access/kanazawa-station.webp')}
           />
@@ -45,8 +45,8 @@ const AccessFlowChart = () => {
               {/* 中央：のと里山空港 */}
               <RouteStopNode
                 name="のと里山空港"
-                bgColor="bg-gray-200"
-                photoAreaColor="bg-gray-300"
+                bgColor="bg-cyan-50"
+                photoAreaColor="bg-cyan-100"
                 className="shadow-md"
                 photoSrc={getImagePath('/images/access/noto-airport.webp')}
               />
@@ -67,7 +67,7 @@ const AccessFlowChart = () => {
         </div>
 
         {/* 小木エリア（大きなコンテナ） */}
-        <div className="relative border-2 sm:border-4 border-orange-300 rounded-2xl pt-3 pb-6 sm:pb-8 px-3 sm:px-6 md:px-8 bg-orange-50">
+        <div className="relative rounded-2xl pt-3 pb-6 sm:pb-8 px-3 sm:px-6 md:px-8 bg-orange-200">
           {/* 小木入口（エリアの上部に重なる） */}
           <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
             <RouteStopNode
@@ -76,7 +76,7 @@ const AccessFlowChart = () => {
               textColor="text-orange-900"
               photoAreaColor="bg-orange-300"
               borderColor="border-orange-500"
-              className="shadow-lg border-2 border-orange-400"
+              className="shadow-none"
               photoSrc={getImagePath('/images/access/ogi-entrance.webp')}
             />
           </div>
@@ -86,7 +86,7 @@ const AccessFlowChart = () => {
           </div>
 
           {/* 施設分岐 */}
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
+          <div className="flex flex-row justify-center items-center gap-2 sm:gap-4 md:gap-8">
             {/* 桔梗庵 */}
             <div className="flex-1 text-center">
               <FlowArrow
