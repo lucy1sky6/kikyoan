@@ -29,13 +29,14 @@ const FacilityBanner = ({
   photoSrc,
   customGradientColor,
 }: FacilityBannerProps) => {
+  const cutSize = '20px';
+
   return (
     <div
-      className={`relative h-48 ${!customGradientColor ? `bg-gradient-to-r ${gradientFrom} ${gradientTo}` : ''} flex items-center`}
+      className={`relative h-48 ${!customGradientColor ? `bg-gradient-to-r ${gradientFrom} ${gradientTo}` : ''} flex items-center -mb-[20px]`}
       style={{
-        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px))',
+        clipPath: `polygon(0 0, 100% 0, 100% 100%, ${cutSize} 100%, 0 calc(100% - ${cutSize}))`,
         zIndex,
-        marginBottom: '-30px',
         boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
         ...(customGradientColor && {
           background: customGradientColor,
@@ -52,14 +53,14 @@ const FacilityBanner = ({
               right: 'max(128px, min(320px, 20%))', // マップの幅に合わせて調整
               WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 45%)',
               maskImage: 'linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 45%)',
-              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px))',
+              clipPath: `polygon(0 0, 100% 0, 100% 100%, ${cutSize} 100%, 0 calc(100% - ${cutSize}))`,
             }}
           />
           {/* 写真を見やすくするための暗いオーバーレイ */}
           <div
             className="absolute inset-0 bg-black/40"
             style={{
-              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px))',
+              clipPath: `polygon(0 0, 100% 0, 100% 100%, ${cutSize} 100%, 0 calc(100% - ${cutSize}))`,
             }}
           ></div>
         </>

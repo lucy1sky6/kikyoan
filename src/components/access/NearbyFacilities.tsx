@@ -6,7 +6,7 @@ const NearbyFacilities = () => {
     <div className="mt-12 -mx-4">
       <h3 className="text-4xl font-bold mb-8 text-center px-4">近くの施設</h3>
 
-      <div className="space-y-0">
+      <div className="flex flex-col">
         {/* 小木漁港 */}
         <FacilityBanner
           title="小木漁港"
