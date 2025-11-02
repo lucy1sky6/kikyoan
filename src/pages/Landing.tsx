@@ -19,7 +19,15 @@ const Landing = () => {
   const [selected, setSelected] = useState<Selection>(null);
   const [galleryInitialTag, setGalleryInitialTag] = useState<string>('すべて');
   const [isKikyoanStoryOpen, setIsKikyoanStoryOpen] = useState(false);
+  const [isActivitiesStoryOpen, setIsActivitiesStoryOpen] = useState(false);
+  const [isFeaturesStoryOpen, setIsFeaturesStoryOpen] = useState(false);
+  const [isRecommendedStoryOpen, setIsRecommendedStoryOpen] = useState(false);
   const [isGreengrassStoryOpen, setIsGreengrassStoryOpen] = useState(false);
+  const [isChairsStoryOpen, setIsChairsStoryOpen] = useState(false);
+  const [isPeelingStoryOpen, setIsPeelingStoryOpen] = useState(false);
+  const [isWorkshopStoryOpen, setIsWorkshopStoryOpen] = useState(false);
+  const [isExhibitionStoryOpen, setIsExhibitionStoryOpen] = useState(false);
+  const [isMediaStoryOpen, setIsMediaStoryOpen] = useState(false);
   const [kikyoanImageIndex, setKikyoanImageIndex] = useState(0);
   const [greengrassImageIndex, setGreengrassImageIndex] = useState(0);
   const [galleryImageIndex, setGalleryImageIndex] = useState(0);
@@ -138,7 +146,7 @@ const Landing = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
-                  className="hidden md:block absolute top-1/2 z-30 pointer-events-none"
+                  className="hidden md:block absolute top-1/2 z-0 pointer-events-none"
                   style={{
                     left: '50%',
                     marginLeft: '-5vw',  // 画像幅10vwの半分
@@ -152,7 +160,7 @@ const Landing = () => {
                     style={{
                       width: '10vw',
                       height: '10vw'
-                    }}
+    }}
                   />
                 </motion.div>
 
@@ -323,14 +331,21 @@ const Landing = () => {
                   delay={0.3}
                 />
 
-                {/* セクション2: ここでできること */}
+                {/* セクション2: 桔梗庵でできること */}
                 <MagazineSection
-                  title="ここでできること"
+                  title="桔梗庵でできること"
                   description={
-                    <p>
-                      レンタルスペースとして、また体験宿泊所としてご利用いただけます。
-                      イベントや会議、ワーケーションなど、様々な用途でお使いいただけます。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        レンタルスペースとして、また体験宿泊所としてご利用いただけます。
+                        イベントや会議、ワーケーションなど、様々な用途でお使いいただけます。
+                      </p>
+                      <ReadMoreButton
+                        onClick={() => setIsActivitiesStoryOpen(true)}
+                        bgColor="bg-purple-600"
+                        hoverColor="hover:bg-purple-700"
+                      />
+                    </>
                   }
                   imagePosition="left"
                   aspectRatio="square"
@@ -351,15 +366,22 @@ const Landing = () => {
                         古民家をリノベーションした温かみのある空間です。
                         木のぬくもりを感じながら、能登の自然に囲まれた贅沢な時間をお楽しみください。
                       </p>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleGallerySelect('桔梗庵');
-                        }}
-                        className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
-                      >
-                        🖼️ フォトを見る
-                      </button>
+                      <div className="flex flex-wrap gap-3">
+                        <ReadMoreButton
+                          onClick={() => setIsFeaturesStoryOpen(true)}
+                          bgColor="bg-purple-600"
+                          hoverColor="hover:bg-purple-700"
+                        />
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleGallerySelect('桔梗庵');
+                          }}
+                          className="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors shadow-md font-sans"
+                        >
+                          🖼️ フォトを見る
+                        </button>
+                      </div>
                     </>
                   }
                   imagePosition="right"
@@ -376,12 +398,19 @@ const Landing = () => {
                 <MagazineSection
                   title="こんな方におすすめ"
                   description={
-                    <p>
-                      ・静かな環境でリフレッシュしたい方<br />
-                      ・能登の自然を満喫したい方<br />
-                      ・グループでの研修やワークショップをお考えの方<br />
-                      ・長期滞在でのワーケーションをご希望の方
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        ・静かな環境でリフレッシュしたい方<br />
+                        ・能登の自然を満喫したい方<br />
+                        ・グループでの研修やワークショップをお考えの方<br />
+                        ・長期滞在でのワーケーションをご希望の方
+                      </p>
+                      <ReadMoreButton
+                        onClick={() => setIsRecommendedStoryOpen(true)}
+                        bgColor="bg-purple-600"
+                        hoverColor="hover:bg-purple-700"
+                      />
+                    </>
                   }
                   imagePosition="left"
                   aspectRatio="landscape"
@@ -448,8 +477,8 @@ const Landing = () => {
                 {/* お問い合わせ */}
                 <ContactSection
                   titleColor="text-purple-900"
-                  phone="012-345-6789"
-                  phoneLink="tel:0123456789"
+                  phone="0768-74-0072"
+                  phoneLink="tel:0768740072"
                   website="https://example.com"
                   websiteLink="https://example.com"
                   linkColor="text-purple-700"
@@ -463,6 +492,17 @@ const Landing = () => {
                   title="桔梗庵について"
                   content={
                     <div>
+                      <h3 className="text-xl font-bold mb-4 text-purple-900">名前の由来</h3>
+                      <p className="mb-6">
+                        「桔梗庵」という名前は、苗字が「桔梗」であることに由来しています。
+                        能登には珍しい苗字が多く、桔梗もかなり珍しい苗字の一つです。
+                      </p>
+                      <p className="mb-6">
+                        もともとは、この古民家でリフレクソロジーを始めようと考えており、
+                        そのために「桔梗庵」という名前をつけました。
+                      </p>
+
+                      <h3 className="text-xl font-bold mb-4 mt-8 text-purple-900">能登半島地震と新たな歩み</h3>
                       <p className="mb-6">
                         2024年1月1日、能登半島地震が発生しました。
                         震度7を記録したこの地震により、能登半島の多くの地域が甚大な被害を受けました。
@@ -473,13 +513,18 @@ const Landing = () => {
                       </div>
 
                       <p className="mb-6">
-                        桔梗庵は、能登半島の復興を応援し、この美しい地域を再び活気づけるために生まれました。
+                        幸いにも桔梗庵は全壊を免れました。
+                        この地震をきっかけに、復興を支える方々の宿泊施設として、
+                        桔梗庵は新たな役割を担うことになりました。
+                      </p>
+
+                      <p className="mb-6">
                         地域の方々とともに歩み、訪れる皆様に能登の魅力を感じていただきながら、
                         復興への一助となることを目指しています。
                       </p>
 
                       <p className="mb-6">
-                        古民家をリノベーションしたこの施設は、能登の伝統と新しい息吹が調和する空間です。
+                        築130年の古民家をリノベーションしたこの施設は、能登の伝統と新しい息吹が調和する空間です。
                         海に近い静かな環境で、心安らぐひとときをお過ごしください。
                       </p>
 
@@ -490,6 +535,120 @@ const Landing = () => {
                       <p className="mb-6">
                         桔梗庵でのご滞在が、能登半島の復興を応援する一歩となります。
                         皆様のお越しを心よりお待ちしております。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* 桔梗庵でできることモーダル */}
+                <StoryModal
+                  isOpen={isActivitiesStoryOpen}
+                  onClose={() => setIsActivitiesStoryOpen(false)}
+                  title="桔梗庵でできること"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        桔梗庵では、様々な用途でご利用いただけます。
+                      </p>
+                      <p className="mb-6">
+                        【レンタルスペース】イベント、会議、ワークショップなど、多目的にご利用いただけます。
+                      </p>
+                      <p className="mb-6">
+                        【体験宿泊所】能登の暮らしを体験できる宿泊施設としてもご利用可能です。
+                      </p>
+                      <p className="mb-6">
+                        【ワーケーション】静かな環境で仕事に集中しながら、能登の自然を楽しむことができます。
+                      </p>
+                      <p className="mb-6">
+                        【長期の釣り合宿】旅館とは異なり素泊まりでご利用いただけます。
+                        キッチンが完備されているので、ご自身で調理することも可能です。
+                        近くの漁港で手に入れた新鮮な魚を刺し身にして味わうこともできます。
+                      </p>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">刺し身の写真</span>
+                      </div>
+
+                      <p className="mb-6">
+                        能登の海の幸を存分に楽しみながら、ゆったりとした長期滞在をお楽しみください。
+                      </p>
+
+                      <h3 className="text-xl font-bold mb-4 mt-8 text-purple-900">設備一覧</h3>
+                      <div className="mb-6">
+                        <h4 className="font-bold mb-2 text-purple-800">基本設備</h4>
+                        <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                          <li>Wi-Fi完備</li>
+                          <li>キッチン（調理器具一式）</li>
+                          <li>冷蔵庫</li>
+                          <li>洗濯機</li>
+                          <li>エアコン</li>
+                        </ul>
+                      </div>
+                      <div className="mb-6">
+                        <h4 className="font-bold mb-2 text-purple-800">宿泊設備</h4>
+                        <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                          <li>布団・寝具</li>
+                          <li>バス・トイレ</li>
+                          <li>タオル</li>
+                        </ul>
+                      </div>
+                      <div className="mb-6">
+                        <h4 className="font-bold mb-2 text-purple-800">その他</h4>
+                        <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                          <li>駐車スペース</li>
+                          <li>BBQスペース</li>
+                        </ul>
+                      </div>
+                    </div>
+                  }
+                />
+
+                {/* こんな方におすすめモーダル */}
+                <StoryModal
+                  isOpen={isRecommendedStoryOpen}
+                  onClose={() => setIsRecommendedStoryOpen(false)}
+                  title="こんな方におすすめ"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        桔梗庵は以下のような方々に特におすすめです。
+                      </p>
+                      <p className="mb-6">
+                        【リフレッシュしたい方】日常から離れて、静かな環境でゆっくりと過ごしたい方に最適です。
+                      </p>
+                      <p className="mb-6">
+                        【自然を満喫したい方】能登の美しい海と山に囲まれた環境で、自然を満喫できます。
+                      </p>
+                      <p className="mb-6">
+                        【グループ利用】研修やワークショップなど、グループでの活動にも対応しています。
+                      </p>
+                      <p className="mb-6">
+                        【ワーケーション】長期滞在しながら仕事をする方にも快適な環境を提供します。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* 施設の魅力モーダル */}
+                <StoryModal
+                  isOpen={isFeaturesStoryOpen}
+                  onClose={() => setIsFeaturesStoryOpen(false)}
+                  title="施設の魅力"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        桔梗庵は、築130年の古民家をリノベーションした温かみのある空間です。
+                      </p>
+                      <p className="mb-6">
+                        能登の伝統的な建築様式を活かしながら、現代的な快適さも備えています。
+                        木のぬくもりを感じながら、能登の自然に囲まれた贅沢な時間をお過ごしください。
+                      </p>
+                      <p className="mb-6">
+                        海に近い静かな環境にあり、窓からは美しい能登の風景が広がります。
+                        昔ながらの日本家屋の良さを残しつつ、Wi-Fiやキッチンなど、現代的な設備も完備しています。
+                      </p>
+                      <p className="mb-6">
+                        広々とした空間は、個人でのご利用はもちろん、グループでのイベントやワークショップにも最適です。
                       </p>
                     </div>
                   }
@@ -572,10 +731,17 @@ const Landing = () => {
                 <MagazineSection
                   title="木の椅子へのこだわり"
                   description={
-                    <p>
-                      すべて手作りで丁寧に仕上げた木の椅子をご提供しています。
-                      木の温もりと座り心地の良さを追求した、世界に一つだけの椅子です。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        すべて手作りで丁寧に仕上げた木の椅子をご提供しています。
+                        木の温もりと座り心地の良さを追求した、世界に一つだけの椅子です。
+                      </p>
+                      <ReadMoreButton
+                        onClick={() => setIsChairsStoryOpen(true)}
+                        bgColor="bg-lime-600"
+                        hoverColor="hover:bg-lime-700"
+                      />
+                    </>
                   }
                   imagePosition="left"
                   aspectRatio="square"
@@ -591,10 +757,17 @@ const Landing = () => {
                 <MagazineSection
                   title="ピーリングウッドとは"
                   description={
-                    <p>
-                      ピーリングウッドの説明が入ります。自然の木材を活かした独特の風合いや、
-                      その特徴についての説明テキストがここに入ります。
-                    </p>
+                    <>
+                      <p className="mb-4">
+                        ピーリングウッドの説明が入ります。自然の木材を活かした独特の風合いや、
+                        その特徴についての説明テキストがここに入ります。
+                      </p>
+                      <ReadMoreButton
+                        onClick={() => setIsPeelingStoryOpen(true)}
+                        bgColor="bg-lime-600"
+                        hoverColor="hover:bg-lime-700"
+                      />
+                    </>
                   }
                   imagePosition="right"
                   aspectRatio="square"
@@ -615,15 +788,22 @@ const Landing = () => {
                         実際に工房を訪れて、木の椅子やピーリングウッドをご覧いただけます。
                         木のぬくもりを感じながら、お気に入りの一品を見つけてください。
                       </p>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleGallerySelect('greengrass');
-                        }}
-                        className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
-                      >
-                        🖼️ フォトを見る
-                      </button>
+                      <div className="flex flex-wrap gap-3">
+                        <ReadMoreButton
+                          onClick={() => setIsWorkshopStoryOpen(true)}
+                          bgColor="bg-lime-600"
+                          hoverColor="hover:bg-lime-700"
+                        />
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleGallerySelect('greengrass');
+                          }}
+                          className="inline-block px-6 py-2 bg-lime-600 text-white rounded-full hover:bg-lime-700 transition-colors shadow-md font-sans"
+                        >
+                          🖼️ フォトを見る
+                        </button>
+                      </div>
                     </>
                   }
                   imagePosition="left"
@@ -640,14 +820,19 @@ const Landing = () => {
                 <MagazineSection
                   title="個展の開催"
                   description={
-                    <div>
+                    <>
                       <p className="mb-4">
-                        個展を開催し、多くの方に木の椅子の魅力をご覧いただきました。
+                        1997年5月25日、北國新聞社本社ビルにて「森の小径展」を開催しました。
                       </p>
-                      <p>
+                      <p className="mb-4">
                         一つ一つ丁寧に作られた椅子を実際に見て、触れて、座っていただける貴重な機会となりました。
                       </p>
-                    </div>
+                      <ReadMoreButton
+                        onClick={() => setIsExhibitionStoryOpen(true)}
+                        bgColor="bg-lime-600"
+                        hoverColor="hover:bg-lime-700"
+                      />
+                    </>
                   }
                   imagePosition="right"
                   aspectRatio="landscape"
@@ -663,15 +848,20 @@ const Landing = () => {
                 <MagazineSection
                   title="メディア・導入事例"
                   description={
-                    <div>
+                    <>
                       <p className="mb-4">
                         NHKで能登の里山が特集され、工房の裏山も含めて紹介されました。山も含めてgreengrassなのです。
                       </p>
-                      <p>
+                      <p className="mb-4">
                         県内外のカフェやレストランで椅子をご利用いただいています。
                         実際に座り心地を体験していただけます。
                       </p>
-                    </div>
+                      <ReadMoreButton
+                        onClick={() => setIsMediaStoryOpen(true)}
+                        bgColor="bg-lime-600"
+                        hoverColor="hover:bg-lime-700"
+                      />
+                    </>
                   }
                   imagePosition="left"
                   aspectRatio="landscape"
@@ -738,8 +928,8 @@ const Landing = () => {
                 {/* お問い合わせ */}
                 <ContactSection
                   titleColor="text-lime-900"
-                  phone="098-765-4321"
-                  phoneLink="tel:0987654321"
+                  phone="0768-74-0072"
+                  phoneLink="tel:0768740072"
                   website="https://greengrass-example.com"
                   websiteLink="https://greengrass-example.com"
                   linkColor="text-lime-700"
@@ -780,6 +970,178 @@ const Landing = () => {
                       <p className="mb-6">
                         自然の力で生まれた素材を、職人の手で丁寧に形にする。
                         greengrassは、能登の自然と共に歩む工房です。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* 木の椅子へのこだわりモーダル */}
+                <StoryModal
+                  isOpen={isChairsStoryOpen}
+                  onClose={() => setIsChairsStoryOpen(false)}
+                  title="木の椅子へのこだわり"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        greengrassの木の椅子は、すべて手作りで丁寧に仕上げています。
+                      </p>
+                      <p className="mb-6">
+                        一つ一つの椅子に、職人の想いと技術が込められています。木の温もりと座り心地の良さを追求し、
+                        長く愛用していただける製品づくりを心がけています。
+                      </p>
+                      <p className="mb-6">
+                        自然の木目を活かしたデザインで、世界に一つだけの椅子をお届けします。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* ピーリングウッドとはモーダル */}
+                <StoryModal
+                  isOpen={isPeelingStoryOpen}
+                  onClose={() => setIsPeelingStoryOpen(false)}
+                  title="ピーリングウッドとは"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        ピーリングウッドは、木の皮を剥いた独特の風合いを持つ木材製品です。
+                      </p>
+                      <p className="mb-6">
+                        自然の木材を活かした素朴な美しさと、手に馴染む温もりが特徴です。
+                        インテリアとしても、実用品としてもお使いいただけます。
+                      </p>
+                      <p className="mb-6">
+                        能登の自然が生み出す、唯一無二の木材製品です。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* 個展の開催モーダル */}
+                <StoryModal
+                  isOpen={isExhibitionStoryOpen}
+                  onClose={() => setIsExhibitionStoryOpen(false)}
+                  title="個展の開催"
+                  content={
+                    <div>
+                      <h3 className="text-xl font-bold mb-4 text-lime-900">森の小径展</h3>
+                      <p className="mb-6">
+                        1997年5月25日、北國新聞社本社ビルにて「森の小径展」を開催しました。
+                      </p>
+
+                      <h3 className="text-xl font-bold mb-4 mt-8 text-lime-900">個展の様子</h3>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">個展の写真1</span>
+                      </div>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">個展の写真2</span>
+                      </div>
+
+                      <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
+                        <span className="text-gray-500">個展の写真3</span>
+                      </div>
+
+                      <p className="mb-6">
+                        「森の小径展」では、それまでに作り上げた木の椅子を展示し、
+                        実際に手に取って、座って、その良さを体験していただきました。
+                      </p>
+                      <p className="mb-6">
+                        多くの方々にお越しいただき、木の魅力を感じていただける貴重な機会となりました。
+                      </p>
+
+                      <div className="my-8 rounded-lg overflow-hidden">
+                        <img
+                          src={getImagePath('/images/greengrass/founder-michio.webp')}
+                          alt="桔梗三千雄と娘"
+                          className="w-full h-auto"
+                        />
+                      </div>
+
+                      <p className="mb-6">
+                        greengrassを創設し、一つ一つ丁寧に椅子を作り続けた桔梗三千雄。
+                        写真は幼い頃の娘との一枚です。
+                      </p>
+                      <p className="mb-6">
+                        その想いは今も工房に息づいています。そして、写真の中で小さかった娘が成長し、
+                        現在このサイトを管理しながら、父の想いを受け継いでいます。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* メディア・導入事例モーダル */}
+                <StoryModal
+                  isOpen={isMediaStoryOpen}
+                  onClose={() => setIsMediaStoryOpen(false)}
+                  title="メディア・導入事例"
+                  content={
+                    <div>
+                      <h3 className="text-xl font-bold mb-4 text-lime-900">メディア掲載</h3>
+                      <p className="mb-6">
+                        NHKで能登の里山が特集された際、greengrassの工房と裏山が紹介されました。
+                      </p>
+                      <p className="mb-6">
+                        山も含めてgreengrassなのです。自然と共に生きる工房の姿を多くの方々に知っていただきました。
+                      </p>
+
+                      <h3 className="text-xl font-bold mb-4 mt-8 text-lime-900">導入事例</h3>
+                      <p className="mb-4">
+                        greengrassの椅子は、以下の施設でご利用いただいています。実際に座り心地を体験していただけます。
+                      </p>
+                      <ul className="space-y-3 mb-6">
+                        <li>
+                          <a
+                            href="https://kurart-arau.jp/cafe/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lime-700 hover:text-lime-900 underline font-semibold"
+                          >
+                            蔵人新宇
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://www.nihonkai-club.com/about.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-lime-700 hover:text-lime-900 underline font-semibold"
+                          >
+                            日本海倶楽部
+                          </a>
+                        </li>
+                      </ul>
+                      <p className="mb-6">
+                        その他、県内外のカフェやレストランでもご利用いただいています。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* 工房を訪れてモーダル */}
+                <StoryModal
+                  isOpen={isWorkshopStoryOpen}
+                  onClose={() => setIsWorkshopStoryOpen(false)}
+                  title="工房を訪れて"
+                  content={
+                    <div>
+                      <p className="mb-6">
+                        greengrassの工房は、能登の自然に囲まれた静かな場所にあります。
+                      </p>
+                      <p className="mb-6">
+                        網元の番屋を改造した建物で、１階が作業場兼木材置き場、２階が手作り木の椅子の展示スペースとなっています。
+                      </p>
+                      <p className="mb-6">
+                        実際に工房を訪れていただくと、木の椅子やピーリングウッドを間近でご覧いただけます。
+                        木のぬくもりを感じながら、お気に入りの一品を見つけてください。
+                      </p>
+                      <p className="mb-6">
+                        工房の裏には山が広がり、その自然もgreengrassの一部です。
+                        山から得られる木材を使って、一つ一つ丁寧に作品を作り上げています。
+                      </p>
+                      <p className="mb-6">
+                        見学をご希望の方は、事前にお問い合わせください。
                       </p>
                     </div>
                   }
