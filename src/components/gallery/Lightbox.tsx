@@ -97,14 +97,21 @@ const Lightbox = ({ photos, currentIndex, onClose, onPrevious, onNext }: Lightbo
         />
 
         {/* 写真の説明 */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-center max-w-2xl px-4">
-          <p className="text-xl font-semibold mb-2">{currentPhoto.alt}</p>
-          {currentPhoto.description && (
-            <p className="text-sm text-gray-200 mb-2">{currentPhoto.description}</p>
-          )}
-          <p className="text-xs text-gray-400">
-            {currentIndex + 1} / {photos.length}
-          </p>
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white max-w-2xl px-6 py-3 bg-black/60 backdrop-blur-sm rounded-lg">
+          <div className="flex items-start">
+            <div className="w-16"></div>
+            <div className="flex-1 text-center">
+              <p className="text-xl font-semibold mb-2">{currentPhoto.alt}</p>
+              {currentPhoto.description && (
+                <p className="text-sm text-gray-200">{currentPhoto.description}</p>
+              )}
+            </div>
+            <div className="w-16 flex justify-end">
+              <p className="text-xs text-gray-400 whitespace-nowrap pt-1">
+                {currentIndex + 1} / {photos.length}
+              </p>
+            </div>
+          </div>
         </div>
       </motion.div>
     </AnimatePresence>
