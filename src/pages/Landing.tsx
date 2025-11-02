@@ -510,7 +510,7 @@ const Landing = () => {
                   phoneLink="tel:0768740072"
                   linkColor="text-purple-700"
                   linkHoverColor="hover:text-purple-900"
-                  businessHours="9：00〜18:00　不定休"
+                  businessHours="9:00〜18:00　不定休"
                 />
 
                 {/* 桔梗庵ストーリーモーダル */}
@@ -995,7 +995,7 @@ const Landing = () => {
                   phoneLink="tel:0768740072"
                   linkColor="text-lime-700"
                   linkHoverColor="hover:text-lime-900"
-                  businessHours="9：00〜18:00　不定休"
+                  businessHours="9:00〜18:00　不定休"
                 />
 
                 {/* greengrassストーリーモーダル */}

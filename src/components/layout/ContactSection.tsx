@@ -34,9 +34,12 @@ const ContactSection = ({
           </a>
         </p>
         {businessHours && (
-          <p className="text-sm text-gray-600 mt-2">
-            {businessHours}
-          </p>
+          <div className="text-sm text-gray-600 mt-2">
+            <span>{businessHours.split('　')[0]}</span>
+            {businessHours.split('　')[1] && (
+              <span className="ml-4">{businessHours.split('　')[1]}</span>
+            )}
+          </div>
         )}
       </div>
     </motion.div>

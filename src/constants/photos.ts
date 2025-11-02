@@ -19,7 +19,8 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 22, src: getImagePath('/images/gallery/sea/05.webp'), alt: '海岸の風景', description: '岩場と海が織りなす自然の造形美。', tags: ['海'] },
   { id: 23, src: getImagePath('/images/gallery/sea/06.webp'), alt: '小木の海', description: '静かな小木の海辺の風景。', tags: ['海'] },
   { id: 24, src: getImagePath('/images/gallery/sea/07.webp'), alt: '日本海', description: '能登半島から望む雄大な日本海。', tags: ['海'] },
+  { id: 26, src: getImagePath('/images/gallery/town/01.webp'), alt: '小木の町並み', description: '能登の港町、小木の風景。', tags: ['小木の町'] },
 ];
 
 // タグのリスト
-export const GALLERY_TAGS = ['すべて', '桔梗庵', 'greengrass', '海', '祭', 'その他'];
+export const GALLERY_TAGS = ['すべて', '桔梗庵', 'greengrass', '海', '祭', '小木の町', 'その他'];
