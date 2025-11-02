@@ -8,6 +8,7 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 12, src: getImagePath('/images/gallery/other/01.webp'), alt: '伝統工芸', description: '能登に伝わる伝統的な工芸品の数々。', tags: ['その他'] },
   { id: 13, src: getImagePath('/images/gallery/kikyoan/04.webp'), alt: '桔梗庵の室内', description: '落ち着いた雰囲気の和の空間。能登の静けさが感じられます。', tags: ['桔梗庵'] },
   { id: 17, src: getImagePath('/images/gallery/kikyoan/05.webp'), alt: '桔梗庵の外観', description: '海に近い静かな場所に佇む古民家の様子。', tags: ['桔梗庵'] },
+  { id: 25, src: getImagePath('/images/gallery/kikyoan/06.webp'), alt: '桔梗庵の縁側', description: '縁側から見える能登の自然。', tags: ['桔梗庵'] },
   { id: 14, src: getImagePath('/images/gallery/greengrass/04.webp'), alt: 'greengrass工房の様子', description: '木材加工の様子。丁寧な手仕事が光ります。', tags: ['greengrass'] },
   { id: 15, src: getImagePath('/images/gallery/greengrass/05.webp'), alt: 'greengrass作品', description: '職人の技が光る木工作品の数々。', tags: ['greengrass'] },
   { id: 16, src: getImagePath('/images/gallery/greengrass/06.webp'), alt: 'greengrass工房内部', description: '温かみのある木の工房で制作が行われています。', tags: ['greengrass'] },

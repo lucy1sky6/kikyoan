@@ -23,6 +23,7 @@ const Landing = () => {
   const [isActivitiesStoryOpen, setIsActivitiesStoryOpen] = useState(false);
   const [isFeaturesStoryOpen, setIsFeaturesStoryOpen] = useState(false);
   const [isRecommendedStoryOpen, setIsRecommendedStoryOpen] = useState(false);
+  const [isKikyoanIntroductionOpen, setIsKikyoanIntroductionOpen] = useState(false);
   const [isGreengrassStoryOpen, setIsGreengrassStoryOpen] = useState(false);
   const [isChairsStoryOpen, setIsChairsStoryOpen] = useState(false);
   const [isPeelingStoryOpen, setIsPeelingStoryOpen] = useState(false);
@@ -422,6 +423,34 @@ const Landing = () => {
                   delay={0.6}
                 />
 
+                {/* セクション5: ご紹介いただきました */}
+                <MagazineSection
+                  title="ご紹介いただきました"
+                  description={
+                    <>
+                      <p className="mb-4">
+                        桔梗庵は様々なメディアや旅行サイトでご紹介いただいております。
+                      </p>
+                      <p className="mb-4">
+                        能登での体験宿泊として、多くの方にご利用いただいています。
+                      </p>
+                      <ReadMoreButton
+                        onClick={() => setIsKikyoanIntroductionOpen(true)}
+                        bgColor="bg-purple-600"
+                        hoverColor="hover:bg-purple-700"
+                      />
+                    </>
+                  }
+                  imagePosition="right"
+                  aspectRatio="landscape"
+                  gradientFrom="from-purple-100"
+                  gradientTo="to-purple-200"
+                  titleColor="text-purple-900"
+                  imageSrc={getImagePath('/images/kikyoan/introduction.webp')}
+                  imageAlt="ご紹介いただきました"
+                  delay={0.65}
+                />
+
                 {/* 料金・予約について */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -481,6 +510,7 @@ const Landing = () => {
                   phoneLink="tel:0768740072"
                   linkColor="text-purple-700"
                   linkHoverColor="hover:text-purple-900"
+                  businessHours="9：00〜18:00　不定休"
                 />
 
                 {/* 桔梗庵ストーリーモーダル */}
@@ -573,10 +603,19 @@ const Landing = () => {
 
                       <h3 className="text-xl font-bold mb-4 mt-8 text-purple-900">設備一覧</h3>
                       <div className="mb-6">
+                        <h4 className="font-bold mb-2 text-purple-800">部屋の構成</h4>
+                        <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
+                          <li>ダイニング＆キッチン</li>
+                          <li>リビング</li>
+                          <li>和室（4部屋）</li>
+                          <li>洗面所・水洗トイレ</li>
+                        </ul>
+                      </div>
+                      <div className="mb-6">
                         <h4 className="font-bold mb-2 text-purple-800">基本設備</h4>
                         <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
                           <li>Wi-Fi完備</li>
-                          <li>キッチン（調理器具一式）</li>
+                          <li>調理器具一式</li>
                           <li>冷蔵庫</li>
                           <li>洗濯機</li>
                           <li>エアコン</li>
@@ -586,7 +625,6 @@ const Landing = () => {
                         <h4 className="font-bold mb-2 text-purple-800">宿泊設備</h4>
                         <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
                           <li>布団・寝具</li>
-                          <li>バス・トイレ</li>
                           <li>タオル</li>
                         </ul>
                       </div>
@@ -622,6 +660,34 @@ const Landing = () => {
                       </p>
                       <p className="mb-6">
                         【ワーケーション】長期滞在しながら仕事をする方にも快適な環境を提供します。
+                      </p>
+                    </div>
+                  }
+                />
+
+                {/* ご紹介いただきましたモーダル */}
+                <StoryModal
+                  isOpen={isKikyoanIntroductionOpen}
+                  onClose={() => setIsKikyoanIntroductionOpen(false)}
+                  title="ご紹介いただきました"
+                  content={
+                    <div>
+                      <h3 className="text-xl font-bold mb-4 text-purple-900">TABITAIKEN</h3>
+                      <p className="mb-4">
+                        TABITAIKENにて桔梗庵をご紹介いただいております。
+                      </p>
+                      <p className="mb-6">
+                        <a
+                          href="https://www.tabitaiken.com/peelingwood"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-purple-700 hover:text-purple-900 underline font-semibold"
+                        >
+                          桔梗庵の紹介ページはこちら
+                        </a>
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        ※外部サイトへ移動します
                       </p>
                     </div>
                   }
@@ -929,6 +995,7 @@ const Landing = () => {
                   phoneLink="tel:0768740072"
                   linkColor="text-lime-700"
                   linkHoverColor="hover:text-lime-900"
+                  businessHours="9：00〜18:00　不定休"
                 />
 
                 {/* greengrassストーリーモーダル */}
@@ -1107,6 +1174,9 @@ const Landing = () => {
                           </a>
                         </li>
                       </ul>
+                      <p className="text-gray-600 text-sm mb-6">
+                        ※リンクをクリックすると外部サイトへ移動します
+                      </p>
                       <p className="mb-6">
                         その他、県内外のカフェやレストランでもご利用いただいています。
                       </p>

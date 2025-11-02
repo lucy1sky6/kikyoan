@@ -7,6 +7,7 @@ interface ContactSectionProps {
   phoneLink: string;
   linkColor: string;
   linkHoverColor: string;
+  businessHours?: string;
 }
 
 const ContactSection = ({
@@ -15,6 +16,7 @@ const ContactSection = ({
   phoneLink,
   linkColor,
   linkHoverColor,
+  businessHours,
 }: ContactSectionProps) => {
   return (
     <motion.div
@@ -31,6 +33,11 @@ const ContactSection = ({
             {phone}
           </a>
         </p>
+        {businessHours && (
+          <p className="text-sm text-gray-600 mt-2">
+            {businessHours}
+          </p>
+        )}
       </div>
     </motion.div>
   );
