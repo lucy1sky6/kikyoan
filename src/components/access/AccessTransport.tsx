@@ -8,14 +8,14 @@ const AccessTransport = () => {
       {/* 飛行機 */}
       <TransportCard icon={<FaPlane />} title="飛行機">
         <p className="text-sm text-gray-700">
-          のと里山空港から <strong>北陸鉄道 特急バス</strong> で約1時間
+          のと里山空港から <span className="font-black">北陸鉄道 特急バス</span> で約1時間
           <ExternalLink
             href="https://www.hokutetsu.co.jp/highway-bus/noto/"
             label="時刻表・料金"
           />
         </p>
         <p className="text-sm text-gray-700">
-          のと里山空港から <strong>ふるさとタクシー</strong> で約1時間
+          のと里山空港から <span className="font-black">ふるさとタクシー</span> で約1時間
           <ExternalLink
             href="https://www.noto-airport.jp/access/furutaku.html"
             label="詳細・予約"
@@ -26,7 +26,7 @@ const AccessTransport = () => {
       {/* 車 */}
       <TransportCard icon={<FaCar />} title="お車">
         <p className="text-sm text-gray-700">
-          金沢から <strong>のと里山海道</strong> 経由で約2.5時間
+          金沢から <span className="font-black">のと里山海道</span> 経由で約2.5時間
           <ExternalLink
             href="https://www.pref.ishikawa.lg.jp/nakanotopublic/notosatoyama/syokai.html"
             label="道路情報"
@@ -37,7 +37,7 @@ const AccessTransport = () => {
       {/* バス */}
       <TransportCard icon={<FaBus />} title="バス">
         <p className="text-sm text-gray-700">
-          金沢駅西口から <strong>北陸鉄道 特急バス</strong> で <strong>小木港</strong> へ 約2.5時間
+          金沢駅西口から <span className="font-black">北陸鉄道 特急バス</span> で <span className="font-black">小木港</span> へ 約2.5時間
           <ExternalLink
             href="https://www.hokutetsu.co.jp/highway-bus/noto/"
             label="時刻表・料金"

@@ -73,7 +73,7 @@ const FacilityBanner = ({
         rel="noopener noreferrer"
         className="relative z-10 flex-1 px-3 sm:px-6 md:px-8 hover:opacity-90 transition-opacity"
       >
-        <h4 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">
+        <h4 className="text-lg sm:text-xl md:text-2xl font-black text-white mb-2 sm:mb-3 drop-shadow-lg">
           {title}
         </h4>
         <p className="text-sm sm:text-base text-white drop-shadow-md mb-2 sm:mb-3">{description}</p>
