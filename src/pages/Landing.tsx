@@ -872,7 +872,7 @@ const Landing = () => {
                     </>
                   }
                   imagePosition="left"
-                  aspectRatio="square"
+                  aspectRatio="landscape"
                   gradientFrom="from-lime-100"
                   gradientTo="to-lime-200"
                   titleColor="text-lime-900"
@@ -949,7 +949,7 @@ const Landing = () => {
                   description={
                     <>
                       <p className="mb-4">
-                        1997年5月25日、北國新聞社本社ビルにて「森の小径展」を開催しました。
+                        1997年5月25日～5月31日、北國新聞社本社ビルにて「森の小径展」を開催しました。
                       </p>
                       <p className="mb-4">
                         一つ一つ丁寧に作られた椅子を実際に見て、触れて、座っていただける貴重な機会となりました。
@@ -1178,10 +1178,8 @@ const Landing = () => {
                     <div>
                       <h3 className="text-xl font-bold mb-3 text-lime-900">森の小径展</h3>
                       <p className="mb-6 ml-6">
-                        1997年5月25日、北國新聞社本社ビルにて「森の小径展」を開催しました。
+                        1997年5月25日～5月31日、北國新聞社本社ビルにて「森の小径展」を開催しました。
                       </p>
-
-                      <h3 className="text-xl font-bold mb-3 mt-8 text-lime-900">個展の様子</h3>
 
                       <div className="my-8 ml-6 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
                         <span className="text-gray-500">個展の写真1</span>
