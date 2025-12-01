@@ -10,6 +10,7 @@ import PricingSection from '../components/content/PricingSection';
 import PriceCard from '../components/content/PriceCard';
 import InfoCard from '../components/content/InfoCard';
 import DecorativeImage from '../components/content/DecorativeImage';
+import ContentImage from '../components/content/ContentImage';
 import SnsLink from '../components/content/SnsLink';
 import { getImagePath } from '../utils/getImagePath';
 
@@ -47,7 +48,6 @@ const GreengrassPage = () => {
           </>
         }
         imagePosition="right"
-        aspectRatio="landscape"
         gradientFrom="from-lime-100"
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
@@ -69,7 +69,6 @@ const GreengrassPage = () => {
           </>
         }
         imagePosition="left"
-        aspectRatio="landscape"
         gradientFrom="from-lime-100"
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
@@ -91,7 +90,6 @@ const GreengrassPage = () => {
           </>
         }
         imagePosition="right"
-        aspectRatio="landscape"
         gradientFrom="from-lime-100"
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
@@ -122,7 +120,6 @@ const GreengrassPage = () => {
           </>
         }
         imagePosition="left"
-        aspectRatio="landscape"
         gradientFrom="from-lime-100"
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
@@ -146,7 +143,6 @@ const GreengrassPage = () => {
           </>
         }
         imagePosition="right"
-        aspectRatio="landscape"
         gradientFrom="from-lime-100"
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
@@ -171,7 +167,6 @@ const GreengrassPage = () => {
           </>
         }
         imagePosition="left"
-        aspectRatio="landscape"
         gradientFrom="from-lime-100"
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
@@ -286,11 +281,10 @@ const GreengrassPage = () => {
               ピーリングウッドは、木の皮を剥いた独特の風合いを持つ木材製品です。
             </p>
 
-            <div className="my-8 rounded-lg overflow-hidden">
-              <img
+            <div className="my-8">
+              <ContentImage
                 src={getImagePath('/images/greengrass/peeling.webp')}
                 alt="ピーリングウッド"
-                className="w-full h-auto"
               />
             </div>
 
@@ -334,11 +328,10 @@ const GreengrassPage = () => {
               多くの方々にお越しいただき、木の魅力を感じていただける貴重な機会となりました。
             </p>
 
-            <div className="my-8 ml-6 rounded-lg overflow-hidden">
-              <img
+            <div className="my-8 ml-6">
+              <ContentImage
                 src={getImagePath('/images/greengrass/founder-michio.webp')}
                 alt="桔梗三千雄と娘"
-                className="w-full h-auto"
               />
             </div>
 

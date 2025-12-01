@@ -10,6 +10,7 @@ import PricingSection from '../components/content/PricingSection';
 import PriceCard from '../components/content/PriceCard';
 import InfoCard from '../components/content/InfoCard';
 import DecorativeImage from '../components/content/DecorativeImage';
+import ContentImage from '../components/content/ContentImage';
 import SnsLink from '../components/content/SnsLink';
 import { getImagePath } from '../utils/getImagePath';
 
@@ -43,7 +44,6 @@ const KikyoanPage = () => {
           </>
         }
         imagePosition="right"
-        aspectRatio="landscape"
         gradientFrom="from-purple-100"
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
@@ -65,7 +65,6 @@ const KikyoanPage = () => {
           </>
         }
         imagePosition="left"
-        aspectRatio="square"
         gradientFrom="from-purple-100"
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
@@ -96,7 +95,6 @@ const KikyoanPage = () => {
           </>
         }
         imagePosition="right"
-        aspectRatio="auto"
         gradientFrom="from-purple-100"
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
@@ -125,7 +123,6 @@ const KikyoanPage = () => {
           </>
         }
         imagePosition="left"
-        aspectRatio="landscape"
         gradientFrom="from-purple-100"
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
@@ -147,7 +144,6 @@ const KikyoanPage = () => {
           </>
         }
         imagePosition="right"
-        aspectRatio="landscape"
         gradientFrom="from-purple-100"
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
@@ -277,11 +273,10 @@ const KikyoanPage = () => {
               近くの漁港で手に入れた新鮮な魚を刺し身にして味わうこともできます。
             </p>
 
-            <div className="my-8 ml-6 rounded-lg overflow-hidden">
-              <img
+            <div className="my-8 ml-6">
+              <ContentImage
                 src={getImagePath('/images/kikyoan/sashimi.webp')}
                 alt="新鮮な刺し身"
-                className="w-full h-auto"
               />
             </div>
 
