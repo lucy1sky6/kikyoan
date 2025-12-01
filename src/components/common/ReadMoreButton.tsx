@@ -1,23 +1,21 @@
 import { FaBookOpen } from 'react-icons/fa';
+import ActionButton from './ActionButton';
 
 interface ReadMoreButtonProps {
   onClick: () => void;
-  bgColor: string;
-  hoverColor: string;
+  color?: 'purple' | 'lime' | 'blue';
 }
 
-const ReadMoreButton = ({ onClick, bgColor, hoverColor }: ReadMoreButtonProps) => {
+const ReadMoreButton = ({ onClick, color = 'purple' }: ReadMoreButtonProps) => {
   return (
-    <button
-      onClick={(e) => {
-        e.stopPropagation();
-        onClick();
-      }}
-      className={`inline-flex items-center gap-2 px-6 py-2 ${bgColor} text-white rounded-full ${hoverColor} transition-colors shadow-md font-sans`}
+    <ActionButton
+      onClick={onClick}
+      icon={<FaBookOpen className="text-white" />}
+      color={color}
+      stopPropagation
     >
-      <FaBookOpen className="text-white" />
       続きを読む
-    </button>
+    </ActionButton>
   );
 };
 

@@ -1,32 +1,44 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import BackButton from '../components/common/BackButton';
+import { BackButton } from '../components/common';
 import TagFilter from '../components/gallery/TagFilter';
 import PhotoGridItem from '../components/gallery/PhotoGridItem';
 import Lightbox from '../components/gallery/Lightbox';
+import { useKeyboardNavigation } from '../hooks';
 import { GALLERY_PHOTOS, GALLERY_TAGS } from '../constants/photos';
 
 const photos = GALLERY_PHOTOS;
 const tags = GALLERY_TAGS;
 
-interface GalleryPageProps {
-  onBack: () => void;
-  initialTag?: string;
-}
+const GalleryPage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialTag = searchParams.get('tag') || 'すべて';
 
-const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => {
   const [selectedTag, setSelectedTag] = useState(initialTag);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  // initialTagが変わったときにselectedTagを更新
+  // URLパラメータが変わったときにselectedTagを更新
   useEffect(() => {
-    setSelectedTag(initialTag);
-  }, [initialTag]);
+    const tag = searchParams.get('tag') || 'すべて';
+    setSelectedTag(tag);
+  }, [searchParams]);
 
   // タグでフィルタリング
-  const filteredPhotos = selectedTag === 'すべて'
-    ? photos
-    : photos.filter(photo => photo.tags.includes(selectedTag));
+  const filteredPhotos =
+    selectedTag === 'すべて'
+      ? photos
+      : photos.filter((photo) => photo.tags.includes(selectedTag));
+
+  // タグ選択時にURLも更新
+  const handleTagSelect = (tag: string) => {
+    setSelectedTag(tag);
+    if (tag === 'すべて') {
+      setSearchParams({});
+    } else {
+      setSearchParams({ tag });
+    }
+  };
 
   // ライトボックスを開く
   const openLightbox = (index: number) => {
@@ -53,21 +65,14 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
   };
 
   // キーボード操作
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showPrevious();
-      if (e.key === 'ArrowRight') showNext();
-    };
-
-    if (lightboxIndex !== null) {
-      window.addEventListener('keydown', handleKeyDown);
-    }
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [lightboxIndex, filteredPhotos.length]);
+  useKeyboardNavigation(
+    [
+      { key: 'Escape', handler: closeLightbox },
+      { key: 'ArrowLeft', handler: showPrevious },
+      { key: 'ArrowRight', handler: showNext },
+    ],
+    lightboxIndex !== null
+  );
 
   return (
     <motion.div
@@ -78,11 +83,7 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
       className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-16 relative"
     >
       {/* 戻るボタン */}
-      <BackButton
-        onClick={onBack}
-        bgColor="bg-blue-600"
-        hoverColor="hover:bg-blue-700"
-      />
+      <BackButton color="blue" />
 
       <div className="max-w-7xl mx-auto">
         {/* タイトル */}
@@ -100,11 +101,7 @@ const GalleryPage = ({ onBack, initialTag = 'すべて' }: GalleryPageProps) => 
 
         {/* タグフィルター */}
         <div className="px-4">
-          <TagFilter
-            tags={tags}
-            selectedTag={selectedTag}
-            onTagSelect={setSelectedTag}
-          />
+          <TagFilter tags={tags} selectedTag={selectedTag} onTagSelect={handleTagSelect} />
         </div>
 
         {/* 格子状写真ギャラリー */}

@@ -36,10 +36,9 @@ export interface ContactSectionProps {
   titleColor: string;
   phone: string;
   phoneLink: string;
-  website: string;
-  websiteLink: string;
   linkColor: string;
   linkHoverColor: string;
+  businessHours?: string;
 }
 
 // Button Props
