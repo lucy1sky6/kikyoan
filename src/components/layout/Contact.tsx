@@ -1,5 +1,5 @@
 import QRCodePlaceholder from '../content/QRCodePlaceholder';
-import SocialLinks from './SocialLinks';
+import SnsLink from '../content/SnsLink';
 
 const Contact = () => {
   return (
@@ -8,7 +8,7 @@ const Contact = () => {
       <QRCodePlaceholder />
 
       {/* SNSアイコン */}
-      <SocialLinks />
+      <SnsLink size="lg" centered />
     </div>
   );
 };
