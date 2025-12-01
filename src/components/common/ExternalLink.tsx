@@ -2,20 +2,36 @@ import { FaExternalLinkAlt } from 'react-icons/fa';
 
 interface ExternalLinkProps {
   href: string;
-  label: string;
+  children: React.ReactNode;
+  /** テーマカラー */
+  color?: 'purple' | 'lime' | 'blue';
+  /** アイコンを表示するか */
+  showIcon?: boolean;
   className?: string;
 }
 
-const ExternalLink = ({ href, label, className = '' }: ExternalLinkProps) => {
+const colorClasses = {
+  purple: 'text-purple-700 hover:text-purple-900',
+  lime: 'text-lime-700 hover:text-lime-900',
+  blue: 'text-blue-600 hover:text-blue-800',
+};
+
+const ExternalLink = ({
+  href,
+  children,
+  color = 'blue',
+  showIcon = false,
+  className = '',
+}: ExternalLinkProps) => {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`text-blue-600 hover:underline inline-flex items-center gap-1 ml-2 font-sans ${className}`}
+      className={`${colorClasses[color]} underline font-semibold inline-flex items-center gap-1 transition ${className}`}
     >
-      <FaExternalLinkAlt className="text-xs" />
-      {label}
+      {showIcon && <FaExternalLinkAlt className="text-xs" />}
+      {children}
     </a>
   );
 };

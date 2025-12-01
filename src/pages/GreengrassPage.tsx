@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ReadMoreButton, ViewPhotosButton } from '../components/common';
+import { ReadMoreButton, ViewPhotosButton, ExternalLink } from '../components/common';
 import PageLayout from '../components/layout/PageLayout';
 import ContactSection from '../components/layout/ContactSection';
 import MagazineSection from '../components/content/MagazineSection';
@@ -367,24 +367,14 @@ const GreengrassPage = () => {
             </p>
             <ul className="space-y-3 mb-6 ml-6">
               <li>
-                <a
-                  href="https://kurart-arau.jp/cafe/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lime-700 hover:text-lime-900 underline font-semibold"
-                >
+                <ExternalLink href="https://kurart-arau.jp/cafe/" color="lime">
                   蔵人新宇
-                </a>
+                </ExternalLink>
               </li>
               <li>
-                <a
-                  href="https://www.nihonkai-club.com/about.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lime-700 hover:text-lime-900 underline font-semibold"
-                >
+                <ExternalLink href="https://www.nihonkai-club.com/about.html" color="lime">
                   日本海倶楽部
-                </a>
+                </ExternalLink>
               </li>
             </ul>
             <p className="text-gray-600 text-sm mb-6 ml-6">

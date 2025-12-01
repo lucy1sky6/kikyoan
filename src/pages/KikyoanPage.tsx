@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ReadMoreButton, ViewPhotosButton } from '../components/common';
+import { ReadMoreButton, ViewPhotosButton, ExternalLink } from '../components/common';
 import PageLayout from '../components/layout/PageLayout';
 import ContactSection from '../components/layout/ContactSection';
 import MagazineSection from '../components/content/MagazineSection';
@@ -367,14 +367,9 @@ const KikyoanPage = () => {
             <h3 className="text-xl font-bold mb-4 text-purple-900">TABITAIKEN</h3>
             <p className="mb-4">TABITAIKENにて桔梗庵をご紹介いただいております。</p>
             <p className="mb-6">
-              <a
-                href="https://www.tabitaiken.com/peelingwood"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-700 hover:text-purple-900 underline font-semibold"
-              >
+              <ExternalLink href="https://www.tabitaiken.com/peelingwood" color="purple">
                 桔梗庵の紹介ページはこちら
-              </a>
+              </ExternalLink>
             </p>
             <p className="text-gray-600 text-sm">※外部サイトへ移動します</p>
           </div>
