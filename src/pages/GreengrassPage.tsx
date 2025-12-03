@@ -239,8 +239,11 @@ const GreengrassPage = () => {
               グローブのような大きな手でしっかり椅子を組んでいたのを思い出します。
             </p>
 
-            <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">工房での作業風景</span>
+            <div className="my-8">
+              <ContentImage
+                src={getImagePath('/images/greengrass/kousakudai.png')}
+                alt="工房での作業風景"
+              />
             </div>
 
             <p className="mb-6">
@@ -267,6 +270,102 @@ const GreengrassPage = () => {
             <p className="mb-6">
               自然の木目を活かしたデザインで、世界に一つだけの椅子をお届けします。
             </p>
+
+            <h3 className="text-xl font-bold mb-3 text-lime-900">どんな椅子？</h3>
+            <p className="mb-4 ml-6">
+              頑丈な木と木を組んで、ナチュラルなインテリアに溶け込む椅子を作っています。
+              <br />
+              クギを一切使わず、仕口（しぐち）を「とめほぞ」で組んでいます。
+            </p>
+            <p className="mb-4 ml-6">
+              イメージとしては、
+              <br />
+              「森に住む、おとぎ話の主人公が使っている椅子」
+            </p>
+            <p className="mb-6 ml-6">木目調デザインの個人宅やカフェで、お使い頂いております。</p>
+
+            <div className="my-8 ml-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-1.jpg')}
+                alt="木の椅子1"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-2.jpg')}
+                alt="木の椅子2"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-3.jpg')}
+                alt="木の椅子3"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-4.jpg')}
+                alt="木の椅子4"
+              />
+            </div>
+
+            <h3 className="text-xl font-bold mb-3 text-lime-900">1脚1脚、すべて違います</h3>
+            <p className="mb-4 ml-6">
+              椅子作りでのワクワクとしては、「木の種類や個性で異なる曲がり」を組み合わせる所です。
+              <br />
+              （思いがけない印象になったり、期待以上のものが生まれたり）
+            </p>
+            <p className="mb-4 ml-6">
+              楽しく作り続け、今までに仕上がった椅子は50脚以上。
+              <br />
+              どれも妥協なく、1つ1つこだわって丁寧に作りました。
+            </p>
+            <p className="mb-6 ml-6">
+              木と木の出会いが1脚の椅子を作る――
+              <br />
+              世界に2つと無い、あなたの椅子として選ばれることは、この上ない喜びです。
+            </p>
+
+            <div className="my-8 ml-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-variety-1.png')}
+                alt="様々な椅子1"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-variety-2.png')}
+                alt="様々な椅子2"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-variety-3.png')}
+                alt="様々な椅子3"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-variety-4.png')}
+                alt="様々な椅子4"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-variety-5.png')}
+                alt="様々な椅子5"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/chairs-variety-6.png')}
+                alt="様々な椅子6"
+              />
+            </div>
+
+            <p className="mb-6 ml-6">
+              Creemaに出品しております。現在、販売は休止中ですが、展示として椅子を始め数々の作品をご覧いただけます。
+              <br />
+              <ExternalLink href="https://www.creema.jp/creator/2248338/item/display" color="lime">
+                https://www.creema.jp/creator/2248338/item/display
+              </ExternalLink>
+            </p>
+
+            <h3 className="text-xl font-bold mb-3 text-lime-900">椅子製作者ミッチー略歴</h3>
+            <ul className="list-disc list-inside mb-6 ml-6 space-y-2">
+              <li>漁家に生まれ、家業を継ぐかたわら、自身所有の山林を整備</li>
+              <li>平成9年、北國新聞会館にて、個展『森の小径』を開催</li>
+              <li>
+                平成26年、石川県が推進する「元気な里山里海づくり」に協力し、地域の人々と共に地域ボランティア「グリーンキーパーズ」を結成
+              </li>
+              <li>金沢大学の協力を得て活動</li>
+              <li>木工歴25年</li>
+              <li>2022年1月 逝去</li>
+            </ul>
           </div>
         }
       />
@@ -281,10 +380,14 @@ const GreengrassPage = () => {
               ピーリングウッドは、木の皮を剥いた独特の風合いを持つ木材製品です。
             </p>
 
-            <div className="my-8">
+            <div className="my-8 grid grid-cols-2 gap-4">
               <ContentImage
-                src={getImagePath('/images/greengrass/peeling.webp')}
-                alt="ピーリングウッド"
+                src={getImagePath('/images/greengrass/peeling-1.jpg')}
+                alt="ピーリングウッド1"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/peeling-2.jpg')}
+                alt="ピーリングウッド2"
               />
             </div>
 
@@ -308,24 +411,49 @@ const GreengrassPage = () => {
               1997年5月25日～5月31日、北國新聞社本社ビルにて「森の小径展」を開催しました。
             </p>
 
-            <div className="my-8 ml-6 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">個展の写真1</span>
-            </div>
-
-            <div className="my-8 ml-6 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">個展の写真2</span>
-            </div>
-
-            <div className="my-8 ml-6 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">個展の写真3</span>
+            <div className="my-8 ml-6 grid grid-cols-2 md:grid-cols-3 gap-4">
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-1.png')}
+                alt="森の小径展の様子1"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-2.png')}
+                alt="森の小径展の様子2"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-3.png')}
+                alt="森の小径展の様子3"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-4.png')}
+                alt="森の小径展の様子4"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-5.png')}
+                alt="森の小径展の様子5"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-6.png')}
+                alt="森の小径展の様子6"
+              />
             </div>
 
             <p className="mb-6 ml-6">
               「森の小径展」では、それまでに作り上げた木の椅子を展示し、
               実際に手に取って、座って、その良さを体験していただきました。
-            </p>
-            <p className="mb-6 ml-6">
+              <br />
               多くの方々にお越しいただき、木の魅力を感じていただける貴重な機会となりました。
+            </p>
+
+            <div className="my-8 ml-6">
+              <ContentImage
+                src={getImagePath('/images/greengrass/exhibition-7.png')}
+                alt="森の小径展の様子7"
+              />
+            </div>
+
+            <p className="mb-6 ml-6">
+              森の小径展では、こちらの手作り看板で皆さんをお迎えしました。
             </p>
 
             <div className="my-8 ml-6">
@@ -407,7 +535,7 @@ const GreengrassPage = () => {
               工房の裏には山が広がり、その自然もgreengrassの一部です。
               山から得られる木材を使って、一つ一つ丁寧に作品を作り上げています。
             </p>
-            <p className="mb-6">見学をご希望の方は、事前にお問い合わせください。</p>
+            <p className="mb-6">見学をご希望の方は、お気軽にお問い合わせください。</p>
           </div>
         }
       />
