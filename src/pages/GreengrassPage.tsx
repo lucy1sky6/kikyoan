@@ -83,8 +83,7 @@ const GreengrassPage = () => {
         description={
           <>
             <p className="mb-4">
-              ピーリングウッドの説明が入ります。自然の木材を活かした独特の風合いや、
-              その特徴についての説明テキストがここに入ります。
+              木の皮を剥いた、独特の風合いを持つ木材製品です。
             </p>
             <ReadMoreButton onClick={() => setIsPeelingStoryOpen(true)} color="lime" />
           </>
@@ -218,11 +217,14 @@ const GreengrassPage = () => {
           <div>
             <p className="mb-6">
               greengrassの始まりは、1990年9月の台風19号がきっかけでした。
-              この台風により、たくさんの木々が折れ地面になぎ倒されました。
+              この台風により、所有する山のたくさんの木々が折れ地面になぎ倒されました。
             </p>
 
-            <div className="my-8 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">台風後の枝の写真</span>
+            <div className="my-8">
+              <ContentImage
+                src={getImagePath('/images/greengrass/typhoon-branches.jpg')}
+                alt="台風後の枝"
+              />
             </div>
 
             <p className="mb-6">
@@ -238,6 +240,13 @@ const GreengrassPage = () => {
               生前、「木と木の組み合わせが難しいし頭を悩ませるけど、アイディアがわいてきちんと組めて椅子が完成したときは本当に嬉しい」とにこにこと話していました。
               グローブのような大きな手でしっかり椅子を組んでいたのを思い出します。
             </p>
+
+            <div className="my-8">
+              <ContentImage
+                src={getImagePath('/images/greengrass/michio-hands.jpg')}
+                alt="ミッチーの手"
+              />
+            </div>
 
             <div className="my-8">
               <ContentImage
@@ -347,8 +356,8 @@ const GreengrassPage = () => {
               />
             </div>
 
-            <p className="mb-6 ml-6">
-              Creemaに出品しております。現在、販売は休止中ですが、展示として椅子を始め数々の作品をご覧いただけます。
+            <p className="mb-8 ml-6">
+              Creemaに出品しております。現在、販売は休止中ですが、展示として椅子を始めいくつかの作品をご覧いただけます。
               <br />
               <ExternalLink href="https://www.creema.jp/creator/2248338/item/display" color="lime">
                 https://www.creema.jp/creator/2248338/item/display
@@ -358,14 +367,25 @@ const GreengrassPage = () => {
             <h3 className="text-xl font-bold mb-3 text-lime-900">椅子製作者ミッチー略歴</h3>
             <ul className="list-disc list-inside mb-6 ml-6 space-y-2">
               <li>漁家に生まれ、家業を継ぐかたわら、自身所有の山林を整備</li>
-              <li>平成9年、北國新聞会館にて、個展『森の小径』を開催</li>
+              <li>1997年、北國新聞会館にて、個展『森の小径』を開催</li>
               <li>
-                平成26年、石川県が推進する「元気な里山里海づくり」に協力し、地域の人々と共に地域ボランティア「グリーンキーパーズ」を結成
+                2014年、石川県が推進する「元気な里山里海づくり」に協力し、地域の人々と共に地域ボランティア「グリーンキーパーズ」を結成
               </li>
               <li>金沢大学の協力を得て活動</li>
-              <li>木工歴25年</li>
+              <li>木工歴30年</li>
               <li>2022年1月 逝去</li>
             </ul>
+
+            <div className="my-8 ml-6 grid grid-cols-2 gap-4">
+              <ContentImage
+                src={getImagePath('/images/greengrass/michio-1.jpg')}
+                alt="ミッチー1"
+              />
+              <ContentImage
+                src={getImagePath('/images/greengrass/michio-2.jpg')}
+                alt="ミッチー2"
+              />
+            </div>
           </div>
         }
       />
@@ -377,7 +397,9 @@ const GreengrassPage = () => {
         content={
           <div>
             <p className="mb-6">
-              ピーリングウッドは、木の皮を剥いた独特の風合いを持つ木材製品です。
+              皮をむき、綺麗に洗い、数ヶ月間乾かしたものです。がっしりしていて、とても丈夫です。
+              適当に切って、小さいお子様用の積み木や遊び道具を作られるのに最適です。
+              ナチュラルなインテリアによく合います。
             </p>
 
             <div className="my-8 grid grid-cols-2 gap-4">
@@ -522,20 +544,41 @@ const GreengrassPage = () => {
         content={
           <div>
             <p className="mb-6">
-              greengrassの工房は、能登の自然に囲まれた静かな場所にあります。
+              工房の裏山は、2013年に整備され、砂防ダムができました。
             </p>
+
+            <div className="my-8">
+              <ContentImage
+                src={getImagePath('/images/greengrass/backyard-dam.jpg')}
+                alt="工房の裏山と砂防ダム"
+              />
+            </div>
+
             <p className="mb-6">
-              網元の番屋を改造した建物で、１階が作業場兼木材置き場、２階が手作り木の椅子の展示スペースとなっています。
+              自然あふれる、のどかな山です。2000年を記念して、しだれ桜を植えましたが、今では大きな木に成長しました。
+              工房の裏山には、いろんな木々や花が咲いています。季節の移ろいを感じることができます。
             </p>
+
+            <div className="my-8">
+              <ContentImage
+                src={getImagePath('/images/greengrass/spring-scenery.jpg')}
+                alt="季節の風景"
+              />
+            </div>
+
             <p className="mb-6">
               実際に工房を訪れていただくと、木の椅子やピーリングウッドを間近でご覧いただけます。
+              ぜひ、木の椅子に自由に座ってみてください。
               木のぬくもりを感じながら、お気に入りの一品を見つけてください。
             </p>
-            <p className="mb-6">
-              工房の裏には山が広がり、その自然もgreengrassの一部です。
-              山から得られる木材を使って、一つ一つ丁寧に作品を作り上げています。
-            </p>
             <p className="mb-6">見学をご希望の方は、お気軽にお問い合わせください。</p>
+
+            <div className="my-8">
+              <ContentImage
+                src={getImagePath('/images/greengrass/workshop-visit.jpg')}
+                alt="工房の様子"
+              />
+            </div>
           </div>
         }
       />

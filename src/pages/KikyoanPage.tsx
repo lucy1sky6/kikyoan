@@ -364,14 +364,25 @@ const KikyoanPage = () => {
         title="ご紹介いただきました"
         content={
           <div>
-            <h3 className="text-xl font-bold mb-4 text-purple-900">TABITAIKEN</h3>
-            <p className="mb-4">TABITAIKENにて桔梗庵をご紹介いただいております。</p>
-            <p className="mb-6">
+            <h3 className="text-xl font-bold mb-4 text-purple-900">サイト</h3>
+
+            <h4 className="text-lg font-bold mb-3 ml-6">TABITAIKEN</h4>
+            <p className="mb-4 ml-6">TABITAIKENにて桔梗庵をご紹介いただいております。</p>
+            <p className="mb-6 ml-6">
               <ExternalLink href="https://www.tabitaiken.com/peelingwood" color="purple">
                 桔梗庵の紹介ページはこちら
               </ExternalLink>
             </p>
-            <p className="text-gray-600 text-sm">※外部サイトへ移動します</p>
+            <p className="text-gray-600 text-sm mb-8 ml-6">※外部サイトへ移動します</p>
+
+            <h3 className="text-xl font-bold mb-4 text-purple-900">メディア</h3>
+
+            <h4 className="text-lg font-bold mb-3 ml-6">NHK Eテレ/BSプレミアム</h4>
+            <p className="mb-6 ml-6">
+              「ふるカフェ系　ハルさんの休日」
+              <br />
+              群馬県みどり市　蔵人新宇（kurart ARAU）様にて椅子を使っていただいております
+            </p>
           </div>
         }
       />
