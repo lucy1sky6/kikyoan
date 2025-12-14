@@ -10,6 +10,7 @@ import PricingSection from '../components/content/PricingSection';
 import PriceCard from '../components/content/PriceCard';
 import ListCard from '../components/content/ListCard';
 import ProfileCard from '../components/content/ProfileCard';
+import ReservationForm from '../components/content/ReservationForm';
 import InfoCard from '../components/content/InfoCard';
 import DecorativeImage from '../components/content/DecorativeImage';
 import ContentImage from '../components/content/ContentImage';
@@ -239,6 +240,9 @@ const KikyoanPage = () => {
           <SnsLink color="purple" />
           <p className="text-gray-700">お気軽にお問い合わせください。</p>
         </InfoCard>
+        <div className="md:col-span-2">
+          <ReservationForm color="purple" />
+        </div>
       </PricingSection>
 
       {/* お問い合わせ */}
