@@ -156,12 +156,29 @@ const KikyoanPage = () => {
       {/* 設備・備品・サービス */}
       <PricingSection title="設備・備品・サービス" color="purple" delay={0.7}>
         <ListCard
-          title="設備"
-          items={['Wi-Fi完備', '駐車スペース']}
+          title="設備・備品"
+          categories={[
+            {
+              category: '部屋の構成',
+              items: ['ダイニング＆キッチン', 'リビング', '和室（4部屋）', '洗面所・水洗トイレ'],
+            },
+            {
+              category: '基本設備',
+              items: ['Wi-Fi完備', '調理器具一式', '冷蔵庫', '洗濯機', 'エアコン'],
+            },
+            {
+              category: '宿泊設備',
+              items: ['布団・寝具', 'タオル'],
+            },
+            {
+              category: 'その他',
+              items: ['駐車スペース', 'BBQスペース'],
+            },
+          ]}
           color="purple"
         />
         <ListCard
-          title="備品・サービス"
+          title="サービス他"
           items={['布団・寝具', 'タオル']}
           color="purple"
         />
