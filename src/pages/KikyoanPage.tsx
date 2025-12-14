@@ -159,6 +159,7 @@ const KikyoanPage = () => {
           items={[
             { label: '1泊（1人でも2人でも）', price: '¥18,000' },
             { label: '1泊（3人目以降）', price: '1人増で +¥8,000' },
+            { label: '2泊目から', price: '1人 ¥8,000' },
           ]}
           note={
             <>
