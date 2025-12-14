@@ -1,13 +1,18 @@
+interface ListItem {
+  text: string;
+  noBullet?: boolean;
+}
+
 interface CategoryItem {
   category: string;
-  items: string[];
+  items: (string | ListItem)[];
 }
 
 interface ListCardProps {
   /** カードのタイトル */
   title: string;
   /** リスト項目（単純なリストまたはカテゴリ付きリスト） */
-  items?: string[];
+  items?: (string | ListItem)[];
   /** カテゴリ付きリスト項目 */
   categories?: CategoryItem[];
   /** テーマカラー */
@@ -32,6 +37,19 @@ const colorClasses = {
   },
 };
 
+const renderItem = (item: string | ListItem, index: number) => {
+  const isObject = typeof item === 'object';
+  const text = isObject ? item.text : item;
+  const noBullet = isObject && item.noBullet;
+
+  return (
+    <li key={index} className={`flex items-start ${noBullet ? 'ml-4' : ''}`}>
+      {!noBullet && <span className="mr-2">・</span>}
+      <span>{text}</span>
+    </li>
+  );
+};
+
 const ListCard = ({ title, items, categories, color }: ListCardProps) => {
   const colors = colorClasses[color];
 
@@ -45,12 +63,7 @@ const ListCard = ({ title, items, categories, color }: ListCardProps) => {
       {/* 単純なリスト */}
       {items && (
         <ul className="space-y-2 text-gray-700">
-          {items.map((item, index) => (
-            <li key={index} className="flex items-start">
-              <span className="mr-2">・</span>
-              <span>{item}</span>
-            </li>
-          ))}
+          {items.map((item, index) => renderItem(item, index))}
         </ul>
       )}
 
@@ -61,12 +74,7 @@ const ListCard = ({ title, items, categories, color }: ListCardProps) => {
             <div key={catIndex}>
               <h4 className={`font-bold mb-2 ${colors.category}`}>{cat.category}</h4>
               <ul className="space-y-1 text-gray-700 ml-4">
-                {cat.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start">
-                    <span className="mr-2">・</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
+                {cat.items.map((item, itemIndex) => renderItem(item, itemIndex))}
               </ul>
             </div>
           ))}

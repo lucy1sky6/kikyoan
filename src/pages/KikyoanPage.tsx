@@ -9,6 +9,7 @@ import PageTitle from '../components/content/PageTitle';
 import PricingSection from '../components/content/PricingSection';
 import PriceCard from '../components/content/PriceCard';
 import ListCard from '../components/content/ListCard';
+import ProfileCard from '../components/content/ProfileCard';
 import InfoCard from '../components/content/InfoCard';
 import DecorativeImage from '../components/content/DecorativeImage';
 import ContentImage from '../components/content/ContentImage';
@@ -153,8 +154,18 @@ const KikyoanPage = () => {
         delay={0.65}
       />
 
+      {/* 家主紹介 */}
+      <PricingSection title="家主紹介" color="purple" delay={0.7}>
+        <div className="md:col-span-2">
+          <ProfileCard
+            text="こんにちは。家主の桔梗園子（ききょうそのこ）です。能登の田舎暮らし50年余りです。エレクトーン講師、大正琴の師範などをしていました。シャンソンなど音楽、ミシンで洋服を作るのが趣味です。能登地震をきっかけに、この古民家を利用し、皆さまのお役に立てることはできないか、模索していました。能登に来られる皆さまの憩いの場になりますよう、心よりお待ち申し上げます。"
+            color="purple"
+          />
+        </div>
+      </PricingSection>
+
       {/* 設備・備品・サービス */}
-      <PricingSection title="設備・備品・サービス" color="purple" delay={0.7}>
+      <PricingSection title="設備・備品・サービス" color="purple" delay={0.75}>
         <ListCard
           title="設備・備品"
           categories={[
@@ -167,7 +178,10 @@ const KikyoanPage = () => {
               items: [
                 'Wi-Fi完備',
                 '調理器具一式',
-                '（炊飯ジャー、電子レンジ、コーヒーメーカー、湯沸かしポット、鍋、フライパン、お玉、菜箸、ボウル、お茶碗、スープカップ、皿、箸、大小フォーク＆スプーン、包丁、まな板他）',
+                {
+                  text: '（炊飯ジャー、電子レンジ、コーヒーメーカー、湯沸かしポット、鍋、フライパン、お玉、菜箸、ボウル、お茶碗、スープカップ、皿、箸、大小フォーク＆スプーン、包丁、まな板他）',
+                  noBullet: true,
+                },
                 'テレビ',
                 '冷蔵庫',
                 '洗濯機',
@@ -188,7 +202,7 @@ const KikyoanPage = () => {
         />
         <ListCard
           title="サービス他"
-          items={['駐車スペース（複数台可）', 'BBQスペース', '全館禁煙']}
+          items={['駐車スペース（普通車2～3台可、台数等お問い合わせください）', 'BBQスペース', '全館禁煙']}
           color="purple"
         />
       </PricingSection>
