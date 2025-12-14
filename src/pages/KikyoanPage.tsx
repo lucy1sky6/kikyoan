@@ -157,11 +157,16 @@ const KikyoanPage = () => {
         <PriceCard
           title="料金の目安"
           items={[
-            { label: '1泊（体験宿泊所）', price: '¥XX,XXX~' },
-            { label: '半日レンタル', price: '¥X,XXX~' },
-            { label: '1日レンタル', price: '¥XX,XXX~' },
+            { label: '1泊（1人でも2人でも）', price: '¥18,000' },
+            { label: '3人目以降', price: '1人増で +¥8,000' },
           ]}
-          note="※料金は利用内容により変動します"
+          note={
+            <>
+              3泊以上　10％引き
+              <br />
+              1週間以上　15％引き
+            </>
+          }
           color="purple"
         />
         <InfoCard title="予約について" color="purple">

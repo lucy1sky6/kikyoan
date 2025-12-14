@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 interface PriceItem {
   label: string;
   price: string;
@@ -9,7 +11,7 @@ interface PriceCardProps {
   /** 価格リスト */
   items: PriceItem[];
   /** 注釈 */
-  note?: string;
+  note?: ReactNode;
   /** テーマカラー */
   color: 'purple' | 'lime' | 'blue';
 }
