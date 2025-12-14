@@ -48,7 +48,7 @@ const PriceCard = ({ title, items, note, color }: PriceCardProps) => {
           </li>
         ))}
       </ul>
-      {note && <p className="text-sm text-gray-500 mt-4 ml-4">{note}</p>}
+      {note && <p className="text-base text-gray-600 mt-4 ml-4">{note}</p>}
     </div>
   );
 };

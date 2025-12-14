@@ -158,13 +158,15 @@ const KikyoanPage = () => {
           title="料金の目安"
           items={[
             { label: '1泊（1人でも2人でも）', price: '¥18,000' },
-            { label: '3人目以降', price: '1人増で +¥8,000' },
+            { label: '1泊（3人目以降）', price: '1人増で +¥8,000' },
           ]}
           note={
             <>
               3泊以上　10％引き
               <br />
               1週間以上　15％引き
+              <br />
+              1ヶ月以上　20％引き
             </>
           }
           color="purple"
