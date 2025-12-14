@@ -8,6 +8,7 @@ import StoryModal from '../components/content/StoryModal';
 import PageTitle from '../components/content/PageTitle';
 import PricingSection from '../components/content/PricingSection';
 import PriceCard from '../components/content/PriceCard';
+import ListCard from '../components/content/ListCard';
 import InfoCard from '../components/content/InfoCard';
 import DecorativeImage from '../components/content/DecorativeImage';
 import ContentImage from '../components/content/ContentImage';
@@ -152,8 +153,22 @@ const KikyoanPage = () => {
         delay={0.65}
       />
 
+      {/* 設備・備品・サービス */}
+      <PricingSection title="設備・備品・サービス" color="purple" delay={0.7}>
+        <ListCard
+          title="設備"
+          items={['Wi-Fi完備', '駐車スペース']}
+          color="purple"
+        />
+        <ListCard
+          title="備品・サービス"
+          items={['布団・寝具', 'タオル']}
+          color="purple"
+        />
+      </PricingSection>
+
       {/* 料金・予約について */}
-      <PricingSection title="料金・予約について" color="purple">
+      <PricingSection title="料金・予約について" color="purple" delay={0.75}>
         <PriceCard
           title="料金の目安"
           items={[
