@@ -156,7 +156,7 @@ const GreengrassPage = () => {
         description={
           <>
             <p className="mb-4">
-              NHKで能登の里山が特集され、工房の裏山も含めて紹介されました。山も含めてgreengrassなのです。
+              NHKで能登の里山が特集され、工房の裏山も含めて紹介されました。山も含めてgreengrassです。
             </p>
             <p className="mb-4">
               県内外のカフェやレストランで椅子をご利用いただいています。
@@ -508,7 +508,7 @@ const GreengrassPage = () => {
               NHKで能登の里山が特集された際、greengrassの工房と裏山が紹介されました。
             </p>
             <p className="mb-6 ml-6">
-              山も含めてgreengrassなのです。自然と共に生きる工房の姿を多くの方々に知っていただきました。
+              山も含めてgreengrassです。自然と共に生きる工房の姿を多くの方々に知っていただきました。
             </p>
 
             <h3 className="text-xl font-bold mb-3 mt-8 text-lime-900">導入事例</h3>
@@ -518,14 +518,28 @@ const GreengrassPage = () => {
             <ul className="space-y-3 mb-6 ml-6">
               <li>
                 <ExternalLink href="https://kurart-arau.jp/cafe/" color="lime">
-                  蔵人新宇
+                  蔵人新宇（kurart　ARAU）
                 </ExternalLink>
+                <p className="text-gray-600 text-sm mt-1 ml-4">
+                  NHK Eテレ/BSプレミアム「ふるカフェ系　ハルさんの休日」
+                </p>
               </li>
               <li>
                 <ExternalLink href="https://www.nihonkai-club.com/about.html" color="lime">
                   日本海倶楽部
                 </ExternalLink>
               </li>
+              <li>
+                <ExternalLink href="https://yamanoouchi.work/" color="lime">
+                  やまのおうち
+                </ExternalLink>
+              </li>
+              <li>
+                <ExternalLink href="https://harenochikumori.com/" color="lime">
+                  そらのあそびば　ハレノチクモリ
+                </ExternalLink>
+              </li>
+              <li>他多数</li>
             </ul>
             <p className="text-gray-600 text-sm mb-6 ml-6">
               ※リンクをクリックすると外部サイトへ移動します

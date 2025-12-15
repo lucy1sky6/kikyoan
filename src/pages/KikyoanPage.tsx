@@ -122,7 +122,7 @@ const KikyoanPage = () => {
             <p className="mb-4">
               ・静かな環境でリフレッシュしたい方
               <br />
-              ・ボランティアで能登に来られる方
+              ・お仕事やボランティアで能登に来られる方
               <br />
               ・能登の自然を満喫したい方
               <br />
@@ -142,9 +142,9 @@ const KikyoanPage = () => {
         delay={0.6}
       />
 
-      {/* セクション5: ご紹介いただきました */}
+      {/* セクション5: ご紹介いただきました＆リンク集 */}
       <MagazineSection
-        title="ご紹介いただきました"
+        title="ご紹介いただきました＆リンク集"
         description={
           <>
             <p className="mb-4">
@@ -159,7 +159,7 @@ const KikyoanPage = () => {
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
         imageSrc={getImagePath('/images/kikyoan/introduction.webp')}
-        imageAlt="ご紹介いただきました"
+        imageAlt="ご紹介いただきました＆リンク集"
         delay={0.65}
       />
 
@@ -471,7 +471,7 @@ const KikyoanPage = () => {
               日常から離れて、静かな環境でゆっくりと過ごしたい方に最適です。
             </p>
 
-            <h3 className="text-xl font-bold mb-3 text-purple-900">ボランティアの方</h3>
+            <h3 className="text-xl font-bold mb-3 text-purple-900">お仕事やボランティアの方</h3>
             <p className="mb-6 ml-6">
               能登の復旧・復興支援のために来てくださる方の滞在先として、心を込めてお迎えいたします。長期滞在も可能ですので、安心して活動に専念していただけます。
             </p>
@@ -497,13 +497,13 @@ const KikyoanPage = () => {
       <StoryModal
         isOpen={isKikyoanIntroductionOpen}
         onClose={() => setIsKikyoanIntroductionOpen(false)}
-        title="ご紹介いただきました"
+        title="ご紹介いただきました＆リンク集"
         content={
           <div>
             <h3 className="text-xl font-bold mb-4 text-purple-900">サイト</h3>
 
             <h4 className="text-lg font-bold mb-3 ml-6">TABITAIKEN</h4>
-            <p className="mb-4 ml-6">TABITAIKENにて桔梗庵をご紹介いただいております。</p>
+            <p className="mb-4 ml-6">TABITAIKEN様にて桔梗庵をご紹介いただいております。</p>
             <p className="mb-6 ml-6">
               <ExternalLink href="https://www.tabitaiken.com/peelingwood" color="purple">
                 桔梗庵の紹介ページはこちら
@@ -511,14 +511,6 @@ const KikyoanPage = () => {
             </p>
             <p className="text-gray-600 text-sm mb-8 ml-6">※外部サイトへ移動します</p>
 
-            <h3 className="text-xl font-bold mb-4 text-purple-900">メディア</h3>
-
-            <h4 className="text-lg font-bold mb-3 ml-6">NHK Eテレ/BSプレミアム</h4>
-            <p className="mb-6 ml-6">
-              「ふるカフェ系　ハルさんの休日」
-              <br />
-              群馬県みどり市　蔵人新宇（kurart ARAU）様にて椅子を使っていただいております
-            </p>
           </div>
         }
       />
