@@ -237,6 +237,15 @@ const KikyoanPage = () => {
         <div className="md:col-span-2">
           <InfoCard title="" color="purple">
             <p className="text-gray-700 mb-4">
+              ご宿泊は、1泊1組様（最大8名様）のみの貸切です。
+            </p>
+            <p className="text-gray-600 text-sm mb-6">
+              ※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。
+            </p>
+            <p className="text-gray-700 mb-4">
+              食事なしの素泊まりのみ
+            </p>
+            <p className="text-gray-700 mb-4">
               チェックイン　15:00～21:00
               <br />
               チェックアウト　～11:00
@@ -434,7 +443,11 @@ const KikyoanPage = () => {
         content={
           <div>
             <p className="mb-6">桔梗庵では、様々な用途でご利用いただけます。</p>
-            <p className="mb-6">お客様1日1グループのみの完全貸切※です。のびのびと自由にお過ごしいただけます。</p>
+            <p className="mb-6">
+              お客様1泊1組様（最大8名様）のみの貸切※です。
+              <br />
+              のびのびと自由にお過ごしいただけます。
+            </p>
 
             <h3 className="text-xl font-bold mb-3 text-purple-900">レンタルスペース</h3>
             <p className="mb-6 ml-6">

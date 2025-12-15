@@ -238,8 +238,8 @@ const ReservationForm = ({ color }: ReservationFormProps) => {
           >
             <option value="">選択してください</option>
             <option value="cash">現金</option>
+            <option value="card">カード</option>
             <option value="bank">銀行振込</option>
-            <option value="paypay">PayPay</option>
           </select>
         </div>
 
