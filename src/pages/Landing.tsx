@@ -56,6 +56,7 @@ const Landing = () => {
             imageIndex={kikyoanImageIndex}
             overlayColor="bg-purple-900/40"
             slideDirection="up"
+            topLabel="癒しの宿"
           />
 
           {/* greengrassセクション */}

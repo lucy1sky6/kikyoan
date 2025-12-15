@@ -35,6 +35,7 @@ const KikyoanPage = () => {
         catchphrase="築130年、海辺から能登を支える"
         color="purple"
         imageFilter="brightness(0) saturate(100%) invert(14%) sepia(64%) saturate(4571%) hue-rotate(263deg) brightness(91%) contrast(103%)"
+        topLabel="癒しの宿"
       />
 
       {/* セクション1: 桔梗庵って？ */}
@@ -172,7 +173,7 @@ const KikyoanPage = () => {
           categories={[
             {
               category: '部屋の構成',
-              items: ['ダイニング＆キッチン', 'リビング', '和室（4部屋）', '洗面所・水洗トイレ'],
+              items: ['ダイニング＆キッチン', 'リビング', '和室（4部屋）', '洗面所・洗浄機付きトイレ', '浴室'],
             },
             {
               category: '基本設備',
@@ -214,16 +215,38 @@ const KikyoanPage = () => {
           title="料金の目安"
           items={[
             { label: '1泊（1名様でも2名様でも）', price: '¥18,000' },
-            { label: '1泊（3人目以降　※最大8名様まで宿泊可）', price: '1名様増で +¥8,000' },
+            { label: '1泊（3名様以降　※最大8名様まで宿泊可）', price: '1名様増で +¥8,000' },
             { label: '2泊目から', price: '1名様 ¥8,000' },
           ]}
           note={
             <>
+              <div className="ml-4">
+                例）
+                <br />
+                <div className="ml-4">
+                  2名様 2泊
+                  <br />
+                  ￥18,000+￥8,000✕2＝￥34,000
+                  <br />
+                  1名様あたり 1泊￥8,500
+                  <br />
+                  <br />
+                  3名様 2泊
+                  <br />
+                  ￥18,000+￥8,000+￥8,000✕3=￥50,000
+                  <br />
+                  1名様あたり 1泊￥8,333
+                </div>
+              </div>
+              <br />
               3泊以上　10％引き
               <br />
               1週間以上　15％引き
               <br />
               1ヶ月以上　20％引き
+              <br />
+              <br />
+              ※金、土は +￥1,000
               <br />
               <br />
               時間レンタル、半日レンタルでもご利用いただけます。

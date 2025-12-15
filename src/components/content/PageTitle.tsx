@@ -14,6 +14,8 @@ interface PageTitleProps {
   color: 'purple' | 'lime' | 'blue';
   /** CSSフィルター（画像の色調整用） */
   imageFilter?: string;
+  /** タイトル画像の上に表示するラベル */
+  topLabel?: string;
 }
 
 const colorClasses = {
@@ -29,6 +31,7 @@ const PageTitle = ({
   catchphrase,
   color,
   imageFilter,
+  topLabel,
 }: PageTitleProps) => {
   return (
     <motion.div
@@ -37,6 +40,11 @@ const PageTitle = ({
       transition={{ delay: 0.2 }}
       className="text-center mb-20 mt-16 md:mt-20"
     >
+      {topLabel && (
+        <p className={`text-lg md:text-xl font-medium ${colorClasses[color]} mb-2`}>
+          {topLabel}
+        </p>
+      )}
       <h1 className="mb-2 flex justify-center">
         <img
           src={getImagePath(imageSrc)}

@@ -15,6 +15,8 @@ interface HeroSectionProps {
   overlayColor: string;
   /** スライドの方向（上から or 下から） */
   slideDirection?: 'up' | 'down';
+  /** タイトルの上に表示するラベル */
+  topLabel?: string;
 }
 
 const HeroSection = ({
@@ -25,6 +27,7 @@ const HeroSection = ({
   imageIndex,
   overlayColor,
   slideDirection = 'up',
+  topLabel,
 }: HeroSectionProps) => {
   const initialY = slideDirection === 'up' ? '-12%' : '12%';
   const exitY = slideDirection === 'up' ? '12%' : '-12%';
@@ -56,6 +59,15 @@ const HeroSection = ({
       <div className={`absolute inset-0 ${overlayColor}`} />
       <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
       <div className="text-center z-10 p-8">
+        {topLabel && (
+          <motion.p
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="text-lg md:text-xl text-white drop-shadow-md mb-2"
+          >
+            {topLabel}
+          </motion.p>
+        )}
         <motion.h2
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
