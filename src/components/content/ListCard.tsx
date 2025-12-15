@@ -60,7 +60,7 @@ const ListCard = ({ title, items, categories, color, note }: ListCardProps) => {
       className={`bg-gradient-to-b ${colors.bg} p-8`}
       style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}
     >
-      <h3 className={`text-2xl font-bold ${colors.title} mb-4`}>{title}</h3>
+      {title && <h3 className={`text-2xl font-bold ${colors.title} mb-4`}>{title}</h3>}
 
       {/* 単純なリスト */}
       {items && (
@@ -74,7 +74,7 @@ const ListCard = ({ title, items, categories, color, note }: ListCardProps) => {
         <div className="space-y-4">
           {categories.map((cat, catIndex) => (
             <div key={catIndex}>
-              <h4 className={`font-bold mb-2 ${colors.category}`}>{cat.category}</h4>
+              <h4 className={`text-2xl font-bold mb-4 ${colors.title}`}>{cat.category}</h4>
               <ul className="space-y-1 text-gray-700 ml-4">
                 {cat.items.map((item, itemIndex) => renderItem(item, itemIndex))}
               </ul>

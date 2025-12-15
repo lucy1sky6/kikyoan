@@ -32,7 +32,7 @@ const InfoCard = ({ title, children, color }: InfoCardProps) => {
       className={`bg-gradient-to-b ${colors.bg} p-8`}
       style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}
     >
-      <h3 className={`text-2xl font-bold ${colors.title} mb-4`}>{title}</h3>
+      {title && <h3 className={`text-2xl font-bold ${colors.title} mb-4`}>{title}</h3>}
       {children}
     </div>
   );

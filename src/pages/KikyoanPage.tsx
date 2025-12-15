@@ -169,7 +169,7 @@ const KikyoanPage = () => {
           <ProfileCard
             text={
               <>
-                <h4 className="font-bold text-purple-800 mb-2">家主からご挨拶</h4>
+                <h4 className="text-2xl font-bold text-purple-800 mb-4">家主からご挨拶</h4>
                 <p className="mb-4">
                   こんにちは。家主の桔梗園子（ききょうそのこ）です。
                 </p>
@@ -193,10 +193,10 @@ const KikyoanPage = () => {
         </div>
       </PricingSection>
 
-      {/* 設備・備品・サービス */}
-      <PricingSection title="設備・備品・サービス" color="purple" delay={0.75}>
+      {/* 設備・備品 */}
+      <PricingSection title="設備・備品" color="purple" delay={0.75}>
         <ListCard
-          title="設備・備品"
+          title=""
           categories={[
             {
               category: '部屋の構成',
@@ -230,15 +230,28 @@ const KikyoanPage = () => {
           color="purple"
           note="※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。"
         />
-        <ListCard
-          title="サービス他"
-          items={['駐車スペース（普通車2～3台可、台数等お問い合わせください）', 'BBQスペース', '全館禁煙']}
-          color="purple"
-        />
+      </PricingSection>
+
+      {/* 基本情報 */}
+      <PricingSection title="基本情報" color="purple" delay={0.75}>
+        <div className="md:col-span-2">
+          <InfoCard title="" color="purple">
+            <p className="text-gray-700 mb-4">
+              チェックイン　15:00～21:00
+              <br />
+              チェックアウト　～11:00
+            </p>
+            <ul className="text-gray-700 space-y-1">
+              <li>・駐車スペース有り（普通車2～3台可、台数等お問い合わせください）</li>
+              <li>・BBQスペース有り</li>
+              <li>・全館禁煙</li>
+            </ul>
+          </InfoCard>
+        </div>
       </PricingSection>
 
       {/* 料金・予約について */}
-      <PricingSection title="料金・予約について" color="purple" delay={0.75}>
+      <PricingSection title="料金・予約について" color="purple" delay={0.8}>
         <PriceCard
           title="料金の目安"
           items={[
@@ -336,6 +349,11 @@ const KikyoanPage = () => {
         </InfoCard>
         <div className="md:col-span-2">
           <ReservationForm color="purple" />
+        </div>
+        <div className="md:col-span-2">
+          <InfoCard title="約款" color="purple">
+            <p className="text-gray-700"></p>
+          </InfoCard>
         </div>
       </PricingSection>
 
