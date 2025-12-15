@@ -17,6 +17,8 @@ interface ListCardProps {
   categories?: CategoryItem[];
   /** テーマカラー */
   color: 'purple' | 'lime' | 'blue';
+  /** 注釈 */
+  note?: string;
 }
 
 const colorClasses = {
@@ -50,7 +52,7 @@ const renderItem = (item: string | ListItem, index: number) => {
   );
 };
 
-const ListCard = ({ title, items, categories, color }: ListCardProps) => {
+const ListCard = ({ title, items, categories, color, note }: ListCardProps) => {
   const colors = colorClasses[color];
 
   return (
@@ -80,6 +82,9 @@ const ListCard = ({ title, items, categories, color }: ListCardProps) => {
           ))}
         </div>
       )}
+
+      {/* 注釈 */}
+      {note && <p className="text-sm text-gray-600 mt-4">{note}</p>}
     </div>
   );
 };

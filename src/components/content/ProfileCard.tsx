@@ -1,6 +1,10 @@
+import type { ReactNode } from 'react';
+
 interface ProfileCardProps {
   /** プロフィール文 */
-  text: string;
+  text: ReactNode;
+  /** 画像の下に表示するテキスト */
+  bottomText?: ReactNode;
   /** 画像パス（オプション） */
   imageSrc?: string;
   /** 画像のalt */
@@ -21,7 +25,7 @@ const colorClasses = {
   },
 };
 
-const ProfileCard = ({ text, imageSrc, imageAlt, color }: ProfileCardProps) => {
+const ProfileCard = ({ text, bottomText, imageSrc, imageAlt, color }: ProfileCardProps) => {
   const colors = colorClasses[color];
 
   return (
@@ -29,7 +33,7 @@ const ProfileCard = ({ text, imageSrc, imageAlt, color }: ProfileCardProps) => {
       className={`bg-gradient-to-b ${colors.bg} p-8 max-w-2xl mx-auto`}
       style={{ boxShadow: '0 20px 25px -8px rgb(0 0 0 / 0.25)' }}
     >
-      <p className="text-gray-700 leading-relaxed mb-6">{text}</p>
+      <div className="text-gray-700 leading-relaxed mb-6">{text}</div>
       {imageSrc ? (
         <div className="flex justify-center">
           <img
@@ -43,6 +47,7 @@ const ProfileCard = ({ text, imageSrc, imageAlt, color }: ProfileCardProps) => {
           <span className="text-gray-500">写真</span>
         </div>
       )}
+      {bottomText && <div className="text-gray-700 leading-relaxed mt-6">{bottomText}</div>}
     </div>
   );
 };

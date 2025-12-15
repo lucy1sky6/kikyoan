@@ -179,9 +179,9 @@ const GreengrassPage = () => {
         <PriceCard
           title="価格の目安"
           items={[
-            { label: '木の椅子', price: '¥XX,XXX~' },
-            { label: 'ピーリングウッド（小）', price: '¥X,XXX~' },
-            { label: 'ピーリングウッド（大）', price: '¥XX,XXX~' },
+            { label: '木の椅子', price: '¥50,000～' },
+            { label: 'ピーリングウッド（小）', price: '¥500～' },
+            { label: 'ピーリングウッド（大）', price: '¥5,000～' },
           ]}
           note="※サイズや仕様により価格は変動します"
           color="lime"

@@ -1,5 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  FaCcVisa,
+  FaCcJcb,
+  FaCcAmex,
+  FaCcDinersClub,
+  FaCcMastercard,
+} from 'react-icons/fa';
 import { ReadMoreButton, ViewPhotosButton, ExternalLink } from '../components/common';
 import PageLayout from '../components/layout/PageLayout';
 import ContactSection from '../components/layout/ContactSection';
@@ -62,7 +69,7 @@ const KikyoanPage = () => {
         description={
           <>
             <p className="mb-4">
-              レンタルスペースとして、また体験宿泊所としてご利用いただけます。
+              レンタルスペースとして、また体験宿泊所（素泊まりのみ）としてご利用いただけます。
               イベントや会議、ワーケーションなど、様々な用途でお使いいただけます。
             </p>
             <ReadMoreButton onClick={() => setIsActivitiesStoryOpen(true)} color="purple" />
@@ -84,7 +91,7 @@ const KikyoanPage = () => {
           <>
             <p className="mb-4">
               古民家をリノベーションした温かみのある空間です。
-              木のぬくもりを感じながら、能登の自然に囲まれた贅沢な時間をお楽しみください。
+              木のぬくもりを感じながら、能登の自然に囲まれたゆったりした時間をお楽しみください。
             </p>
             <div className="flex flex-wrap gap-3">
               <ReadMoreButton onClick={() => setIsFeaturesStoryOpen(true)} color="purple" />
@@ -160,7 +167,27 @@ const KikyoanPage = () => {
       <PricingSection title="家主紹介" color="purple" delay={0.7}>
         <div className="md:col-span-2">
           <ProfileCard
-            text="こんにちは。家主の桔梗園子（ききょうそのこ）です。能登の田舎暮らし50年余りです。エレクトーン講師、大正琴の師範などをしていました。シャンソンなど音楽、ミシンで洋服を作るのが趣味です。能登地震をきっかけに、この古民家を利用し、皆さまのお役に立てることはできないか、模索していました。能登に来られる皆さまの憩いの場になりますよう、心よりお待ち申し上げます。"
+            text={
+              <>
+                <h4 className="font-bold text-purple-800 mb-2">家主からご挨拶</h4>
+                <p className="mb-4">
+                  こんにちは。家主の桔梗園子（ききょうそのこ）です。
+                </p>
+                <p className="mb-4">
+                  能登地震をきっかけに、この古民家を利用し、皆さまのお役に立てることはできないか、模索していました。
+                </p>
+                <p className="mb-4">
+                  能登の復興支援で、せっかく能登のために遠方からはるばる仕事やボランティアに来られる方々がいらっしゃるのに、ゆっくり体を休める宿泊施設が足りない、それで苦労されている方がいらっしゃるというお話を聞き、何かお力添えできないか、そう思ったのが桔梗庵を農家民宿に登録したきっかけです。
+                </p>
+                <p className="mb-4">
+                  自分自身、何か新しいことに挑戦してみたいという想いもあり、皆さまに支えられてまた応援していただき、新しいスタートを切る運びとなりました。
+                </p>
+                <p>
+                  能登に来られる皆さまの憩いの場になりますよう、心よりお待ち申し上げます。
+                </p>
+              </>
+            }
+            bottomText="富山県出身。能登の田舎暮らしは50年余り。電子オルガン（brother エミリオン）講師を25年。今でも電子オルガンを趣味とする。また、琴城流大正琴准教授、リフレクソロジーセラピストの顔も持つ。シャンソン、歌、踊りも好む。"
             color="purple"
           />
         </div>
@@ -201,6 +228,7 @@ const KikyoanPage = () => {
             },
           ]}
           color="purple"
+          note="※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。"
         />
         <ListCard
           title="サービス他"
@@ -256,12 +284,55 @@ const KikyoanPage = () => {
           }
           color="purple"
         />
+        <InfoCard title="決済方法" color="purple">
+          <p className="text-gray-700 mb-6">
+            現金・カード決済・銀行振込がご利用いただけます。
+          </p>
+          <h4 className="text-lg font-semibold text-purple-800 mb-4">ご利用可能なクレジットカード</h4>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
+              <FaCcVisa className="text-3xl text-[#1A1F71]" />
+              <span className="text-gray-700 text-sm">Visa</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
+              <FaCcJcb className="text-3xl text-[#0E4C96]" />
+              <span className="text-gray-700 text-sm">JCB</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
+              <FaCcAmex className="text-3xl text-[#006FCF]" />
+              <span className="text-gray-700 text-sm">American Express</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
+              <FaCcDinersClub className="text-3xl text-[#004A97]" />
+              <span className="text-gray-700 text-sm">Diners Club</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
+              <FaCcMastercard className="text-3xl text-[#EB001B]" />
+              <span className="text-gray-700 text-sm">Mastercard</span>
+            </div>
+            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
+              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                <rect width="24" height="24" rx="4" fill="#E21836" />
+                <rect x="12" width="12" height="24" rx="0" fill="#00447C" />
+                <text x="12" y="16" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">UP</text>
+              </svg>
+              <span className="text-gray-700 text-sm">UnionPay</span>
+            </div>
+          </div>
+          <h4 className="text-lg font-semibold text-purple-800 mb-3">銀行振込</h4>
+          <p className="text-gray-700">ご希望の方は、お気軽にお問い合わせください。</p>
+        </InfoCard>
         <InfoCard title="予約について" color="purple">
           <p className="text-gray-700 mb-4">
             最新の空き状況や予約については、SNSにてお知らせしております。
           </p>
           <SnsLink color="purple" />
-          <p className="text-gray-700">お気軽にお問い合わせください。</p>
+          <p className="text-gray-700 mb-4">お気軽にお問い合わせください。</p>
+          <p className="text-gray-700">
+            ご予約は「予約フォーム」をご利用ください。
+            <br />
+            Airbnbのサイトからでもご予約いただけますが、「予約フォーム」から直接ご予約いただいた方が、お得です。
+          </p>
         </InfoCard>
         <div className="md:col-span-2">
           <ReservationForm color="purple" />
@@ -345,6 +416,7 @@ const KikyoanPage = () => {
         content={
           <div>
             <p className="mb-6">桔梗庵では、様々な用途でご利用いただけます。</p>
+            <p className="mb-6">お客様1日1グループのみの完全貸切※です。のびのびと自由にお過ごしいただけます。</p>
 
             <h3 className="text-xl font-bold mb-3 text-purple-900">レンタルスペース</h3>
             <p className="mb-6 ml-6">
@@ -353,7 +425,7 @@ const KikyoanPage = () => {
 
             <h3 className="text-xl font-bold mb-3 text-purple-900">体験宿泊所</h3>
             <p className="mb-6 ml-6">
-              能登の暮らしを体験できる宿泊施設としてもご利用可能です。
+              能登の暮らしを体験できる宿泊施設（素泊まりのみ）としてもご利用可能です。
             </p>
 
             <h3 className="text-xl font-bold mb-3 text-purple-900">ワーケーション</h3>
@@ -379,40 +451,9 @@ const KikyoanPage = () => {
               能登の海の幸を存分に楽しみながら、ゆったりとした長期滞在をお楽しみください。
             </p>
 
-            <h3 className="text-xl font-bold mb-3 mt-8 text-purple-900">設備一覧</h3>
-            <div className="mb-6 ml-6">
-              <h4 className="font-bold mb-2 text-purple-800">部屋の構成</h4>
-              <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
-                <li>ダイニング＆キッチン</li>
-                <li>リビング</li>
-                <li>和室（4部屋）</li>
-                <li>洗面所・水洗トイレ</li>
-              </ul>
-            </div>
-            <div className="mb-6 ml-6">
-              <h4 className="font-bold mb-2 text-purple-800">基本設備</h4>
-              <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
-                <li>Wi-Fi完備</li>
-                <li>調理器具一式</li>
-                <li>冷蔵庫</li>
-                <li>洗濯機</li>
-                <li>エアコン</li>
-              </ul>
-            </div>
-            <div className="mb-6 ml-6">
-              <h4 className="font-bold mb-2 text-purple-800">宿泊設備</h4>
-              <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
-                <li>布団・寝具</li>
-                <li>タオル</li>
-              </ul>
-            </div>
-            <div className="mb-6 ml-6">
-              <h4 className="font-bold mb-2 text-purple-800">その他</h4>
-              <ul className="list-disc list-inside space-y-1 ml-4 text-gray-700">
-                <li>駐車スペース</li>
-                <li>BBQスペース</li>
-              </ul>
-            </div>
+            <p className="text-sm text-gray-600">
+              ※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。
+            </p>
           </div>
         }
       />
