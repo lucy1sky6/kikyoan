@@ -222,7 +222,7 @@ const GreengrassPage = () => {
 
             <div className="my-8">
               <ContentImage
-                src={getImagePath('/images/greengrass/typhoon-branches.jpg')}
+                src={getImagePath('/images/greengrass/typhoon-branches.webp')}
                 alt="台風後の枝"
               />
             </div>
@@ -243,14 +243,14 @@ const GreengrassPage = () => {
 
             <div className="my-8">
               <ContentImage
-                src={getImagePath('/images/greengrass/michio-hands.jpg')}
+                src={getImagePath('/images/greengrass/michio-hands.webp')}
                 alt="ミッチーの手"
               />
             </div>
 
             <div className="my-8">
               <ContentImage
-                src={getImagePath('/images/greengrass/kousakudai.png')}
+                src={getImagePath('/images/greengrass/kousakudai.webp')}
                 alt="工房での作業風景"
               />
             </div>
@@ -295,19 +295,19 @@ const GreengrassPage = () => {
 
             <div className="my-8 ml-6 grid grid-cols-2 md:grid-cols-4 gap-4">
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-1.jpg')}
+                src={getImagePath('/images/greengrass/chairs-1.webp')}
                 alt="木の椅子1"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-2.jpg')}
+                src={getImagePath('/images/greengrass/chairs-2.webp')}
                 alt="木の椅子2"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-3.jpg')}
+                src={getImagePath('/images/greengrass/chairs-3.webp')}
                 alt="木の椅子3"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-4.jpg')}
+                src={getImagePath('/images/greengrass/chairs-4.webp')}
                 alt="木の椅子4"
               />
             </div>
@@ -331,27 +331,27 @@ const GreengrassPage = () => {
 
             <div className="my-8 ml-6 grid grid-cols-2 md:grid-cols-3 gap-4">
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-variety-1.png')}
+                src={getImagePath('/images/greengrass/chairs-variety-1.webp')}
                 alt="様々な椅子1"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-variety-2.png')}
+                src={getImagePath('/images/greengrass/chairs-variety-2.webp')}
                 alt="様々な椅子2"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-variety-3.png')}
+                src={getImagePath('/images/greengrass/chairs-variety-3.webp')}
                 alt="様々な椅子3"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-variety-4.png')}
+                src={getImagePath('/images/greengrass/chairs-variety-4.webp')}
                 alt="様々な椅子4"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-variety-5.png')}
+                src={getImagePath('/images/greengrass/chairs-variety-5.webp')}
                 alt="様々な椅子5"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/chairs-variety-6.png')}
+                src={getImagePath('/images/greengrass/chairs-variety-6.webp')}
                 alt="様々な椅子6"
               />
             </div>
@@ -378,11 +378,11 @@ const GreengrassPage = () => {
 
             <div className="my-8 ml-6 grid grid-cols-2 gap-4">
               <ContentImage
-                src={getImagePath('/images/greengrass/michio-1.jpg')}
+                src={getImagePath('/images/greengrass/michio-1.webp')}
                 alt="ミッチー1"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/michio-2.jpg')}
+                src={getImagePath('/images/greengrass/michio-2.webp')}
                 alt="ミッチー2"
               />
             </div>
@@ -404,11 +404,11 @@ const GreengrassPage = () => {
 
             <div className="my-8 grid grid-cols-2 gap-4">
               <ContentImage
-                src={getImagePath('/images/greengrass/peeling-1.jpg')}
+                src={getImagePath('/images/greengrass/peeling-1.webp')}
                 alt="ピーリングウッド1"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/peeling-2.jpg')}
+                src={getImagePath('/images/greengrass/peeling-2.webp')}
                 alt="ピーリングウッド2"
               />
             </div>
@@ -435,27 +435,27 @@ const GreengrassPage = () => {
 
             <div className="my-8 ml-6 grid grid-cols-2 md:grid-cols-3 gap-4">
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-1.png')}
+                src={getImagePath('/images/greengrass/exhibition-1.webp')}
                 alt="森の小径展の様子1"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-2.png')}
+                src={getImagePath('/images/greengrass/exhibition-2.webp')}
                 alt="森の小径展の様子2"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-3.png')}
+                src={getImagePath('/images/greengrass/exhibition-3.webp')}
                 alt="森の小径展の様子3"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-4.png')}
+                src={getImagePath('/images/greengrass/exhibition-4.webp')}
                 alt="森の小径展の様子4"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-5.png')}
+                src={getImagePath('/images/greengrass/exhibition-5.webp')}
                 alt="森の小径展の様子5"
               />
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-6.png')}
+                src={getImagePath('/images/greengrass/exhibition-6.webp')}
                 alt="森の小径展の様子6"
               />
             </div>
@@ -469,7 +469,7 @@ const GreengrassPage = () => {
 
             <div className="my-8 ml-6">
               <ContentImage
-                src={getImagePath('/images/greengrass/exhibition-7.png')}
+                src={getImagePath('/images/greengrass/exhibition-7.webp')}
                 alt="森の小径展の様子7"
               />
             </div>
@@ -563,7 +563,7 @@ const GreengrassPage = () => {
 
             <div className="my-8">
               <ContentImage
-                src={getImagePath('/images/greengrass/backyard-dam.jpg')}
+                src={getImagePath('/images/greengrass/backyard-dam.webp')}
                 alt="工房の裏山と砂防ダム"
               />
             </div>
@@ -575,7 +575,7 @@ const GreengrassPage = () => {
 
             <div className="my-8">
               <ContentImage
-                src={getImagePath('/images/greengrass/spring-scenery.jpg')}
+                src={getImagePath('/images/greengrass/spring-scenery.webp')}
                 alt="季節の風景"
               />
             </div>
@@ -589,7 +589,7 @@ const GreengrassPage = () => {
 
             <div className="my-8">
               <ContentImage
-                src={getImagePath('/images/greengrass/workshop-visit.jpg')}
+                src={getImagePath('/images/greengrass/workshop-visit.webp')}
                 alt="工房の様子"
               />
             </div>
