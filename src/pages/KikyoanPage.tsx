@@ -348,7 +348,7 @@ const KikyoanPage = () => {
           <p className="text-gray-700 mb-4">
             最新の空き状況や予約については、SNSにてお知らせしております。
           </p>
-          <SnsLink color="purple" />
+          <SnsLink instagramUrl="https://www.instagram.com/kikyoan_greengrass" color="purple" />
           <p className="text-gray-700 mb-4">お気軽にお問い合わせください。</p>
           <p className="text-gray-700">
             ご予約は「予約フォーム」をご利用ください。

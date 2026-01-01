@@ -8,7 +8,7 @@ const Contact = () => {
       <QRCodePlaceholder />
 
       {/* SNSアイコン */}
-      <SnsLink size="lg" centered />
+      <SnsLink instagramUrl="https://www.instagram.com/kikyoan_greengrass" size="lg" centered />
     </div>
   );
 };

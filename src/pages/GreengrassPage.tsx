@@ -190,7 +190,7 @@ const GreengrassPage = () => {
           <p className="text-gray-700 mb-4">
             最新の在庫状況については、SNSにてお知らせしております。
           </p>
-          <SnsLink color="lime" />
+          <SnsLink instagramUrl="https://www.instagram.com/kikyoan_greengrass" color="lime" />
           <p className="text-gray-700">お気軽にお問い合わせください。</p>
         </InfoCard>
       </PricingSection>
