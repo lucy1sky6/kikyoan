@@ -137,7 +137,7 @@ const KikyoanPage = () => {
         gradientFrom="from-purple-100"
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
-        imageSrc={getImagePath('/images/kikyoan/photo-intro.webp')}
+        imageSrc={getImagePath('/images/kikyoan/recommended.webp')}
         imageAlt="桔梗庵での過ごし方"
         delay={0.6}
       />
@@ -167,6 +167,8 @@ const KikyoanPage = () => {
       <PricingSection title="家主紹介" color="purple" delay={0.7}>
         <div className="md:col-span-2">
           <ProfileCard
+            imageSrc={getImagePath('/images/kikyoan/host-greeting.webp')}
+            imageAlt="家主 桔梗園子"
             text={
               <>
                 <h4 className="text-2xl font-bold text-purple-800 mb-4">家主からご挨拶</h4>
@@ -187,7 +189,7 @@ const KikyoanPage = () => {
                 </p>
               </>
             }
-            bottomText="富山県出身。能登の田舎暮らしは50年余り。電子オルガン（brother エミリオン）講師を25年。今でも電子オルガンを趣味とする。また、琴城流大正琴准教授、リフレクソロジーセラピストの顔も持つ。シャンソン、歌、踊りも好む。"
+            bottomText="富山県出身。能登の田舎暮らしは50年余り。電子オルガン（brother エミリオン）講師を25年。琴城流大正琴准教授、リフレクソロジーセラピストの顔も持つ。シャンソン、歌、踊りも好む。"
             color="purple"
           />
         </div>
@@ -200,7 +202,7 @@ const KikyoanPage = () => {
           categories={[
             {
               category: '部屋の構成',
-              items: ['ダイニング＆キッチン', 'リビング', '和室（4部屋）', '洗面所・洗浄機付きトイレ', '浴室'],
+              items: ['ダイニング＆キッチン', '和室（3部屋）', '洗面所・洗浄機付きトイレ', '浴室'],
             },
             {
               category: '基本設備',
@@ -361,7 +363,76 @@ const KikyoanPage = () => {
         </div>
         <div className="md:col-span-2">
           <InfoCard title="約款" color="purple">
-            <p className="text-gray-700"></p>
+            <div className="text-gray-700 text-sm space-y-4">
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第1条（宿泊契約の成立）</h4>
+                <p className="ml-4">宿泊契約は、当施設が宿泊の申し込みを承諾したときに成立します。予約確定後、当施設から確認のご連絡をいたします。</p>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第2条（宿泊料金のお支払い）</h4>
+                <p className="ml-4">宿泊料金は、チェックアウト時またはチェックイン時に現金、クレジットカード、または事前の銀行振込にてお支払いください。</p>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第3条（チェックイン・チェックアウト）</h4>
+                <p className="ml-4">チェックインは15:00〜21:00、チェックアウトは11:00までとなります。時間の変更をご希望の場合は、事前にご相談ください。</p>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第4条（キャンセルポリシー）</h4>
+                <ul className="ml-4 list-disc list-inside space-y-1">
+                  <li>7日前まで：無料</li>
+                  <li>3〜6日前：宿泊料金の30%</li>
+                  <li>前日：宿泊料金の50%</li>
+                  <li>当日：宿泊料金の100%</li>
+                  <li>無連絡キャンセル：宿泊料金の100%</li>
+                </ul>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第5条（禁止事項）</h4>
+                <ul className="ml-4 list-disc list-inside space-y-1">
+                  <li>館内での喫煙（全館禁煙）</li>
+                  <li>ペットの同伴（盲導犬・介助犬を除く）</li>
+                  <li>他のお客様や近隣住民へのご迷惑となる行為</li>
+                  <li>危険物の持ち込み</li>
+                  <li>当施設の許可のない物品販売・営業行為</li>
+                  <li>予約時に申告された人数を超える宿泊</li>
+                </ul>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第6条（施設・備品の利用）</h4>
+                <p className="ml-4">施設および備品は大切にご利用ください。故意または過失により施設・備品を破損・汚損された場合は、修繕費用を請求させていただくことがあります。</p>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第7条（責任の範囲）</h4>
+                <p className="ml-4">当施設は、宿泊に関して当施設の責に帰すべき事由により損害を与えた場合、その損害を賠償いたします。ただし、お客様の貴重品・現金等の紛失・盗難については、当施設に故意または重大な過失がない限り責任を負いかねます。</p>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第8条（宿泊契約の解除）</h4>
+                <p className="ml-4">以下の場合、当施設は宿泊契約を解除することがあります。</p>
+                <ul className="ml-4 list-disc list-inside space-y-1 mt-1">
+                  <li>法令の規定、公序良俗に反する行為があった場合</li>
+                  <li>伝染病と認められる疾病にかかっていると判明した場合</li>
+                  <li>宿泊に際して合理的な範囲を超える要求があった場合</li>
+                  <li>天災等不可抗力により宿泊が不可能となった場合</li>
+                </ul>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第9条（個人情報の取り扱い）</h4>
+                <p className="ml-4">ご予約時にお預かりした個人情報は、宿泊に関する業務および法令に基づく届出の目的のみに使用し、適切に管理いたします。</p>
+              </section>
+
+              <section>
+                <h4 className="font-bold text-purple-800 mb-2">第10条（準拠法・管轄）</h4>
+                <p className="ml-4">本約款は日本法に準拠し、本約款に関する紛争については、当施設所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+              </section>
+            </div>
           </InfoCard>
         </div>
       </PricingSection>
