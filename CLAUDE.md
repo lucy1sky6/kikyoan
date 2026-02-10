@@ -131,8 +131,12 @@ ESLintでコードをチェックします。
    - カスタムスタイルは `src/index.css` に記載
 
 4. **画像の追加**
-   - `public/` ディレクトリに画像を配置
-   - コンポーネントで `/filename.jpg` として参照
+   - `public/images/` の該当ディレクトリに WebP 形式で配置
+   - `gallery/` はライトボックス拡大用（長辺1600px）、それ以外はインライン用（長辺≤800px）
+   - 拡大予定の写真とインライン写真を同じフォルダに混在させない
+   - `npm run images:check` を実行してポリシー違反がないことを確認
+   - 違反があれば `npm run images:fix` で自動リサイズ、または手動で対応
+   - 詳細は `public/images/README.md` を参照
 
 ### Tailwind CSS v3の使い方
 

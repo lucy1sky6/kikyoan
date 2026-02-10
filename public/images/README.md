@@ -1,111 +1,69 @@
-# 画像ファイル配置ガイド
+# 画像ポリシー
 
-このディレクトリには、サイトで使用する画像を配置します。
+## サイズ・形式ルール
+
+| 用途 | ディレクトリ | 長辺 | 形式 | 理由 |
+|------|------------|------|------|------|
+| ライトボックス拡大 | `gallery/` | 1600px | WebP | 拡大表示に耐えるサイズ |
+| インライン表示 | それ以外 | ≤ 800px | WebP | 表示領域を超えない |
+
+- **500KB超は要注意** — `images:check` が警告を出す
+- access/ (200px)、qr/ (192px) など小さいものはそのまま。800px以下は全てOK
+
+## gallery/ とそれ以外の使い分け
+
+- `gallery/` はライトボックスで拡大表示する写真専用。**長辺1600px固定**
+- それ以外（`greengrass/`, `kikyoan/`, `landing/`, `facilities/` 等）はインライン表示用。**長辺800px以下**
+- 同じ写真をギャラリーにも使う場合は、1600px版を `gallery/` に、800px版をインライン用ディレクトリに、それぞれ配置する。同一写真の複数解像度は正常
+- **拡大予定の写真とインライン写真を同じフォルダに混在させない**
 
 ## ディレクトリ構成
 
-### `landing/` - トップページのヒーロー画像
-トップページの各セクションで使用する背景画像を配置します。
+```
+public/images/
+├── gallery/           # ライトボックス拡大用（長辺1600px）
+│   ├── kikyoan/       #   桔梗庵タグ（連番: 01.webp, 02.webp ...）
+│   ├── greengrass/    #   greengrassタグ
+│   ├── sea/           #   海タグ
+│   ├── festival/      #   祭タグ
+│   └── other/         #   その他タグ
+├── landing/           # トップページヒーロー画像
+├── kikyoan/           # 桔梗庵インライン写真
+├── greengrass/        # greengrassインライン写真
+├── facilities/        # 近くの施設
+├── access/            # アクセスフローチャート（200x200）
+├── logos/             # ロゴ画像
+└── qr/                # QRコード（192x192）
+```
 
-- `kikyoan-hero-01.webp, 02.webp, 03.webp` - 桔梗庵セクション (1200x800) ※3枚が自動切り替え
-- `greengrass-hero-01.webp, 02.webp, 03.webp` - greengrassセクション (1200x800) ※3枚が自動切り替え
-- `gallery-hero.webp` - のとフォトセクション (1200x800)
+## バリデーション
 
-### `gallery/` - のとフォトで表示する写真
-のとフォトページで表示される写真を配置します。タグごとにサブディレクトリに分類してください。
+```bash
+npm run images:check    # ポリシー違反を検出
+npm run images:fix      # 違反画像を自動リサイズ（上書き）
+```
 
-- `gallery/kikyoan/01.webp, 02.webp, 03.webp` - 桔梗庵タグの写真
-- `gallery/greengrass/01.webp, 02.webp, 03.webp` - greengrassタグの写真
-- `gallery/sea/01.webp, 02.webp, 03.webp` - 海タグの写真
-- `gallery/festival/01.webp, 02.webp` - 祭タグの写真
-- `gallery/other/01.webp` - その他タグの写真
+## 画像の追加手順
 
-**ファイル名の形式**: `01.webp`, `02.webp` など（連番）
+1. WebP 形式で該当ディレクトリに配置
+2. `npm run images:check` でポリシー違反がないことを確認
+3. 違反があれば `npm run images:fix` で自動リサイズ、または手動で対応
 
-### `kikyoan/` - 桔梗庵セクションで使用する写真
-桔梗庵の紹介セクション（MagazineSection）で使用する写真を配置します。
+## ファイル名規約
 
-- `about.webp` - 桔梗庵について (1200x900)
-- `activities.webp` - ここでできること (1000x1000)
-- `features.webp` - 施設の魅力 (1000x1000)
-- `photo-intro.webp` - こんな方におすすめ (1200x900)
-
-### `greengrass/` - greengrassセクションで使用する写真
-greengrassの紹介セクション（MagazineSection）で使用する写真を配置します。
-
-- `about.webp` - greengrassについて (1200x900)
-- `chairs.webp` - 木の椅子へのこだわり (1000x1000)
-- `peeling.webp` - ピーリングウッドとは (1000x1000)
-- `workshop.webp` - 工房を訪れて (1200x900)
-- `exhibition.webp` - 個展の開催 (1200x900)
-- `media.webp` - メディア・導入事例 (1200x900)
-
-### `facilities/` - 近くの施設の写真
-近くの施設セクションで使用する写真を配置します。
-
-- `ogi-port.webp` - 小木漁港 (800x600)
-- `ika-no-eki.webp` - イカの駅 つくモール (800x600)
-- `marine-center.webp` - のと海洋ふれあいセンター (800x600)
-- `mawaki-ruins.webp` - 縄文真脇遺跡 (800x600)
-- `yanagida-park.webp` - 柳田植物公園 (800x600)
-
-### `access/` - アクセスフローチャートで使用する写真
-アクセスセクションのフローチャートで使用する写真を配置します。
-
-- `kanazawa-station.webp` - 金沢駅 (200x200)
-- `noto-airport.webp` - のと里山空港 (200x200)
-- `ogi-entrance.webp` - 小木入口 (200x200)
-- `kikyoan.webp` - 桔梗庵 (200x200)
-- `greengrass.webp` - greengrass (200x200)
-
-### `logos/` - ロゴ画像
-サイトロゴや各種アイコンを配置します。
-
-### `qr/` - QRコード
-サイトのQRコードを配置します。
-
-- `qr-code.webp` - サイトのQRコード (192x192)
+- 英数字とハイフンを使用（日本語ファイル名は避ける）
+- 大文字小文字を区別する
+- ギャラリーは連番: `01.webp`, `02.webp`, ...
 
 ## 画像の参照方法
 
-画像は `/images/` から始まるパスで参照します：
-
 ```tsx
-// のとフォトの写真
-<img src="/images/gallery/kikyoan/kikyoan-01.jpg" alt="桔梗庵の外観" />
-
-// 桔梗庵セクションの写真
-imageSrc="/images/kikyoan/exterior.jpg"
-
-// ロゴ
+<img src="/images/gallery/kikyoan/01.webp" alt="桔梗庵" />
+<img src="/images/greengrass/about.webp" alt="greengrassについて" />
 <img src="/images/logos/site-logo.png" alt="桔梗庵 & greengrass" />
-
-// QRコード
-<img src="/images/qr/qr-code.webp" alt="QRコード" />
 ```
-
-## 推奨画像サイズ
-
-### のとフォトギャラリー
-- **正方形**: 800x800px 以上
-- **フォーマット**: JPEG (圧縮率80-90%)
-
-### MagazineSection
-- **横長 (landscape)**: 1200x900px 以上 (4:3)
-- **正方形 (square)**: 1000x1000px 以上
-- **フォーマット**: JPEG (圧縮率80-90%)
-
-### ロゴ
-- **PNG形式** (透過背景の場合)
-- サイズは用途に応じて
-
-### QRコード
-- **正方形**: 192x192px 以上
-- **フォーマット**: PNG または WebP
 
 ## 注意事項
 
-- ファイル名は英数字とハイフンを使用（日本語ファイル名は避ける）
-- 大文字小文字を区別します
-- 画像は適切に圧縮してからアップロードしてください
-- 個人情報が写り込んでいないか確認してください
+- 個人情報が写り込んでいないか確認すること
+- 画像は適切に圧縮してから配置すること
