@@ -2,7 +2,7 @@
  * 画像ポリシーチェックスクリプト
  *
  * ポリシー:
- *   gallery/  → 長辺 1600px（ライトボックス拡大用）
+ *   gallery/  → 長辺 1600px 推奨、1200px 以上は WARN、未満は FAIL
  *   それ以外  → 長辺 ≤ 800px（インライン表示用）
  *   全画像    → WebP 形式
  *   500KB超   → 注意（情報のみ）
@@ -15,6 +15,7 @@ import sharp from "sharp";
 const IMAGES_DIR = new URL("../public/images", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
 
 const GALLERY_LONG_EDGE = 1600;
+const GALLERY_MIN_LONG_EDGE = 1200;
 const INLINE_MAX_LONG_EDGE = 800;
 const SIZE_WARN_BYTES = 500 * 1024;
 
@@ -51,10 +52,15 @@ async function checkImage(filePath) {
   const longEdge = Math.max(metadata.width, metadata.height);
 
   if (isGallery(relPath)) {
-    if (longEdge !== GALLERY_LONG_EDGE) {
+    if (longEdge < GALLERY_MIN_LONG_EDGE) {
       issues.push({
         level: "FAIL",
-        msg: `長辺${longEdge}px（期待${GALLERY_LONG_EDGE}px）`,
+        msg: `長辺${longEdge}px（最低${GALLERY_MIN_LONG_EDGE}px）`,
+      });
+    } else if (longEdge !== GALLERY_LONG_EDGE) {
+      issues.push({
+        level: "WARN",
+        msg: `長辺${longEdge}px（推奨${GALLERY_LONG_EDGE}px）`,
       });
     }
   } else {
