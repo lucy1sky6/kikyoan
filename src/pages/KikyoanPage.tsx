@@ -1,12 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {
-  FaCcVisa,
-  FaCcJcb,
-  FaCcAmex,
-  FaCcDinersClub,
-  FaCcMastercard,
-} from 'react-icons/fa';
 import { ReadMoreButton, ViewPhotosButton, ExternalLink } from '../components/common';
 import PageLayout from '../components/layout/PageLayout';
 import ContactSection from '../components/layout/ContactSection';
@@ -17,7 +10,6 @@ import PricingSection from '../components/content/PricingSection';
 import PriceCard from '../components/content/PriceCard';
 import ListCard from '../components/content/ListCard';
 import ProfileCard from '../components/content/ProfileCard';
-import ReservationForm from '../components/content/ReservationForm';
 import InfoCard from '../components/content/InfoCard';
 import DecorativeImage from '../components/content/DecorativeImage';
 import ContentImage from '../components/content/ContentImage';
@@ -31,6 +23,7 @@ const KikyoanPage = () => {
   const [isFeaturesStoryOpen, setIsFeaturesStoryOpen] = useState(false);
   const [isRecommendedStoryOpen, setIsRecommendedStoryOpen] = useState(false);
   const [isKikyoanIntroductionOpen, setIsKikyoanIntroductionOpen] = useState(false);
+  const [isSupportPrice, setIsSupportPrice] = useState(false);
 
   return (
     <PageLayout color="purple">
@@ -210,7 +203,7 @@ const KikyoanPage = () => {
                 'Wi-Fi完備',
                 '調理器具一式',
                 {
-                  text: '（炊飯ジャー、電子レンジ、コーヒーメーカー、湯沸かしポット、鍋、フライパン、お玉、菜箸、ボウル、お茶碗、スープカップ、皿、箸、大小フォーク＆スプーン、包丁、まな板他）',
+                  text: '（炊飯ジャー、電子レンジ、IHクッキングヒーター、グリルなべ、コーヒーメーカー、鍋、フライパン、お玉、菜箸、ボウル、お茶碗、皿、箸、大小フォーク＆スプーン、包丁、まな板他）',
                   noBullet: true,
                 },
                 'テレビ',
@@ -226,7 +219,10 @@ const KikyoanPage = () => {
             },
             {
               category: 'その他',
-              items: ['ドライヤー', 'シャンプー', 'コンディショナー', 'ボディーソープ', '歯磨きセット'],
+              items: [
+                '歯ブラシセットあります。',
+                'バスタオル、タオルの貸し出しはありませんが、どうしても必要な場合はお気軽にご相談ください。',
+              ],
             },
           ]}
           color="purple"
@@ -263,86 +259,92 @@ const KikyoanPage = () => {
 
       {/* 料金・予約について */}
       <PricingSection title="料金・予約について" color="purple" delay={0.8}>
-        <PriceCard
-          title="料金の目安"
-          items={[
-            { label: '1泊（1名様でも2名様でも）', price: '¥18,000' },
-            { label: '1泊（3名様以降　※最大8名様まで宿泊可）', price: '1名様増で +¥8,000' },
-            { label: '2泊目から', price: '1名様 ¥8,000' },
-          ]}
-          note={
-            <>
-              <div className="ml-4">
-                例）
-                <br />
+        {!isSupportPrice ? (
+          <PriceCard
+            title="料金の目安"
+            items={[
+              { label: '1泊（1名様でも2名様でも）', price: '¥18,000' },
+              { label: '1泊（3名様以降　※最大8名様まで宿泊可）', price: '1名様増で +¥8,000' },
+              { label: '2泊目から', price: '1名様 ¥8,000' },
+            ]}
+            note={
+              <>
                 <div className="ml-4">
-                  2名様 2泊
+                  例）
                   <br />
-                  ￥18,000+￥8,000✕2＝￥34,000
-                  <br />
-                  1名様あたり 1泊￥8,500
-                  <br />
-                  <br />
-                  3名様 2泊
-                  <br />
-                  ￥18,000+￥8,000+￥8,000✕3=￥50,000
-                  <br />
-                  1名様あたり 1泊￥8,333
+                  <div className="ml-4">
+                    2名様 2泊
+                    <br />
+                    ￥18,000+￥8,000✕2＝￥34,000
+                    <br />
+                    1名様あたり 1泊￥8,500
+                    <br />
+                    <br />
+                    3名様 2泊
+                    <br />
+                    ￥18,000+￥8,000+￥8,000✕3=￥50,000
+                    <br />
+                    1名様あたり 1泊￥8,333
+                  </div>
                 </div>
-              </div>
-              <br />
-              3泊以上　10％引き
-              <br />
-              1週間以上　15％引き
-              <br />
-              1ヶ月以上　20％引き
-              <br />
-              <br />
-              ※金、土は +￥1,000
-              <br />
-              <br />
-              時間レンタル、半日レンタルでもご利用いただけます。
-              <br />
-              お気軽にお問い合わせください。
-            </>
-          }
-          color="purple"
-        />
+                <br />
+                3泊以上　10％引き
+                <br />
+                1週間以上　15％引き
+                <br />
+                1ヶ月以上　20％引き
+                <br />
+                <br />
+                ※金、土は +￥1,000
+                <br />
+                <br />
+                時間レンタル、半日レンタルでもご利用いただけます。
+                <br />
+                お気軽にお問い合わせください。
+                <br />
+                <br />
+                <span className="block text-right">
+                  <span
+                    className="text-purple-500 text-sm cursor-pointer hover:text-purple-700 underline underline-offset-2 transition-colors"
+                    onClick={() => setIsSupportPrice(true)}
+                  >
+                    復興支援関係の方はこちら
+                  </span>
+                </span>
+              </>
+            }
+            color="purple"
+          />
+        ) : (
+          <PriceCard
+            title="復興支援関係者向け料金"
+            items={[
+              { label: '1泊（1名様でも2名様でも）', price: '¥---' },
+              { label: '1泊（3名様以降　※最大8名様まで宿泊可）', price: '1名様増で +¥---' },
+              { label: '2泊目から', price: '1名様 ¥---' },
+            ]}
+            note={
+              <>
+                復興支援に携わる皆さまへ、感謝を込めた特別料金です。
+                <br />
+                <br />
+                <span className="block text-right">
+                  <span
+                    className="text-purple-500 text-sm cursor-pointer hover:text-purple-700 underline underline-offset-2 transition-colors"
+                    onClick={() => setIsSupportPrice(false)}
+                  >
+                    通常料金に戻す
+                  </span>
+                </span>
+              </>
+            }
+            color="purple"
+          />
+        )}
         <InfoCard title="決済方法" color="purple">
           <p className="text-gray-700 mb-6">
-            現金・カード決済・銀行振込がご利用いただけます。
+            現金・銀行振込がご利用いただけます。
           </p>
-          <h4 className="text-lg font-semibold text-purple-800 mb-4">ご利用可能なクレジットカード</h4>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
-            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
-              <FaCcVisa className="text-3xl text-[#1A1F71]" />
-              <span className="text-gray-700 text-sm">Visa</span>
-            </div>
-            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
-              <FaCcJcb className="text-3xl text-[#0E4C96]" />
-              <span className="text-gray-700 text-sm">JCB</span>
-            </div>
-            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
-              <FaCcAmex className="text-3xl text-[#006FCF]" />
-              <span className="text-gray-700 text-sm">American Express</span>
-            </div>
-            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
-              <FaCcDinersClub className="text-3xl text-[#004A97]" />
-              <span className="text-gray-700 text-sm">Diners Club</span>
-            </div>
-            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
-              <FaCcMastercard className="text-3xl text-[#EB001B]" />
-              <span className="text-gray-700 text-sm">Mastercard</span>
-            </div>
-            <div className="flex items-center gap-3 bg-white/60 rounded-lg px-3 py-2">
-              <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
-                <rect width="24" height="24" rx="4" fill="#E21836" />
-                <rect x="12" width="12" height="24" rx="0" fill="#00447C" />
-                <text x="12" y="16" textAnchor="middle" fill="white" fontSize="7" fontWeight="bold">UP</text>
-              </svg>
-              <span className="text-gray-700 text-sm">UnionPay</span>
-            </div>
-          </div>
           <h4 className="text-lg font-semibold text-purple-800 mb-3">銀行振込</h4>
           <p className="text-gray-700">ご希望の方は、お気軽にお問い合わせください。</p>
         </InfoCard>
@@ -351,16 +353,8 @@ const KikyoanPage = () => {
             最新の空き状況や予約については、SNSにてお知らせしております。
           </p>
           <SnsLink instagramUrl="https://www.instagram.com/kikyoan_greengrass" color="purple" />
-          <p className="text-gray-700 mb-4">お気軽にお問い合わせください。</p>
-          <p className="text-gray-700">
-            ご予約は「予約フォーム」をご利用ください。
-            <br />
-            Airbnbのサイトからでもご予約いただけますが、「予約フォーム」から直接ご予約いただいた方が、お得です。
-          </p>
+          <p className="text-gray-700">お気軽にお問い合わせください。</p>
         </InfoCard>
-        <div className="md:col-span-2">
-          <ReservationForm color="purple" />
-        </div>
         <div className="md:col-span-2">
           <InfoCard title="約款" color="purple">
             <div className="text-gray-700 text-sm space-y-4">
@@ -371,7 +365,7 @@ const KikyoanPage = () => {
 
               <section>
                 <h4 className="font-bold text-purple-800 mb-2">第2条（宿泊料金のお支払い）</h4>
-                <p className="ml-4">宿泊料金は、チェックアウト時またはチェックイン時に現金、クレジットカード、または事前の銀行振込にてお支払いください。</p>
+                <p className="ml-4">宿泊料金は、チェックアウト時またはチェックイン時に現金、または事前の銀行振込にてお支払いください。</p>
               </section>
 
               <section>

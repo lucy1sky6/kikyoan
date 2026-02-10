@@ -23,5 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+
+# Claude Code
+.claude/
+
 # Serena MCP
 .serena
