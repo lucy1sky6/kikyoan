@@ -62,8 +62,8 @@ const KikyoanPage = () => {
         description={
           <>
             <p className="mb-4">
-              レンタルスペースとして、また体験宿泊所（素泊まりのみ）としてご利用いただけます。
-              イベントや会議、ワーケーションなど、様々な用途でお使いいただけます。
+              ホテルや旅館とは異なり、能登の暮らしをそのまま体感できる素泊まりの宿です。
+              レンタルスペースとしてもご利用いただけます。
             </p>
             <ReadMoreButton onClick={() => setIsActivitiesStoryOpen(true)} color="purple" />
           </>
@@ -83,8 +83,8 @@ const KikyoanPage = () => {
         description={
           <>
             <p className="mb-4">
-              古民家をリノベーションした温かみのある空間です。
-              木のぬくもりを感じながら、能登の自然に囲まれたゆったりした時間をお楽しみください。
+              築130年の古民家に手を入れながら大切に住み継いできた建物です。
+              最新の設備ではありませんが、木のぬくもりと能登の自然に囲まれたゆったりした時間をお楽しみください。
             </p>
             <div className="flex flex-wrap gap-3">
               <ReadMoreButton onClick={() => setIsFeaturesStoryOpen(true)} color="purple" />
@@ -224,9 +224,18 @@ const KikyoanPage = () => {
                 'バスタオル、タオルの貸し出しはありませんが、どうしても必要な場合はお気軽にご相談ください。',
               ],
             },
+            {
+              category: 'ご持参をおすすめするもの',
+              items: [
+                'バスタオル',
+                'シャンプー・ボディソープ類',
+                'パジャマ・部屋着',
+                'スリッパ（室内用）',
+              ],
+            },
           ]}
           color="purple"
-          note="※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。"
+          note="※キッチン・洗面所・お手洗いは家主と共同です（冷蔵庫、洗濯機、浴室は共同ではありません）。"
         />
       </PricingSection>
 
@@ -235,10 +244,12 @@ const KikyoanPage = () => {
         <div className="md:col-span-2">
           <InfoCard title="" color="purple">
             <p className="text-gray-700 mb-4">
-              ご宿泊は、1泊につき1組様（最大8名様）のみの貸切※です。
+              ご宿泊は、1泊につき1組様（最大8名様）のみの貸切です。
             </p>
-            <p className="text-gray-600 text-sm mb-6">
-              ※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。
+            <p className="text-gray-700 mb-4 font-semibold">
+              家主は普段向かいの別宅におりますが、キッチン・洗面所・お手洗いは家主と共同です。
+              <br />
+              <span className="font-normal text-gray-600">（冷蔵庫、洗濯機、浴室は共同ではありません）</span>
             </p>
             <p className="text-gray-700 mb-4">
               食事なしの素泊まりのみ
@@ -253,6 +264,34 @@ const KikyoanPage = () => {
               <li>・BBQスペース有り</li>
               <li>・全館禁煙</li>
             </ul>
+            <p className="text-gray-600 text-sm mt-4">
+              ※田舎の古民家のため、季節によって虫が出ることがあります。対策は講じておりますが、あらかじめご了承ください。
+            </p>
+          </InfoCard>
+        </div>
+      </PricingSection>
+
+      {/* 周辺のお店・お食事 */}
+      <PricingSection title="周辺のお店・お食事" color="purple" delay={0.78}>
+        <div className="md:col-span-2">
+          <InfoCard title="" color="purple">
+            <p className="text-gray-700 mb-4 font-semibold">
+              周辺にコンビニはありません。食材はチェックイン前にお買い求めいただくことをおすすめします。
+            </p>
+            <div className="space-y-4">
+              <div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">しんやスーパー（食料品）</h4>
+                <p className="text-gray-700 ml-4">桔梗庵から車で約5分 {/* TODO: 距離・時間を要確認 */}</p>
+                <p className="text-gray-700 ml-4">営業時間: 9:00〜18:00（TODO: 要確認）</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">飲食店</h4>
+                <p className="text-gray-700 ml-4">TODO: 店名・営業時間を要確認</p>
+              </div>
+            </div>
+            <p className="text-gray-600 text-sm mt-4">
+              ※震災の影響で営業時間が変更されている場合があります。お出かけ前にご確認ください。
+            </p>
           </InfoCard>
         </div>
       </PricingSection>
@@ -548,7 +587,7 @@ const KikyoanPage = () => {
             </p>
 
             <p className="text-sm text-gray-600">
-              ※家主は普段向かいの別宅におりますが、キッチン、洗面所、お手洗いは共同となります（冷蔵庫、洗濯機、浴室は共同ではありません）。
+              ※キッチン・洗面所・お手洗いは家主と共同です（冷蔵庫、洗濯機、浴室は共同ではありません）。
             </p>
           </div>
         }
@@ -618,11 +657,11 @@ const KikyoanPage = () => {
         content={
           <div>
             <p className="mb-6">
-              桔梗庵は、築130年の古民家をリノベーションした温かみのある空間です。
+              桔梗庵は、築130年の古民家に手を入れながら大切に住み継いできた建物です。
             </p>
             <p className="mb-6">
-              能登の伝統的な建築様式を活かしながら、現代的な快適さも備えています。
-              Wi-Fiやキッチンなどの設備も完備しています。
+              能登の伝統的な建築様式をそのまま残しており、古民家ならではの趣があります。
+              最新の設備ではありませんが、Wi-Fiやキッチンなど滞在に必要なものは揃っています。
             </p>
             <p className="mb-6">
               海に近い静かな環境にあり、一歩外に出ると、美しい能登の田舎の風景が広がります。
