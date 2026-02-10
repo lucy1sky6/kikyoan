@@ -159,7 +159,8 @@ ESLintでコードをチェックします。
 
 ## 8. ogiリポジトリとの関係
 
-- `ogi` リポジトリが事業戦略・運営情報の正本（同じディレクトリに並んでいる）
+- `ogi` リポジトリが事業戦略・運営情報・Todo管理の正本（同じディレクトリに並んでいる）
+- **kikyoanにはTodo・ステータス管理ファイルを置かない。** 管理は全て ogi 側で行う
 - コンテンツ変更時はogiの戦略ドキュメントと整合を確認する
 - 料金変更時は ogi 側の `docs/strategy/business/pricing.md` と `docs/operations/decision-log.md` も更新
 
