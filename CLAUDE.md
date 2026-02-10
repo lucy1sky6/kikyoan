@@ -200,23 +200,11 @@ npx playwright test --project=chromium  # デスクトップのみ
 
 ## 11. デプロイ
 
-### GitHub Pages（現行）
-GitHub Pagesにデプロイ済み。
-
-### Vercel
-```bash
-npm install -g vercel
-vercel
-```
-
-### Netlify
-1. `npm run build` でビルド
-2. `dist/` フォルダをドラッグ&ドロップ
-
-### その他のホスティング
+### Cloudflare Pages（現行）
+- URL: noto-kikyoan.com
+- 無料プラン。mainへのpushで自動デプロイ
 - ビルドコマンド: `npm run build`
 - 出力ディレクトリ: `dist`
-- Node.js バージョン: 18以上推奨
 
 詳細は [Viteのデプロイガイド](https://vitejs.dev/guide/static-deploy.html)を参照してください。
 

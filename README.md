@@ -128,25 +128,9 @@ npm run build
 
 ### ホスティング
 
-以下のサービスにデプロイ可能：
+Cloudflare Pages（無料プラン）でデプロイ。mainへのpushで自動デプロイされる。
 
-#### Vercel（推奨）
-```bash
-npm install -g vercel
-vercel
-```
-
-#### Netlify
-1. `npm run build` でビルド
-2. `dist/` フォルダをドラッグ&ドロップ
-
-#### GitHub Pages
-```bash
-npm run build
-# gh-pagesブランチにdist/の内容をプッシュ
-```
-
-設定詳細は [Viteのデプロイガイド](https://vitejs.dev/guide/static-deploy.html) を参照してください。
+- URL: noto-kikyoan.com
 
 ## ライセンス
 
