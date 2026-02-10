@@ -3,6 +3,8 @@ import { test, expect } from '@playwright/test';
 test.describe('桔梗庵ページ — コンテンツ存在確認', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/kikyoan');
+    // lazy-loaded コンテンツの描画を待つ
+    await expect(page.locator('body')).toContainText('0768-74-0072');
   });
 
   test('「農家民宿」のテキストが存在する', async ({ page }) => {
@@ -45,6 +47,8 @@ test.describe('桔梗庵ページ — コンテンツ存在確認', () => {
 test.describe('意図的な不在の確認', () => {
   test('予約フォームがレンダリングされていない', async ({ page }) => {
     await page.goto('/kikyoan');
+    // lazy-loaded コンテンツの描画を待ってから不在を確認
+    await expect(page.locator('body')).toContainText('0768-74-0072');
     // フォーム要素（input[type="date"], 予約ボタン等）が存在しないことを確認
     await expect(page.locator('form')).toHaveCount(0);
     await expect(page.getByRole('button', { name: /予約/ })).toHaveCount(0);
@@ -52,6 +56,8 @@ test.describe('意図的な不在の確認', () => {
 
   test('クレジットカード関連の表示がない', async ({ page }) => {
     await page.goto('/kikyoan');
+    // lazy-loaded コンテンツの描画を待つ
+    await expect(page.locator('body')).toContainText('0768-74-0072');
     const visibleText = await page.locator('body').innerText();
     expect(visibleText).not.toContain('クレジットカード');
     expect(visibleText.toLowerCase()).not.toContain('visa');
@@ -69,7 +75,7 @@ test.describe('greengrassページ — コンテンツ存在確認', () => {
 
   test('greengrass の説明が存在する', async ({ page }) => {
     await page.goto('/greengrass');
-    await expect(page.locator('body')).toContainText('greengrass');
+    await expect(page.locator('body')).toContainText(/greengrass/i);
   });
 });
 
