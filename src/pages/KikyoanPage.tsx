@@ -280,13 +280,28 @@ const KikyoanPage = () => {
             </p>
             <div className="space-y-4">
               <div>
-                <h4 className="text-lg font-semibold text-purple-800 mb-1">しんやスーパー（食料品）</h4>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">スーパーしんや（食料品）</h4>
                 <p className="text-gray-700 ml-4">桔梗庵から車で約5分 {/* TODO: 距離・時間を要確認 */}</p>
-                <p className="text-gray-700 ml-4">営業時間: 9:00〜18:00（TODO: 要確認）</p>
+                <p className="text-gray-700 ml-4">営業時間: 9:30〜18:30（毎週日曜定休）</p>
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-purple-800 mb-1">飲食店</h4>
-                <p className="text-gray-700 ml-4">TODO: 店名・営業時間を要確認</p>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">どんたく宇出津店（食料品）</h4>
+                <p className="text-gray-700 ml-4">ショッピングタウン アルプ内・桔梗庵から車で約15分</p>
+                <p className="text-gray-700 ml-4">営業時間: 9:00〜19:00</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">福寿司（お食事）</h4>
+                <p className="text-gray-700 ml-4">桔梗庵から車で約5分</p>
+                <p className="text-gray-700 ml-4">営業時間: 17:00〜23:00（不定休・ランチは完全予約制）</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">能登shirushi（お食事）</h4>
+                <p className="text-gray-700 ml-4">桔梗庵から車で約3分（不定休）</p>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">うわみ花月堂（スイーツ・パン屋さん）</h4>
+                <p className="text-gray-700 ml-4">桔梗庵から車で約1分</p>
+                <p className="text-gray-700 ml-4">営業時間: 9:30〜17:30（毎週日曜定休）</p>
               </div>
             </div>
             <p className="text-gray-600 text-sm mt-4">
@@ -550,6 +565,10 @@ const KikyoanPage = () => {
             <p className="mb-6">
               お客様1泊につき1組様（最大8名様）のみの貸切※です。
               <br />
+              <span className="text-sm text-gray-600">
+                ※キッチン・洗面所・お手洗いは家主と共同です（冷蔵庫、洗濯機、浴室は共同ではありません）。
+              </span>
+              <br />
               のびのびと自由にお過ごしいただけます。
             </p>
 
@@ -584,10 +603,6 @@ const KikyoanPage = () => {
 
             <p className="mb-6 ml-6">
               能登の海の幸を存分に楽しみながら、ゆったりとした長期滞在をお楽しみください。
-            </p>
-
-            <p className="text-sm text-gray-600">
-              ※キッチン・洗面所・お手洗いは家主と共同です（冷蔵庫、洗濯機、浴室は共同ではありません）。
             </p>
           </div>
         }
