@@ -188,7 +188,7 @@ const GreengrassPage = () => {
         />
         <InfoCard title="在庫について" color="lime">
           <p className="text-gray-700 mb-4">
-            最新の在庫状況については、SNSにてお知らせしております。
+            最新の在庫状況については、SNSでお知らせいたします。
           </p>
           <SnsLink instagramUrl="https://www.instagram.com/kikyoan_greengrass" color="lime" />
           <p className="text-gray-700">お気軽にお問い合わせください。</p>

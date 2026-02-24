@@ -115,7 +115,7 @@ const KikyoanPage = () => {
             <p className="mb-4">
               ・静かな環境でリフレッシュしたい方
               <br />
-              ・お仕事やボランティアで能登に来られる方
+              ・お仕事や復興支援で能登に来られる方
               <br />
               ・能登の自然を満喫したい方
               <br />
@@ -215,19 +215,20 @@ const KikyoanPage = () => {
             },
             {
               category: '宿泊設備',
-              items: ['布団・寝具', 'タオル'],
+              items: ['布団・寝具'],
             },
             {
               category: 'その他',
               items: [
                 '歯ブラシセットあります。',
-                'バスタオル、タオルの貸し出しはありませんが、どうしても必要な場合はお気軽にご相談ください。',
+                'タオル、バスタオルの貸し出しはありませんが、どうしても必要な場合はお気軽にご相談ください。',
               ],
             },
             {
               category: 'ご持参をおすすめするもの',
               items: [
-                'バスタオル',
+                '洗面用具',
+                'タオル・バスタオル',
                 'シャンプー・ボディソープ類',
                 'パジャマ・部屋着',
                 'スリッパ（室内用）',
@@ -303,9 +304,15 @@ const KikyoanPage = () => {
                 <p className="text-gray-700 ml-4">桔梗庵から車で約1分</p>
                 <p className="text-gray-700 ml-4">営業時間: 9:30〜17:30（毎週日曜定休）</p>
               </div>
+              <div>
+                <h4 className="text-lg font-semibold text-purple-800 mb-1">イカの駅 つくモール（お土産・お食事など）</h4>
+                <p className="text-gray-700 ml-4">桔梗庵から車で7分</p>
+                <p className="text-gray-700 ml-4">営業時間: 10:00〜17:00（毎週水曜定休）</p>
+                <p className="text-gray-700 ml-4">レストラン: 11:00〜15:00</p>
+              </div>
             </div>
             <p className="text-gray-600 text-sm mt-4">
-              ※震災の影響で営業時間が変更されている場合があります。お出かけ前にご確認ください。
+              ※震災の影響や季節により、営業時間が変更されている場合があります。お出かけ前にご確認ください。
             </p>
           </InfoCard>
         </div>
@@ -373,7 +380,7 @@ const KikyoanPage = () => {
           <PriceCard
             title="復興支援関係者向け料金"
             items={[
-              { label: '1泊（1名様）', price: '¥---' },
+              { label: '1泊（1名様）', price: 'ご相談' },
               { label: '3泊以上', price: '10％引き' },
               { label: '1週間以上', price: '15％引き' },
               { label: '30日以上', price: '20％引き' },
@@ -405,10 +412,12 @@ const KikyoanPage = () => {
         </InfoCard>
         <InfoCard title="予約について" color="purple">
           <p className="text-gray-700 mb-4">
-            最新の空き状況や予約については、SNSにてお知らせしております。
+            最新の空き状況については、SNSにてお知らせしております。
           </p>
           <SnsLink instagramUrl="https://www.instagram.com/kikyoan_greengrass" color="purple" />
-          <p className="text-gray-700">お気軽にお問い合わせください。</p>
+          <p className="text-gray-700 mt-4">
+            ご予約は 0768-74-0072 まで、お気軽にご連絡ください。
+          </p>
         </InfoCard>
         <div className="md:col-span-2">
           <InfoCard title="約款" color="purple">
@@ -524,10 +533,6 @@ const KikyoanPage = () => {
               震度7を記録したこの地震により、能登半島の多くの地域が甚大な被害を受けました。
             </p>
 
-            <div className="my-8 ml-6 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">地震被害の写真</span>
-            </div>
-
             <p className="mb-6 ml-6">
               幸いにも桔梗庵は全壊を免れました。
               この地震をきっかけに、復興を支える方々の宿泊施設として、
@@ -540,13 +545,9 @@ const KikyoanPage = () => {
             </p>
 
             <p className="mb-6 ml-6">
-              築130年の古民家をリノベーションしたこの施設は、能登の伝統と新しい息吹が調和する空間です。
+              築130年の古民家を改装したこの施設は、能登の伝統と新しい息吹が調和する空間です。
               海に近い静かな環境で、心安らぐひとときをお過ごしください。
             </p>
-
-            <div className="my-8 ml-6 bg-gray-200 h-64 flex items-center justify-center rounded-lg">
-              <span className="text-gray-500">復興の様子の写真</span>
-            </div>
 
             <p className="mb-6 ml-6">
               桔梗庵でのご滞在が、能登半島の復興を応援する一歩となります。
@@ -622,7 +623,7 @@ const KikyoanPage = () => {
               日常から離れて、静かな環境でゆっくりと過ごしたい方に最適です。
             </p>
 
-            <h3 className="text-xl font-bold mb-3 text-purple-900">お仕事やボランティアの方</h3>
+            <h3 className="text-xl font-bold mb-3 text-purple-900">お仕事や復興支援の方</h3>
             <p className="mb-6 ml-6">
               能登の復旧・復興支援のために来てくださる方の滞在先として、心を込めてお迎えいたします。長期滞在も可能ですので、安心して活動に専念していただけます。
             </p>

@@ -8,9 +8,6 @@ const QRCodePlaceholder = () => {
           src={getImagePath('/images/qr/qr-code.webp')}
           alt="QRコード"
           className="w-full h-full object-cover"
-          style={{
-            filter: 'invert(20%) sepia(50%) saturate(800%) hue-rotate(230deg) brightness(95%)'
-          }}
         />
       </div>
     </div>

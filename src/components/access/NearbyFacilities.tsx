@@ -55,17 +55,17 @@ const NearbyFacilities = () => {
           customGradientColor="rgb(29,179,167)"
         />
 
-        {/* 縄文真脇遺跡 */}
+        {/* 国指定史跡 真脇遺跡 */}
         <FacilityBanner
-          title="縄文真脇遺跡"
+          title="国指定史跡 真脇遺跡"
           link="http://www.mawakiiseki.jp/"
           gradientFrom="from-amber-100"
           gradientTo="to-amber-50"
           carIconColor="text-amber-600"
           distance="桔梗庵から車で15分"
           description="約4000年前の縄文時代の遺跡。"
-          mapSrc="https://maps.google.com/maps?q=縄文真脇遺跡,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          mapTitle="縄文真脇遺跡の地図"
+          mapSrc="https://maps.google.com/maps?q=国指定史跡 真脇遺跡,石川県鳳珠郡能登町&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          mapTitle="国指定史跡 真脇遺跡の地図"
           zIndex={11}
           photoSrc={getImagePath('/images/facilities/mawaki-ruins.webp')}
           customGradientColor="rgb(215,164,42)"
