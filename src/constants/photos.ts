@@ -26,7 +26,7 @@ export const GALLERY_PHOTOS: Photo[] = [
   { id: 33, src: getImagePath('/images/gallery/kikyoan/10.webp'), alt: '桔梗庵の和室', description: '落ち着いた雰囲気の和の空間。', tags: ['桔梗庵'] },
   { id: 34, src: getImagePath('/images/gallery/kikyoan/11.webp'), alt: '軒先には', description: 'ツバメが巣を作ることも。', tags: ['桔梗庵'] },
   { id: 35, src: getImagePath('/images/gallery/kikyoan/12.webp'), alt: '桔梗庵の空間', description: '丁度いい空間でゆったりと過ごせます。', tags: ['桔梗庵'] },
-  { id: 36, src: getImagePath('/images/gallery/kikyoan/13.webp'), alt: '桔梗庵の玄関', description: '趣のある玄関からお迎えします。', tags: ['桔梗庵'] },
+  { id: 36, src: getImagePath('/images/gallery/kikyoan/13.webp'), alt: '桔梗庵の外観', description: '趣のある玄関からお迎えします。', tags: ['桔梗庵'] },
   { id: 37, src: getImagePath('/images/gallery/kikyoan/14.webp'), alt: '玄関に入ると', description: '手前左にみせの間、奥左に居間、更に奥にはダイニングキッチンがあります。', tags: ['桔梗庵'] },
   { id: 38, src: getImagePath('/images/gallery/kikyoan/15.webp'), alt: '桔梗庵の雰囲気', description: '静かな環境で心安らぐひととき。', tags: ['桔梗庵'] },
   { id: 39, src: getImagePath('/images/gallery/greengrass/07.webp'), alt: 'ピーリングウッド', description: '木の皮を剥いた独特の風合いを持つ木材製品。', tags: ['greengrass'] },

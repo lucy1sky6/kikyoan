@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 interface PriceItem {
   label: string;
   price: string;
+  separator?: string;
 }
 
 interface PriceCardProps {
@@ -42,9 +43,16 @@ const PriceCard = ({ title, items, note, color }: PriceCardProps) => {
       <h3 className={`text-2xl font-bold ${colors.title} mb-4`}>{title}</h3>
       <ul className="space-y-3 text-gray-700">
         {items.map((item, index) => (
-          <li key={index} className="flex justify-between">
-            <span>{item.label}</span>
-            <span className="font-semibold">{item.price}</span>
+          <li key={index}>
+            {item.separator && (
+              <div className="border-t border-gray-300 pt-3 mb-3">
+                <span className="text-sm text-gray-500">{item.separator}</span>
+              </div>
+            )}
+            <div className="flex justify-between">
+              <span>{item.label}</span>
+              <span className="font-semibold">{item.price}</span>
+            </div>
           </li>
         ))}
       </ul>
