@@ -41,7 +41,7 @@ const GreengrassPage = () => {
         description={
           <>
             <p className="mb-4">
-              １Fが作業場兼木材置き場、2Fが手作り木の椅子の展示スペースとなっています。
+              １Fが作業場兼木材置き場、2Fが手作り木の椅子の展示・販売スペースとなっています。
               網元の番屋（漁船に関わる器材の倉庫）を改造した建物です。
             </p>
             <ReadMoreButton onClick={() => setIsGreengrassStoryOpen(true)} color="lime" />
