@@ -39,7 +39,7 @@ const StoryModal = ({ isOpen, onClose, title, content }: StoryModalProps) => {
       >
         {/* 閉じるボタン */}
         <button
-          className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition z-50 font-sans"
+          className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition z-50 font-sans drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]"
           onClick={onClose}
           aria-label="閉じる"
         >
