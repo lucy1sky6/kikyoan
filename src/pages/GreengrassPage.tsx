@@ -84,6 +84,7 @@ const GreengrassPage = () => {
           <>
             <p className="mb-4">
               木の皮を剥いた、独特の風合いを持つ木材製品です。
+              椅子と比べてお手頃な価格で販売しております。
             </p>
             <ReadMoreButton onClick={() => setIsPeelingStoryOpen(true)} color="lime" />
           </>
