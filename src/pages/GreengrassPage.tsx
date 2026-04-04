@@ -359,7 +359,7 @@ const GreengrassPage = () => {
             </div>
 
             <p className="mb-8 ml-6">
-              Creemaに出品しております。現在、販売は休止中ですが、展示として椅子を始めいくつかの作品をご覧いただけます。
+              Creemaに出品しております。現在、Creemaでは販売は休止中ですが、展示として椅子を始めいくつかの作品をご覧いただけます。
               <br />
               <ExternalLink href="https://www.creema.jp/creator/2248338/item/display" color="lime">
                 https://www.creema.jp/creator/2248338/item/display
