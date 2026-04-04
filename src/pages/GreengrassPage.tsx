@@ -509,6 +509,10 @@ const GreengrassPage = () => {
             <p className="mb-6 ml-6">
               NHKで能登の里山が特集された際、greengrassの工房と裏山が紹介されました。
             </p>
+            <ContentImage
+              src={getImagePath('/images/greengrass/nhk-satoyama.webp')}
+              alt="NHK 能登の里山特集で紹介されたgreengrassの工房と裏山"
+            />
             <p className="mb-6 ml-6">
               山も含めてgreengrassです。自然と共に生きる工房の姿を多くの方々に知っていただきました。
             </p>
