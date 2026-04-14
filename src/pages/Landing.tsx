@@ -5,6 +5,7 @@ import Contact from '../components/layout/Contact';
 import GalleryHeroBanner from '../components/gallery/GalleryHeroBanner';
 import HeroSection from '../components/landing/HeroSection';
 import FlowerDecoration from '../components/landing/FlowerDecoration';
+import FlowerBoundary from '../components/landing/FlowerBoundary';
 import { useSlideshow } from '../hooks';
 import { getImagePath } from '../utils/getImagePath';
 
@@ -58,6 +59,9 @@ const Landing = () => {
             slideDirection="up"
             topLabel="癒しの宿"
           />
+
+          {/* 桔梗の花 - 縦並び用（スマホ）セクション境界に配置 */}
+          <FlowerBoundary />
 
           {/* greengrassセクション */}
           <HeroSection
