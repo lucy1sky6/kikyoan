@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { getImagePath } from '../../utils/getImagePath';
 
 /**
- * スマホ縦並び時の桔梗の花。
+ * 縦並び時の桔梗の花。
  * 2セクションの「間」にflex子要素として置くことで、
  * 常に境界の正確な位置に表示する。
  */

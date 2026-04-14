@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { getImagePath } from '../../utils/getImagePath';
 
 /**
- * PC横並び時の桔梗の花。
+ * 横並び時の桔梗の花。
  * 横並びではtop:50%が正確に境界になるため、従来通りの配置。
  */
 const FlowerDecoration = () => {

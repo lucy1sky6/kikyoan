@@ -60,7 +60,7 @@ const Landing = () => {
             topLabel="癒しの宿"
           />
 
-          {/* 桔梗の花 - 縦並び用（スマホ）セクション境界に配置 */}
+          {/* 桔梗の花 - 縦並び時はセクション境界に配置 */}
           <FlowerBoundary />
 
           {/* greengrassセクション */}
