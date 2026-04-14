@@ -151,9 +151,9 @@ const GreengrassPage = () => {
         delay={0.7}
       />
 
-      {/* セクション6: メディア・導入事例 */}
+      {/* セクション6: メディア・紹介事例 */}
       <MagazineSection
-        title="メディア・導入事例"
+        title="メディア・紹介事例"
         description={
           <>
             <p className="mb-4">
@@ -171,7 +171,7 @@ const GreengrassPage = () => {
         gradientTo="to-lime-200"
         titleColor="text-lime-900"
         imageSrc={getImagePath('/images/greengrass/media.webp')}
-        imageAlt="メディア出演・導入事例"
+        imageAlt="メディア出演・紹介事例"
         delay={0.8}
       />
 
@@ -503,7 +503,7 @@ const GreengrassPage = () => {
       <StoryModal
         isOpen={isMediaStoryOpen}
         onClose={() => setIsMediaStoryOpen(false)}
-        title="メディア・導入事例"
+        title="メディア・紹介事例"
         content={
           <div>
             <h3 className="text-xl font-bold mb-3 text-lime-900">メディア掲載</h3>
@@ -520,11 +520,30 @@ const GreengrassPage = () => {
               山も含めてgreengrassです。自然と共に生きる工房の姿を多くの方々に知っていただきました。
             </p>
 
-            <h3 className="text-xl font-bold mb-3 mt-8 text-lime-900">導入事例</h3>
-            <p className="mb-4 ml-6">
-              greengrassの椅子は、以下の施設でご利用いただいています。実際に座り心地を体験していただけます。
+            <h3 className="text-xl font-bold mb-3 mt-8 text-lime-900">紹介事例</h3>
+
+            <p className="mb-2 ml-6">
+              greengrassの椅子や木材は、以下の施設でご利用いただいています。実際に座り心地を体験していただけます。
+            </p>
+            <p className="text-gray-600 text-sm mb-4 ml-6">
+              ※リンクをクリックすると外部サイトへ移動します
             </p>
             <ul className="space-y-3 mb-6 ml-6">
+              <li>
+                <a href="https://tabitaiken.com" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={getImagePath('/images/greengrass/tabitaiken-banner-small.png')}
+                    alt="TABITAIKEN - 自然のおもしろさ・ふしぎさに気づけばもっと楽しくなる"
+                    className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-2"
+                  />
+                </a>
+                <ExternalLink href="https://tabitaiken.com" color="lime">
+                  TABITAIKEN
+                </ExternalLink>
+                <p className="text-gray-600 text-sm mt-1 ml-4">
+                  自然のおもしろさ・ふしぎさに気づけばもっと楽しくなる
+                </p>
+              </li>
               <li>
                 <ExternalLink href="https://kurart-arau.jp/cafe/" color="lime">
                   蔵人新宇（kurart　ARAU）
@@ -548,11 +567,7 @@ const GreengrassPage = () => {
                   そらのあそびば　ハレノチクモリ
                 </ExternalLink>
               </li>
-              <li>他多数</li>
             </ul>
-            <p className="text-gray-600 text-sm mb-6 ml-6">
-              ※リンクをクリックすると外部サイトへ移動します
-            </p>
             <p className="mb-6 ml-6">
               その他、県内外のカフェやレストランでもご利用いただいています。
             </p>

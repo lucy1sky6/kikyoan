@@ -135,9 +135,9 @@ const KikyoanPage = () => {
         delay={0.6}
       />
 
-      {/* セクション5: ご紹介いただきました＆リンク集 */}
+      {/* セクション5: ご紹介いただきました */}
       <MagazineSection
-        title="ご紹介いただきました＆リンク集"
+        title="ご紹介いただきました"
         description={
           <>
             <p className="mb-4">
@@ -152,7 +152,7 @@ const KikyoanPage = () => {
         gradientTo="to-purple-200"
         titleColor="text-purple-900"
         imageSrc={getImagePath('/images/kikyoan/introduction.webp')}
-        imageAlt="ご紹介いただきました＆リンク集"
+        imageAlt="ご紹介いただきました"
         delay={0.65}
       />
 
@@ -649,20 +649,26 @@ const KikyoanPage = () => {
       <StoryModal
         isOpen={isKikyoanIntroductionOpen}
         onClose={() => setIsKikyoanIntroductionOpen(false)}
-        title="ご紹介いただきました＆リンク集"
+        title="ご紹介いただきました"
         content={
           <div>
-            <h3 className="text-xl font-bold mb-4 text-purple-900">サイト</h3>
-
-            <h4 className="text-lg font-bold mb-3 ml-6">TABITAIKEN</h4>
-            <p className="mb-4 ml-6">TABITAIKEN様にて桔梗庵をご紹介いただいております。</p>
-            <p className="mb-6 ml-6">
-              <ExternalLink href="https://www.tabitaiken.com/peelingwood" color="purple">
-                桔梗庵の紹介ページはこちら
-              </ExternalLink>
-            </p>
-            <p className="text-gray-600 text-sm mb-8 ml-6">※外部サイトへ移動します</p>
-
+            <ul className="space-y-3 mb-6 ml-6">
+              <li>
+                <a href="https://tabitaiken.com" target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={getImagePath('/images/greengrass/tabitaiken-banner-small.png')}
+                    alt="TABITAIKEN - 自然のおもしろさ・ふしぎさに気づけばもっと楽しくなる"
+                    className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-2"
+                  />
+                </a>
+                <ExternalLink href="https://tabitaiken.com" color="purple">
+                  TABITAIKEN
+                </ExternalLink>
+                <p className="text-gray-600 text-sm mt-1 ml-4">
+                  自然のおもしろさ・ふしぎさに気づけばもっと楽しくなる
+                </p>
+              </li>
+            </ul>
           </div>
         }
       />
